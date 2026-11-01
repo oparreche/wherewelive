@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where We Live — Sobrevivência, exploração e construção entre planetas</title>
+<meta name="description" content="Where We Live: pilote naves construídas bloco a bloco, salte para outro sistema estelar, explore planetas e luas, monte sua base e sobreviva — sozinho ou com amigos. Baixe grátis para Windows.">
+<meta property="og:title" content="Where We Live">
+<meta property="og:description" content="Um mundo entre planetas, luas e sistemas estelares. Pilote, construa e sobreviva — sozinho ou com amigos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oparreche.github.io/wherewelive/">
+<meta property="og:image" content="https://oparreche.github.io/wherewelive/shot_nave.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://oparreche.github.io/wherewelive/">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060a16; --bg2:#0b1226; --card:#0f1830; --line:#1f2c4d;
+  --fg:#e9eefc; --mut:#9fb0d6; --amber:#ffb52e; --amber2:#ff8f1f; --cy:#4fd1ff;
+  --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 "Barlow",system-ui,Segoe UI,sans-serif}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;margin:0;text-wrap:balance}
+/* barra */
+.nav{position:fixed;inset:0 0 auto 0;z-index:20;backdrop-filter:blur(12px);background:linear-gradient(#060a16d9,#060a1600)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav img{height:40px}
+.nav nav{display:flex;gap:26px;font-weight:500;font-size:15px;color:var(--mut)}
+.nav nav a{text-decoration:none}
+.nav nav a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font:700 19px "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;background:linear-gradient(135deg,var(--amber),var(--amber2));color:#1a0f00;box-shadow:0 10px 34px #ff9a2a55,inset 0 1px 0 #fff6;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px #ff9a2a88,inset 0 1px 0 #fff6}
+.btn.ghost{background:#ffffff12;color:var(--fg);box-shadow:inset 0 0 0 1px #ffffff2e}
+.btn.sm{padding:10px 20px;font-size:16px}
+.btn svg{flex:none}
+.nav .acts{display:flex;align-items:center;gap:10px}
+@media(max-width:520px){.nav .btn.sm{padding:9px 14px;font-size:15px;letter-spacing:.04em}.nav .acts{gap:8px}.nav img{height:34px}}
+/* herói */
+.hero{position:relative;min-height:min(100svh,900px);display:grid;align-items:center;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:url(shot_nave.jpg) center/cover;z-index:-2;transform:scale(1.04);animation:drift 28s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#060a16f2 0%,#060a16c0 36%,#060a1640 68%,#060a1600 100%),linear-gradient(0deg,var(--bg) 0%,#060a1600 28%)}
+@keyframes drift{to{transform:scale(1.12) translate(-1.5%,1%)}}
+.hero .wrap{padding-block:130px 90px}
+.kicker{font:700 15px "Barlow Condensed";letter-spacing:.32em;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
+.hero h1{font-size:clamp(64px,11vw,148px);font-weight:800}
+.hero h1 span{display:block;color:var(--amber)}
+.hero h1 + .rule{width:min(260px,40%);height:8px;border-radius:4px;background:var(--amber);margin:22px 0 26px}
+.hero p.lead{max-width:30em;font-size:clamp(18px,2vw,22px);color:#dbe5ff;margin:0 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.meta{margin-top:22px;color:var(--mut);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 22px}
+.meta b{color:var(--fg);font-weight:600}
+/* seções */
+section{padding-block:96px}
+.sec-h{max-width:760px;margin-bottom:46px}
+.sec-h .kicker{margin-bottom:12px}
+.sec-h h2{font-size:clamp(40px,6vw,72px);font-weight:800}
+.sec-h p{color:var(--mut);margin:16px 0 0}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:980px){.feats{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}}
+.feat{background:linear-gradient(180deg,var(--card),#0b1226);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px}
+.feat .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#ffb52e1c;color:var(--amber);margin-bottom:18px}
+.feat .ic svg{width:26px;height:26px}
+.feat h3{font-size:28px;font-weight:700;margin-bottom:10px;letter-spacing:.03em}
+.feat p{margin:0;color:var(--mut);font-size:16px}
+/* faixas com imagem */
+.band{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+.band.rev{grid-template-columns:1fr 1.15fr}
+.band.rev .shot{order:2}
+.shot{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px #0009}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.band h2{font-size:clamp(36px,5vw,60px);font-weight:800;margin-bottom:16px}
+.band p{color:var(--mut);margin:0 0 14px}
+.band ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.band li{padding-left:26px;position:relative;color:#d3def9}
+.band li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:3px;background:var(--amber);border-radius:2px}
+.alt{background:linear-gradient(180deg,var(--bg),var(--bg2) 20%,var(--bg2) 80%,var(--bg))}
+/* passos */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;counter-reset:s}
+.step{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--card);position:relative}
+.step::before{counter-increment:s;content:counter(s);font:800 56px "Barlow Condensed";color:var(--amber);opacity:.9;line-height:1;display:block;margin-bottom:6px}
+.step h3{font-size:26px;margin-bottom:8px}
+.step p{margin:0;color:var(--mut);font-size:16px}
+.req{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px 28px;margin-top:34px;color:var(--mut);font-size:15px}
+.req b{color:var(--fg);font-weight:600;display:block}
+/* chamada final */
+.final{text-align:center;background:radial-gradient(60% 120% at 50% 0%,#ffb52e22,#0000 70%)}
+.final img{height:92px;margin:0 auto 26px}
+.final h2{font-size:clamp(44px,7vw,92px);font-weight:800}
+.final p{color:var(--mut);max-width:34em;margin:16px auto 32px}
+footer{border-top:1px solid var(--line);padding-block:34px;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+@media(max-width:860px){
+  .nav nav{display:none}
+  .band,.band.rev{grid-template-columns:1fr;gap:28px}
+  .band.rev .shot{order:0}
+  section{padding-block:68px}
+  .hero::after{background:linear-gradient(180deg,#060a16cc 0%,#060a1690 50%,var(--bg) 100%)}
+}
+@media(prefers-reduced-motion:reduce){.hero::before{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#topo" aria-label="Where We Live"><img src="logo_horizontal.png" alt="Where We Live"></a>
+    <nav>
+      <a href="#jogo">O jogo</a>
+      <a href="#naves">Naves</a>
+      <a href="#mundos">Mundos</a>
+      <a href="#combate">Combate</a>
+      <a href="#baixar">Como jogar</a>
+    </nav>
+    <div class="acts">
+      <a class="btn sm ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Discord</a>
+      <a class="btn sm" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar</a>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <div class="wrap">
+      <div class="kicker">Sobrevivência · Exploração · Interplanetário</div>
+      <h1>Where<span>We Live</span></h1>
+      <div class="rule"></div>
+      <p class="lead">Um mundo entre planetas, luas e sistemas estelares. Pilote naves construídas bloco a bloco, monte sua base, negocie nas cidades e sobreviva — sozinho ou com amigos.</p>
+      <div class="cta">
+        <a class="btn" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+          Baixar para Windows
+        </a>
+        <a class="btn ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H11l-5 4v-4H4z"/><path d="M8.5 10.5h.01M15.5 10.5h.01"/></svg>
+          Entrar no Discord
+        </a>
+        <a class="btn ghost" href="#jogo">Conhecer o jogo</a>
+      </div>
+      <div class="meta"><span>Grátis</span><span>Instalador em português</span><span>Atualiza sozinho a cada abertura</span><span id="ver">Versão atual: <b>1.0.429</b></span></div>
+    </div>
+  </div>
+
+  <section id="jogo">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="kicker">O jogo</div>
+        <h2>Tudo o que você precisa para viver lá fora</h2>
+        <p>Where We Live mistura construção livre, pilotagem e sobrevivência em sistemas estelares inteiros, com planetas de verdade que você percorre a pé, de carro ou de nave.</p>
+      </div>
+      <div class="feats">
+        <article class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg></div>
+          <h3>Construa com blocos</h3>
+          <p>Paredes, rampas, janelas finas, portas, propulsores e estações. Monte bases e naves peça por peça — e edite a nave direto, com ela estacionada. O que você constrói sob o seu núcleo volta inteiro para a mochila.</p>
+        </article>
+        <article class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 3 4 7 4 11l3 3v3l-4-1-3 3-3-3-4 1v-3l3-3c0-4 1-8 4-11z"/><circle cx="12" cy="10" r="1.6"/></svg></div>
+          <h3>Pilote de verdade</h3>
+          <p>Decole do pátio de uma cidade, cruze a atmosfera e chegue ao espaço. Cada nave tem peso, empuxo e combustível ou energia — e leva o seu carro no convés.</p>
+        </article>
+        <article class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+          <h3>Planetas e luas</h3>
+          <p>Terreno voxel gerado na GPU: montanhas, praias, cavernas e pedras de minério que você extrai com o laser. Cada mundo tem clima, flora, ar e perigos próprios.</p>
+        </article>
+        <article class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/></svg></div>
+          <h3>Economia viva</h3>
+          <p>Preços que sobem e descem por cidade, lojas de verdade, contratos e reputação com as corporações. Fabrique, venda, melhore — e garimpe sucata nos ferros-velhos.</p>
+        </article>
+        <article class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.4c3 0 6 1.6 6 5.6"/></svg></div>
+          <h3>Sozinho ou em grupo</h3>
+          <p>Jogue em mundo próprio ou entre em servidores com amigos. Hospede o seu com o Servidor Dedicado e leve sua base e sua nave junto.</p>
+        </article>
+        <article class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></div>
+          <h3>Sobreviva</h3>
+          <p>Oxigênio, fome, estamina, armadura e armas. Sem ar lá em cima, leve um gerador de O₂ — e um leito médico para voltar para casa. Longe das cidades, os bichos atacam.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="naves" class="alt">
+    <div class="wrap">
+      <div class="band">
+        <div class="shot"><img src="shot_espaco.jpg" loading="lazy" alt="Nave de blocos branca e laranja voando no espaço do Sistema Ônix, com o gigante gasoso Titã ao fundo"></div>
+        <div>
+          <div class="kicker">Naves e espaço</div>
+          <h2>Do pátio a outro sistema</h2>
+          <p>Cada cidade tem seu pátio de naves. Compre uma, suba a rampa até a cabine e decole — ou construa a sua, bloco a bloco, e edite direto nela sempre que estiver parada.</p>
+          <ul>
+            <li>Propulsores pequenos e grandes, giroscópios, baterias, tanques e até uma Fundição de bordo para as naves grandes</li>
+            <li>Leve o carro ou o hover no convés: ele fica travado na nave e viaja com ela</li>
+            <li>O Motor de dobra, abastecido com cristais colhidos nos planetas, leva a nave inteira — com a tripulação e os veículos travados — para o Sistema Ônix</li>
+            <li>Quer só projetar? O <b>Mundo de projeto</b> é um mundo solo de construção livre: monte nave, carro ou casa sem gastar material e grave o resultado na tela Projetos para usar nos outros mundos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ferro-velho">
+    <div class="wrap">
+      <div class="band rev">
+        <div class="shot"><img src="shot_dia.jpg" loading="lazy" alt="Portal de entrada do ferro-velho Retalhos do Vale, com muro de chapa e céu de dia"></div>
+        <div>
+          <div class="kicker">Ferro-velho</div>
+          <h2>Sucata que vira nave</h2>
+          <p>Os ferros-velhos são pátios de comércio, sem inimigos. Compre uma ficha, receba uma unidade incompleta sorteada — de sucata comum a achado raro — e decida: desmontar e vender o material, ou reconstruir e registrar o chassi no mecânico.</p>
+          <ul>
+            <li>Nos planetas, naves pequenas e veículos; no Pátio orbital do Cascalho, naves médias e grandes</li>
+            <li>O pátio vende as peças que costumam faltar: propulsores, giroscópio e bateria</li>
+            <li>Muro de chapa, portal com nome próprio, escritório de contêiner e luz à noite</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cidades" class="alt">
+    <div class="wrap">
+      <div class="band">
+        <div class="shot"><img src="shot_cidade.jpg" loading="lazy" alt="Fachada do Armazém Geral Depósito Rebite, com letreiro luminoso e toldo listrado"></div>
+        <div>
+          <div class="kicker">Cidades</div>
+          <h2>Lojas de verdade em cada esquina</h2>
+          <p>Padaria, café, farmácia, ferragens, autopeças, livraria, armazém e mais: cada loja tem letreiro luminoso, nome próprio e o seu vendedor atrás do balcão. Pão fresco, ensopado, café e curativo entram no cardápio.</p>
+          <ul>
+            <li>Missões diárias, patrulhas espaciais e contratos das corporações</li>
+            <li>A livraria dá uma dica por dia, de mecânica do jogo ou do mundo</li>
+            <li>Bússola, radar e diário de missões numa interface nova em grafite e âmbar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mundos">
+    <div class="wrap">
+      <div class="band rev">
+        <div class="shot"><img src="shot_malva.jpg" loading="lazy" alt="Personagem caminhando em Malva, o planeta roxo, entre árvores de copa lilás e cristais"></div>
+        <div>
+          <div class="kicker">Mundos</div>
+          <h2>Malva, o planeta roxo</h2>
+          <p>Um novo mundo no Sistema Ônix: capim roxo, árvores de copa lilás e céu lilás, com 4 cidades a céu aberto e 8 locais para explorar. Chegue pela dobra até Duna e siga voando.</p>
+          <ul>
+            <li>Árvores, arbustos e rochas com modelos novos em todos os planetas, nas luas e nos asteroides</li>
+            <li>Pedras de minério espalhadas pelo chão: a cor mostra o minério, e só o laser extrai</li>
+            <li>Tempestades de areia em Duna e Mesa, e perigos próprios em cada mundo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="combate" class="alt">
+    <div class="wrap">
+      <div class="band">
+        <div class="shot"><img src="shot_combate.jpg" loading="lazy" alt="Personagem mirando um fuzil de assalto, com a câmera por cima do ombro"></div>
+        <div>
+          <div class="kicker">Combate e fauna</div>
+          <h2>Mire pelo cano, defenda, apare</h2>
+          <p>O combate foi refeito: câmera mais perto com a arma na mão, tiro que sai do cano, luneta nos rifles, acerto confirmado pelo servidor e aviso da direção do dano. Com arma branca, a defesa vale contra os soldados — e aparar no tempo certo dá o troco.</p>
+          <ul>
+            <li>Três bichos hostis longe das cidades: Rastejador, Zangão-de-pedra e Espinhoso, cada planeta com a sua cor</li>
+            <li>Eles soltam carne de fera, quitina e glândulas — a carne vira espetinho no Processador</li>
+            <li>Soldados reagem ao tiro e avisam antes de atirar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="companheiros">
+    <div class="wrap">
+      <div class="band rev">
+        <div class="shot"><img src="shot_pet.jpg" loading="lazy" alt="A Trufa, um bichinho companheiro, de perto numa encosta gramada à beira-mar"></div>
+        <div>
+          <div class="kicker">Personagem e companheiros</div>
+          <h2>Você, com estilo — e um bichinho ao lado</h2>
+          <p>Personagem novo, masculino ou feminino, com três trajes de modelo próprio — Macacão colonial, Traje reforçado e Traje espacial — e editor de cores para pele, olhos, cabelo e traje. E, para andar com você, três companheiros que ninguém consegue machucar.</p>
+          <ul>
+            <li>Trufa fareja pedras de minério por perto, vai até lá e cava</li>
+            <li>Bolota avisa quando há bicho ou soldado hostil chegando</li>
+            <li>Faísca flutua perto do ombro e acende uma luz à noite</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mar" class="alt">
+    <div class="wrap">
+      <div class="band">
+        <div class="shot"><img src="shot_mar.jpg" loading="lazy" alt="Personagem nadando sobre o fundo de um mar de Aurora, entre corais e rochas submersas"></div>
+        <div>
+          <div class="kicker">Mar</div>
+          <h2>O fundo do mar tem vida</h2>
+          <p>Nos mares de Aurora, Gelo e Malva há algas, corais e rochas submersas, cardumes, medusas, arraias e tartarugas. Nade para onde você olha e leve a Arpoeira, a arma feita para o mar.</p>
+          <ul>
+            <li>Armas de fogo perdem força debaixo d’água; a Arpoeira dobra o dano</li>
+            <li>Afundou o veículo? Perto do que você quer resgatar, nenhum predador nasce nem persegue</li>
+          </ul>
+        </div>
+      </div>
+      <div class="band rev" style="margin-top:72px">
+        <div class="shot"><img src="shot_sombra.jpg" loading="lazy" alt="A Sombra-d’água, serpente translúcida das águas profundas, de boca aberta e com as iscas luminosas acesas"></div>
+        <div>
+          <div class="kicker">Predadores</div>
+          <h2>Cuidado com o escuro</h2>
+          <p>A Boca-de-lodo dorme enterrada no fundo e acorda se você chegar perto. A Sombra-d’água, uma serpente translúcida de 7 m, ronda as águas profundas. Os dois têm corpo articulado e, em Gelo e Malva, mudam de cor.</p>
+          <ul>
+            <li>Os predadores avisam antes do bote: a Boca-de-lodo abre a boca e a Sombra-d’água para com as iscas acesas</li>
+            <li>Quando a isca acende, é hora de recuar ou de revidar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="baixar">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="kicker">Como jogar</div>
+        <h2>Pronto em três passos</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Baixe</h3><p>Clique em “Baixar para Windows” e salve o instalador <b>Instalar_WhereWeLive.exe</b>.</p></div>
+        <div class="step"><h3>Instale</h3><p>Execute e escolha a pasta. Se o Windows avisar, clique em <i>Mais informações → Executar assim mesmo</i>: o instalador ainda não é assinado.</p></div>
+        <div class="step"><h3>Jogue</h3><p>Abra pelo atalho da área de trabalho. O jogo confere as novidades e se atualiza sozinho a cada abertura.</p></div>
+      </div>
+      <div class="req">
+        <div><b>Sistema</b>Windows 10 ou 11 (64 bits)</div>
+        <div><b>Placa de vídeo</b>Compatível com Vulkan (GTX 1050 ou superior recomendada)</div>
+        <div><b>Memória</b>8 GB de RAM ou mais</div>
+        <div><b>Espaço em disco</b>cerca de 1,3 GB instalado; reserve uns 3 GB livres na primeira instalação (download de cerca de 1,1 GB)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <img src="logo_marca.png" alt="">
+      <h2>Seu lugar no sistema está esperando</h2>
+      <p>Baixe, construa sua primeira nave e descubra onde você vai viver. E passe no nosso Discord para achar gente para jogar, mostrar suas construções e contar o que achou.</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar para Windows</a>
+        <a class="btn ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Entrar no Discord</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Where We Live — jogo independente em desenvolvimento</span>
+    <span>Dúvidas, bugs e sugestões: <a href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">entre no nosso Discord</a>.</span>
+  </div>
+</footer>
+
+</body>
+</html>
