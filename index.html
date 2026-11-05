@@ -12,11 +12,26 @@
 <meta property="og:image" content="https://wherewelive.com.br/shot_nave.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://wherewelive.com.br/">
+<meta name="theme-color" content="#060a16">
 <link rel="icon" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/BarlowCondensed-800.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+(function(){var d=document.documentElement,q=location.search,w=0;
+try{w=!!window.WebGLRenderingContext&&!!document.createElement('canvas').getContext('webgl2')}catch(e){}
+if(!w||/[?&]static\b/.test(q)||matchMedia('(prefers-reduced-motion:reduce)').matches){d.classList.add('static');return}
+d.classList.add('s3d');
+var l=document.createElement('link');l.rel='preload';l.as='fetch';l.crossOrigin='';l.href='nave.glb';document.head.appendChild(l);var m=document.createElement('link');m.rel='preload';m.as='image';m.crossOrigin='';m.href='malva.webp';document.head.appendChild(m);
+var s=document.createElement('link');s.rel='preload';s.as='image';s.href=innerWidth<860?'stills/poster_m.webp':'stills/poster.webp';document.head.appendChild(s);
+})();
+</script>
 <style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/Barlow-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/Barlow-500.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/Barlow-600.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/BarlowCondensed-600.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/BarlowCondensed-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/BarlowCondensed-800.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
 :root{
   --bg:#060a16; --bg2:#0b1226; --card:#0f1830; --line:#1f2c4d;
   --fg:#e9eefc; --mut:#9fb0d6; --amber:#ffb52e; --amber2:#ff8f1f; --cy:#4fd1ff;
@@ -44,16 +59,7 @@ h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-transform
 .nav .acts{display:flex;align-items:center;gap:10px}
 @media(max-width:520px){.nav .btn.sm{padding:9px 14px;font-size:15px;letter-spacing:.04em}.nav .acts{gap:8px}.nav img{height:34px}}
 /* herói */
-.hero{position:relative;min-height:min(100svh,900px);display:grid;align-items:center;overflow:hidden;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;background:url(shot_nave.jpg) center/cover;z-index:-2;transform:scale(1.04);animation:drift 28s ease-in-out infinite alternate}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#060a16f2 0%,#060a16c0 36%,#060a1640 68%,#060a1600 100%),linear-gradient(0deg,var(--bg) 0%,#060a1600 28%)}
-@keyframes drift{to{transform:scale(1.12) translate(-1.5%,1%)}}
-.hero .wrap{padding-block:130px 90px}
 .kicker{font:700 15px "Barlow Condensed";letter-spacing:.32em;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
-.hero h1{font-size:clamp(64px,11vw,148px);font-weight:800}
-.hero h1 span{display:block;color:var(--amber)}
-.hero h1 + .rule{width:min(260px,40%);height:8px;border-radius:4px;background:var(--amber);margin:22px 0 26px}
-.hero p.lead{max-width:30em;font-size:clamp(18px,2vw,22px);color:#dbe5ff;margin:0 0 34px}
 .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .meta{margin-top:22px;color:var(--mut);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 22px}
 .meta b{color:var(--fg);font-weight:600}
@@ -102,9 +108,94 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   .band,.band.rev{grid-template-columns:1fr;gap:28px}
   .band.rev .shot{order:0}
   section{padding-block:68px}
-  .hero::after{background:linear-gradient(180deg,#060a16cc 0%,#060a1690 50%,var(--bg) 100%)}
 }
 @media(prefers-reduced-motion:reduce){.hero::before{animation:none}html{scroll-behavior:auto}}
+
+
+/* ---- stage 3D ---- */
+html,body{overflow-x:clip}
+.stage{position:relative;background:var(--bg)}
+.stage-pin{display:none}
+.chap .wrap{display:grid;gap:28px;align-items:center;padding-block:96px 56px}
+.chap.r .wrap{direction:ltr}
+.chap .still{border-radius:var(--r);border:1px solid var(--line);box-shadow:0 30px 80px #0009;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.chap .copy{max-width:520px}
+.chap h1{font-size:clamp(60px,9.5vw,132px);font-weight:800}
+.chap h1 span{display:block;color:var(--amber)}
+.chap h1 + .rule{width:min(260px,40%);height:8px;border-radius:4px;background:var(--amber);margin:22px 0 26px}
+.chap .lead{max-width:30em;font-size:clamp(18px,2vw,22px);color:#dbe5ff;margin:0 0 30px}
+.chap h2{font-size:clamp(40px,5.2vw,74px);font-weight:800;margin-bottom:16px}
+.chap .copy>p{color:#c4d1f1;margin:0 0 14px}
+.chap .copy ul{list-style:none;padding:0;margin:14px 0 22px;display:grid;gap:9px}
+.chap .copy li{padding-left:26px;position:relative;color:#d3def9}
+.chap .copy li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:3px;background:var(--amber);border-radius:2px}
+.cue{margin-top:34px;display:flex;align-items:center;gap:12px;color:var(--mut);font:600 13px "Barlow Condensed";letter-spacing:.24em;text-transform:uppercase}
+.cue i{width:2px;height:34px;background:linear-gradient(var(--amber),#0000);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(.2);transform-origin:top}60%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(1);transform-origin:bottom;opacity:0}}
+.rail{display:none}
+html.static .chap .wrap{grid-template-columns:1fr 1fr;padding-block:56px}
+html.static .chap:first-child .wrap{padding-top:120px}
+html.static .chap.r .still{order:-1}
+html.static .cue{display:none}
+html.static .stage{background:linear-gradient(180deg,var(--bg),var(--bg2) 12%,var(--bg2) 88%,var(--bg))}
+@media(max-width:860px){html.static .chap .wrap{grid-template-columns:1fr}html.static .chap.r .still{order:0}}
+/* modo 3D (rolagem) */
+html.s3d .stage{height:calc(var(--n) * 100svh)}
+html.s3d .stage-pin{display:block;position:sticky;top:0;height:100svh;overflow:hidden;background:#03050d url(stills/poster.webp) center/cover}
+html.s3d .stage-pin::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 50%,#0000 55%,#03050d99 100%),linear-gradient(0deg,#060a16 0%,#060a1600 14%)}
+#c{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .9s ease}
+html.live #c{opacity:1}
+html.s3d .chaps{margin-top:-100svh;position:relative;z-index:2;pointer-events:none}
+html.s3d .chap{height:100svh;display:flex;align-items:center}
+html.s3d .chap .wrap{display:flex;width:min(1180px,100% - 40px);padding-block:84px 40px;align-items:center}
+html.s3d .chap.r .wrap{justify-content:flex-end}
+html.s3d .chap .still{display:none}
+html.s3d .chap .copy{opacity:0;transform:translateY(26px);transition:opacity .55s ease,transform .55s ease;text-shadow:0 2px 24px #03050dcc,0 0 3px #03050d99}
+html.s3d .chap .copy::before{content:"";position:absolute;inset:-60px -60px -60px -90px;z-index:-1;background:radial-gradient(closest-side,#03050d99 35%,#03050d00);pointer-events:none}
+html.s3d .chap .copy{position:relative}
+html.s3d .chap.on .dom{opacity:1}
+html.s3d .chap.on .copy{opacity:1;transform:none;pointer-events:auto}
+html.s3d .rail{display:flex;position:fixed;z-index:15;right:16px;top:50%;transform:translateY(-50%);flex-direction:column;gap:6px;opacity:0;pointer-events:none;transition:opacity .4s}
+html.s3d.in-stage .rail{opacity:1;pointer-events:auto}
+.rail button{all:unset;cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:6px 4px;color:var(--mut);font:600 12px "Barlow Condensed";letter-spacing:.16em;text-transform:uppercase}
+.rail button span{opacity:0;transform:translateX(6px);transition:.2s;white-space:nowrap;text-shadow:0 1px 8px #000}
+.rail button:hover span,.rail button.on span{opacity:1;transform:none}
+.rail button i{width:10px;height:10px;border-radius:50%;border:2px solid var(--mut);transition:.2s;flex:none}
+.rail button.on i{background:var(--amber);border-color:var(--amber);box-shadow:0 0 12px var(--amber)}
+.rail button:focus-visible i{outline:2px solid var(--cy);outline-offset:3px}
+@media(max-width:860px){
+  html.s3d .stage-pin{background-image:url(stills/poster_m.webp)}
+  html.s3d .chap{align-items:flex-end}
+  html.s3d .chap .wrap{justify-content:flex-start !important;padding-block:0 0;width:100%}
+  html.s3d .chap .copy{max-width:none;width:100%;padding:70px 20px 26px;background:linear-gradient(0deg,#060a16f2 0%,#060a16d9 62%,#060a1600 100%)}
+  html.s3d .chap .copy::before{display:none}
+  html.s3d .chap .copy ul{display:none}
+  html.s3d .chap .kicker{font-size:13px;letter-spacing:.22em;margin-bottom:10px}
+  html.s3d .chap:first-child .kicker,html.s3d .chap:first-child .cta .ghost:last-child{display:none}
+  html.s3d .chap h2{font-size:clamp(34px,10vw,48px)}
+  html.s3d .chap h1{font-size:clamp(52px,17vw,84px)}
+  html.s3d .chap .lead{font-size:17px;margin-bottom:18px}
+  html.s3d .chap h1 + .rule{margin:12px 0 14px;height:6px}
+  html.s3d .chap .meta{display:none}
+  html.s3d .cue{display:none}
+  html.s3d .rail{right:6px}
+  .rail button span{display:none}
+}
+
+/* diagrama técnico (rótulos das peças) */
+.dom{margin-top:22px;font:700 22px "Barlow Condensed";letter-spacing:.28em;text-transform:uppercase;color:var(--amber)}
+.diag{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+.diag svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.diag g g{transition:opacity .25s}
+.diag polyline{fill:none;stroke:var(--amber);stroke-width:1.5;stroke-linejoin:round;filter:drop-shadow(0 0 4px #ffb52e88)}
+.diag circle.c{fill:var(--amber)}
+.diag circle.r{fill:none;stroke:var(--amber);stroke-width:1.5;opacity:.8}
+.diag .tag{position:absolute;left:0;top:0;white-space:nowrap;transition:opacity .25s;display:flex;align-items:center;gap:10px;font:700 15px "Barlow Condensed";letter-spacing:.2em;text-transform:uppercase;color:#fff;text-shadow:0 1px 10px #000}
+.diag .tag b{color:var(--amber);font-weight:800;border:1.5px solid var(--amber);padding:1px 6px;border-radius:3px;letter-spacing:.08em}
+html.static .diag,html.static .dom{display:none}
+@media(max-width:860px){.diag .tag{font-size:13px;letter-spacing:.14em}.dom{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.cue i{animation:none}}
+
 .wiki-m{display:none}@media(max-width:860px){.wiki-m{display:inline-flex}}
 </style>
 </head>
@@ -130,25 +221,87 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 </header>
 
 <main id="topo">
-  <div class="hero">
-    <div class="wrap">
-      <div class="kicker">Sobrevivência · Exploração · Interplanetário</div>
-      <h1>Where<span>We Live</span></h1>
-      <div class="rule"></div>
-      <p class="lead">Um mundo entre planetas, luas e sistemas estelares. Pilote naves construídas bloco a bloco, monte sua base, negocie nas cidades e sobreviva — sozinho ou com amigos.</p>
-      <div class="cta">
-        <a class="btn" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
-          Baixar para Windows
-        </a>
-        <a class="btn ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H11l-5 4v-4H4z"/><path d="M8.5 10.5h.01M15.5 10.5h.01"/></svg>
-          Entrar no Discord
-        </a>
-        <a class="btn ghost" href="#jogo">Conhecer o jogo</a>
-      </div>
-      <div class="meta"><span>Grátis</span><span>Instalador em português</span><span>Atualiza sozinho a cada abertura</span><span id="ver">Versão atual: <b>1.0.463</b></span></div>
+  <div class="stage" id="stage" style="--n:7">
+    <div class="stage-pin"><canvas id="c" aria-hidden="true"></canvas></div>
+    <div class="chaps">
+
+    <article class="chap on l" data-i="0" id="topo-nave">
+      <div class="wrap"><div class="copy">
+        <div class="kicker">Sobrevivência · Exploração · Interplanetário</div>
+        <h1>Where<span>We Live</span></h1>
+        <div class="rule"></div>
+        <p class="lead">Um mundo entre planetas, luas e sistemas estelares. Pilote naves construídas bloco a bloco, monte sua base, negocie nas cidades e sobreviva — sozinho ou com amigos.</p>
+        <div class="cta">
+          <a class="btn" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>Baixar para Windows</a>
+          <a class="btn ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H11l-5 4v-4H4z"/><path d="M8.5 10.5h.01M15.5 10.5h.01"/></svg>Entrar no Discord</a>
+          <a class="btn ghost" href="#jogo">Conhecer o jogo</a>
+        </div>
+        <div class="meta"><span>Grátis</span><span>Instalador em português</span><span>Atualiza sozinho a cada abertura</span><span id="ver">Versão atual: <b>1.0.463</b></span></div>
+        <div class="cue" aria-hidden="true"><i></i>Role para desmontar a nave</div>
+      </div><img class="still" src="stills/cap0.webp" width="1280" height="800" loading="lazy" alt="A nave Andorinha, inteira, vista de três quartos sobre o planeta roxo Malva"></div>
+    </article>
+
+    <article class="chap r" data-i="1">
+      <div class="wrap"><div class="copy">
+        <div class="kicker">Peça 01 de 05 · Casco e asas</div>
+        <h2>Feita bloco a bloco</h2>
+        <p>Fuselagem, asas e rampas: esta Andorinha foi desenhada no gerador de blueprints e é feita só dos mesmos blocos que você usa no jogo. Monte a sua do zero ou parta de uma pronta de pátio — e edite direto nela sempre que estiver estacionada.</p>
+        <ul><li>O que você constrói sob o seu núcleo volta inteiro para a mochila</li><li>Naves prontas nos pátios das cidades, ou sucata nos ferros-velhos</li></ul>
+        
+      </div><img class="still" src="stills/cap1.webp" width="1280" height="800" loading="lazy" alt="Casco e asas da nave abertos, destacados do resto das peças"></div>
+    </article>
+
+    <article class="chap l" data-i="2">
+      <div class="wrap"><div class="copy">
+        <div class="kicker">Peça 02 de 05 · Propulsores</div>
+        <h2>Empuxo de hidrogênio</h2>
+        <p>Os propulsores de hidrogênio funcionam no planeta e no espaço. Cada nave tem peso, empuxo e consumo: quanto mais grande e mais carregada, mais propulsor ela pede.</p>
+        <ul><li>Pequenos e grandes, apontados para onde você mandar</li><li>Peças de voo só entram em estrutura com núcleo de nave</li></ul>
+        
+      </div><img class="still" src="stills/cap2.webp" width="1280" height="800" loading="lazy" alt="Os propulsores de hidrogênio da nave, com as chamas acesas"></div>
+    </article>
+
+    <article class="chap r" data-i="3">
+      <div class="wrap"><div class="copy">
+        <div class="kicker">Peça 03 de 05 · Núcleo e energia</div>
+        <h2>O coração da nave</h2>
+        <p>O núcleo de nave é o que transforma uma estrutura em nave. Em volta dele trabalham gerador, baterias, giroscópio e tanque — a energia, a estabilidade e o combustível de que o voo depende.</p>
+        <ul><li>Sem núcleo, nada de peças de voo</li><li>Naves grandes ganham uma Fundição de bordo, para refinar a caminho</li></ul>
+        
+      </div><img class="still" src="stills/cap3.webp" width="1280" height="800" loading="lazy" alt="Núcleo, geradores, baterias e tanques da nave, em destaque"></div>
+    </article>
+
+    <article class="chap l" data-i="4">
+      <div class="wrap"><div class="copy">
+        <div class="kicker">Peça 04 de 05 · Cabine</div>
+        <h2>Sua cadeira de piloto</h2>
+        <p>Console, bancos e janelas amplas. Suba a rampa, sente e decole do pátio da cidade, cruze a atmosfera e chegue ao espaço.</p>
+        <ul><li>Leve o carro ou o hover no convés: ele fica travado na nave e viaja com ela</li></ul>
+        
+      </div><img class="still" src="stills/cap4.webp" width="1280" height="800" loading="lazy" alt="A cabine da nave, com janelas, console e bancos"></div>
+    </article>
+
+    <article class="chap r" data-i="5">
+      <div class="wrap"><div class="copy">
+        <div class="kicker">Peça 05 de 05 · Broca de nave</div>
+        <h2>Minério direto da nave</h2>
+        <p>A broca de nave extrai minério a partir da própria nave, sem você precisar descer. Pouse perto do veio, ligue a broca e veja o material chegar.</p>
+        <ul><li>Combina com a Fundição de bordo: extraia e refine sem sair do convés</li></ul>
+        
+      </div><img class="still" src="stills/cap5.webp" width="1280" height="800" loading="lazy" alt="A broca de nave na proa, soltando faíscas"></div>
+    </article>
+
+    <article class="chap l" data-i="6">
+      <div class="wrap"><div class="copy">
+        <div class="kicker">Tudo no lugar</div>
+        <h2>Pronta. Agora é voar</h2>
+        <p>Com tudo no lugar, a nave leva você para onde quiser. O Motor de dobra, abastecido com cristais colhidos nos planetas, leva a nave inteira — com a tripulação e os veículos travados — para outro sistema estelar.</p>
+        
+        <div class="cta"><a class="btn" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>Baixar grátis</a><a class="btn ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H11l-5 4v-4H4z"/><path d="M8.5 10.5h.01M15.5 10.5h.01"/></svg>Entrar no Discord</a></div><div class="dom">wherewelive.com.br</div>
+      </div><img class="still" src="stills/cap6.webp" width="1280" height="800" loading="lazy" alt="A nave remontada decolando sobre o planeta Malva, com os propulsores acesos"></div>
+    </article>
     </div>
+    <nav class="rail" aria-label="Peças da nave"><button type="button" aria-label="Nave" title="Nave" class="on"><i></i><span>Nave</span></button><button type="button" aria-label="Casco e asas" title="Casco e asas"><i></i><span>Casco e asas</span></button><button type="button" aria-label="Propulsores" title="Propulsores"><i></i><span>Propulsores</span></button><button type="button" aria-label="Núcleo" title="Núcleo"><i></i><span>Núcleo</span></button><button type="button" aria-label="Cabine" title="Cabine"><i></i><span>Cabine</span></button><button type="button" aria-label="Broca" title="Broca"><i></i><span>Broca</span></button><button type="button" aria-label="Decolagem" title="Decolagem"><i></i><span>Decolagem</span></button></nav>
   </div>
 
   <section id="jogo">
@@ -352,7 +505,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 
   <section class="final">
     <div class="wrap">
-      <img src="logo_marca.png" alt="">
+      <img src="logo_marca.png" loading="lazy" width="92" height="92" alt="">
       <h2>Seu lugar no sistema está esperando</h2>
       <p>Baixe, construa sua primeira nave e descubra onde você vai viver. E passe no nosso Discord para achar gente para jogar, mostrar suas construções e contar o que achou.</p>
       <div class="cta" style="justify-content:center">
@@ -370,5 +523,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   </div>
 </footer>
 
+<script>if(document.documentElement.classList.contains('s3d')){var s=document.createElement('script');s.src='ww3d.js';document.body.appendChild(s)}</script>
 </body>
 </html>
