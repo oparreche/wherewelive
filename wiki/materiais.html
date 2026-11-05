@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materiais — Wiki Where We Live</title>
+<meta name="description" content="Onde encontrar cada material do Where We Live: minérios, cristais, ligas e itens de coleta, por planeta, com como processar e para que serve.">
+<meta property="og:title" content="Materiais — Wiki Where We Live">
+<meta property="og:description" content="Onde encontrar cada material do Where We Live: minérios, cristais, ligas e itens de coleta, por planeta, com como processar e para que serve.">
+<link rel="icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="../" aria-label="Where We Live — página inicial"><img src="../logo_horizontal.png" alt="Where We Live"></a>
+    <nav class="wnav"><a href="../">O jogo</a><span class="sep"></span><a href="index.html">Início</a><a href="materiais.html" class="on">Materiais</a><a href="planetas.html">Planetas</a></nav>
+    <div class="acts"><a class="btn sm ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Discord</a><a class="btn sm" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar</a></div>
+  </div>
+</header>
+
+<main><div class="wrap">
+<div class="topo"><div class="kicker">Wiki</div><h1>Materiais</h1><p class="lead">Onde achar cada material, como processá-lo e para que serve. Tudo vem das tabelas do próprio jogo (versão 1.0.461).</p></div>
+<div class="filtros" id="filtros">
+<label class="busca"><span>Buscar</span><input id="q" type="search" placeholder="ex.: prata, cristal, caverna…" autocomplete="off"></label>
+<label><span>Corpo</span><select id="pl"><option value="">Todos os corpos</option><optgroup label="Sistema Aurora"><option value="aurora">Aurora</option><option value="cinzas">Cinzas</option><option value="gelo">Gelo</option><option value="lua">Lua</option><option value="fobos">Fobos</option><option value="brasa">Brasa</option><option value="cristal">Cristal</option></optgroup><optgroup label="Sistema Ônix"><option value="duna">Duna</option><option value="mesa">Mesa</option><option value="tita">Titã</option><option value="dente">Dente</option><option value="po">Pó</option><option value="brita">Brita</option><option value="seixo">Seixo</option><option value="lasca">Lasca</option><option value="bloco">Bloco</option><option value="cascalho">Cascalho</option><option value="mo">Mó</option><option value="ponta">Ponta</option><option value="dorso">Dorso</option><option value="malva">Malva</option></optgroup><optgroup label="Sistema Cobalto"><option value="preamar">Preamar</option></optgroup><optgroup label="Sistema Âmbar"><option value="seiva">Seiva</option></optgroup><optgroup label="Sistema Cromo"><option value="esmeril">Esmeril</option></optgroup></select></label>
+<label><span>Tipo</span><select id="cat"><option value="">Todos</option><option value="minerio">Minérios e metais</option><option value="especial">Cristais e minerais especiais</option><option value="terreno">Recursos do terreno</option><option value="refinado">Ligas e refinados</option><option value="componente">Componentes da Fábrica</option><option value="criatura">Saque de criaturas</option></select></label>
+<button id="limpar" type="button" class="btn sm ghost">Limpar</button>
+</div>
+<p id="cont" class="mut" aria-live="polite"></p>
+<details class="visao" open><summary>Visão rápida: material × corpo</summary><p class="dica-rolar">Arraste a tabela para o lado →</p><div class="matriz-box"><div class="matriz-wrap"><table class="matriz"><thead><tr><th class="mat1">Material</th><th class="c" data-pl="aurora" title="Sistema Aurora · temperado"><span>Aurora</span></th><th class="c" data-pl="cinzas" title="Sistema Aurora · de lava"><span>Cinzas</span></th><th class="c" data-pl="gelo" title="Sistema Aurora · gelado"><span>Gelo</span></th><th class="c" data-pl="lua" title="Sistema Aurora · lua rochosa"><span>Lua</span></th><th class="c" data-pl="fobos" title="Sistema Aurora · lua rochosa"><span>Fobos</span></th><th class="c" data-pl="brasa" title="Sistema Aurora · lua de lava"><span>Brasa</span></th><th class="c" data-pl="cristal" title="Sistema Aurora · lua gelada"><span>Cristal</span></th><th class="c" data-pl="duna" title="Sistema Ônix · deserto"><span>Duna</span></th><th class="c" data-pl="mesa" title="Sistema Ônix · deserto"><span>Mesa</span></th><th class="c" data-pl="tita" title="Sistema Ônix · gigante gasoso"><span>Titã</span></th><th class="c" data-pl="dente" title="Sistema Ônix · lua rochosa"><span>Dente</span></th><th class="c" data-pl="po" title="Sistema Ônix · lua gelada"><span>Pó</span></th><th class="c" data-pl="brita" title="Sistema Ônix · asteroide"><span>Brita</span></th><th class="c" data-pl="seixo" title="Sistema Ônix · asteroide"><span>Seixo</span></th><th class="c" data-pl="lasca" title="Sistema Ônix · asteroide"><span>Lasca</span></th><th class="c" data-pl="bloco" title="Sistema Ônix · asteroide"><span>Bloco</span></th><th class="c" data-pl="cascalho" title="Sistema Ônix · asteroide"><span>Cascalho</span></th><th class="c" data-pl="mo" title="Sistema Ônix · asteroide"><span>Mó</span></th><th class="c" data-pl="ponta" title="Sistema Ônix · asteroide"><span>Ponta</span></th><th class="c" data-pl="dorso" title="Sistema Ônix · asteroide"><span>Dorso</span></th><th class="c" data-pl="malva" title="Sistema Ônix · temperado"><span>Malva</span></th><th class="c" data-pl="preamar" title="Sistema Cobalto · temperado"><span>Preamar</span></th><th class="c" data-pl="seiva" title="Sistema Âmbar · temperado"><span>Seiva</span></th><th class="c" data-pl="esmeril" title="Sistema Cromo · temperado"><span>Esmeril</span></th></tr></thead><tbody><tr data-q="minerio de ferro"><th class="mat1"><a href="#minerio-de-ferro">Minério de ferro</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos" class="sim" title="Existe aqui">●</td><td data-pl="brasa" class="sim" title="Existe aqui">●</td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po"></td><td data-pl="brita" class="sim" title="Existe aqui">●</td><td data-pl="seixo" class="sim" title="Existe aqui">●</td><td data-pl="lasca" class="sim" title="Existe aqui">●</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="sim" title="Existe aqui">●</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="sim" title="Existe aqui">●</td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva" class="inc" title="Mundo protegido: sem veios">?</td><td data-pl="esmeril" class="inc" title="Mundo protegido: sem veios">?</td></tr><tr data-q="carvao"><th class="mat1"><a href="#carvao">Carvão</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas"></td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva" class="inc" title="Mundo protegido: sem veios">?</td><td data-pl="esmeril" class="inc" title="Mundo protegido: sem veios">?</td></tr><tr data-q="cobre"><th class="mat1"><a href="#cobre">Cobre</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo"></td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos"></td><td data-pl="brasa" class="sim" title="Existe aqui">●</td><td data-pl="cristal"></td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva" class="inc" title="Mundo protegido: sem veios">?</td><td data-pl="esmeril" class="inc" title="Mundo protegido: sem veios">?</td></tr><tr data-q="silicio"><th class="mat1"><a href="#silicio">Silício</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas"></td><td data-pl="gelo"></td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="gelo"><th class="mat1"><a href="#gelo">Gelo</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas"></td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po" class="sim" title="Existe aqui">●</td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="prata"><th class="mat1"><a href="#prata">Prata</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas"></td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos" class="sim" title="Existe aqui">●</td><td data-pl="brasa"></td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po" class="sim" title="Existe aqui">●</td><td data-pl="brita" class="sim" title="Existe aqui">●</td><td data-pl="seixo" class="sim" title="Existe aqui">●</td><td data-pl="lasca" class="sim" title="Existe aqui">●</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="sim" title="Existe aqui">●</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="sim" title="Existe aqui">●</td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="titanio"><th class="mat1"><a href="#titanio">Titânio</a></th><td data-pl="aurora"></td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo"></td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos" class="sim" title="Existe aqui">●</td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="cobalto"><th class="mat1"><a href="#cobalto">Cobalto</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po" class="sim" title="Existe aqui">●</td><td data-pl="brita" class="sim" title="Existe aqui">●</td><td data-pl="seixo" class="sim" title="Existe aqui">●</td><td data-pl="lasca" class="sim" title="Existe aqui">●</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="sim" title="Existe aqui">●</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="sim" title="Existe aqui">●</td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="ouro"><th class="mat1"><a href="#ouro">Ouro</a></th><td data-pl="aurora"></td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo"></td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa" class="sim" title="Existe aqui">●</td><td data-pl="cristal"></td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="platina"><th class="mat1"><a href="#platina">Platina</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo"></td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita" class="sim" title="Existe aqui">●</td><td data-pl="seixo" class="sim" title="Existe aqui">●</td><td data-pl="lasca" class="sim" title="Existe aqui">●</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="sim" title="Existe aqui">●</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="sim" title="Existe aqui">●</td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="iridio"><th class="mat1"><a href="#iridio">Irídio</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo"></td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita" class="evt" title="Só por evento ocasional">◐</td><td data-pl="seixo" class="evt" title="Só por evento ocasional">◐</td><td data-pl="lasca" class="evt" title="Só por evento ocasional">◐</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="sim" title="Existe aqui">●</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="sim" title="Existe aqui">●</td><td data-pl="dorso" class="evt" title="Só por evento ocasional">◐</td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="vitrolita"><th class="mat1"><a href="#vitrolita">Vitrólita</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo"></td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos" class="sim" title="Existe aqui">●</td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="lumigelo"><th class="mat1"><a href="#lumigelo">Lumigelo</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po" class="sim" title="Existe aqui">●</td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="brasalita"><th class="mat1"><a href="#brasalita">Brasalita</a></th><td data-pl="aurora"></td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo"></td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa" class="sim" title="Existe aqui">●</td><td data-pl="cristal"></td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="fulgurito"><th class="mat1"><a href="#fulgurito">Fulgurito</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo"></td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna" class="evt" title="Só por evento ocasional">◐</td><td data-pl="mesa" class="evt" title="Só por evento ocasional">◐</td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="nucleita"><th class="mat1"><a href="#nucleita">Nucleíta</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo"></td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita" class="sim" title="Existe aqui">●</td><td data-pl="seixo" class="evt" title="Só por evento ocasional">◐</td><td data-pl="lasca" class="evt" title="Só por evento ocasional">◐</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="evt" title="Só por evento ocasional">◐</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="evt" title="Só por evento ocasional">◐</td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="penumbrita"><th class="mat1"><a href="#penumbrita">Penumbrita</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="helio-3"><th class="mat1"><a href="#helio-3">Hélio-3</a></th><td data-pl="aurora"></td><td data-pl="cinzas"></td><td data-pl="gelo"></td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna"></td><td data-pl="mesa"></td><td data-pl="tita" class="sim" title="Existe aqui">●</td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva"></td><td data-pl="preamar"></td><td data-pl="seiva"></td><td data-pl="esmeril"></td></tr><tr data-q="cristal"><th class="mat1"><a href="#cristal">Cristal</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos" class="sim" title="Existe aqui">●</td><td data-pl="brasa" class="sim" title="Existe aqui">●</td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po" class="sim" title="Existe aqui">●</td><td data-pl="brita" class="sim" title="Existe aqui">●</td><td data-pl="seixo" class="sim" title="Existe aqui">●</td><td data-pl="lasca" class="sim" title="Existe aqui">●</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="sim" title="Existe aqui">●</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="sim" title="Existe aqui">●</td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva" class="inc" title="Mundo protegido: sem veios">?</td><td data-pl="esmeril" class="inc" title="Mundo protegido: sem veios">?</td></tr><tr data-q="pedra"><th class="mat1"><a href="#pedra">Pedra</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua" class="sim" title="Existe aqui">●</td><td data-pl="fobos" class="sim" title="Existe aqui">●</td><td data-pl="brasa" class="sim" title="Existe aqui">●</td><td data-pl="cristal" class="sim" title="Existe aqui">●</td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente" class="sim" title="Existe aqui">●</td><td data-pl="po" class="sim" title="Existe aqui">●</td><td data-pl="brita" class="sim" title="Existe aqui">●</td><td data-pl="seixo" class="sim" title="Existe aqui">●</td><td data-pl="lasca" class="sim" title="Existe aqui">●</td><td data-pl="bloco" class="sim" title="Existe aqui">●</td><td data-pl="cascalho" class="sim" title="Existe aqui">●</td><td data-pl="mo" class="sim" title="Existe aqui">●</td><td data-pl="ponta" class="sim" title="Existe aqui">●</td><td data-pl="dorso" class="sim" title="Existe aqui">●</td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva" class="inc" title="Mundo protegido: sem veios">?</td><td data-pl="esmeril" class="inc" title="Mundo protegido: sem veios">?</td></tr><tr data-q="madeira"><th class="mat1"><a href="#madeira">Madeira</a></th><td data-pl="aurora" class="sim" title="Existe aqui">●</td><td data-pl="cinzas" class="sim" title="Existe aqui">●</td><td data-pl="gelo" class="sim" title="Existe aqui">●</td><td data-pl="lua"></td><td data-pl="fobos"></td><td data-pl="brasa"></td><td data-pl="cristal"></td><td data-pl="duna" class="sim" title="Existe aqui">●</td><td data-pl="mesa" class="sim" title="Existe aqui">●</td><td data-pl="tita"></td><td data-pl="dente"></td><td data-pl="po"></td><td data-pl="brita"></td><td data-pl="seixo"></td><td data-pl="lasca"></td><td data-pl="bloco"></td><td data-pl="cascalho"></td><td data-pl="mo"></td><td data-pl="ponta"></td><td data-pl="dorso"></td><td data-pl="malva" class="sim" title="Existe aqui">●</td><td data-pl="preamar" class="sim" title="Existe aqui">●</td><td data-pl="seiva" class="inc" title="Mundo protegido: sem veios">?</td><td data-pl="esmeril"></td></tr></tbody></table></div></div><p class="mut leg"><span class="sim">●</span> existe (veio, rocha, pedra, caverna ou recurso do terreno) &nbsp; <span class="evt">◐</span> só por evento ocasional &nbsp; <span class="inc">?</span> mundo protegido (sem veios) &nbsp; vazio = não existe.</p></details>
+<section class="grupo" data-grupo="minerio"><h2>Minérios e metais</h2><p class="mut">Saem do solo, de rochas e de asteroides com a Multiferramenta (laser) ou a broca de nave.</p><div class="cards">
+<article class="mat" id="minerio-de-ferro" data-cat="minerio" data-pl="aurora|cinzas|gelo|lua|fobos|brasa|cristal|duna|mesa|dente|brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso|malva|preamar" data-q="minerio de ferro minerio minerios e metais  aurora cinzas gelo lua fobos brasa cristal duna mesa dente brita seixo lasca bloco cascalho mo ponta dorso malva preamar seiva esmeril">
+<header><h3>Minério de ferro</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Cinzas</span><span class="chip pl">Gelo</span><span class="chip pl">Lua</span><span class="chip pl">Fobos</span><span class="chip pl">Brasa</span><span class="chip pl">Cristal</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Dente</span><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<p class="mut">Sem confirmação (mundo protegido, sem veios): Seiva, Esmeril.</p>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: veio no solo (126 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: veio no solo (58 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: veio no solo (4 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: veio no solo (21 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Fobos</b> <i>(Sistema Aurora, lua rochosa)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Brasa</b> <i>(Sistema Aurora, lua de lava)</i>: veio no solo (6 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: veio no solo (27 campos na disposição original)</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (38 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (28 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: veio no solo (4 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (6 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (13 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (9 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: veio no solo (91 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: veio no solo (93 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo)</li>
+<li><b>Seiva</b> <i>(Sistema Âmbar, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+<li><b>Esmeril</b> <i>(Sistema Cromo, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 1,0).</p>
+<p class="mut">Cada veio guarda de 300 a 900 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#madeira">Madeira</a> + 3× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a> → 1× <a href="materiais.html#barra-de-aco">Barra de aço</a></li>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#barra-de-aco">Barra de aço</a> + 1× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a> → 1× <a href="materiais.html#componente">Componente</a></li>
+<li><b>Peneira (Fundição):</b> 40 de cascalho viram 1 Minério de ferro nos corpos asteroide, gelado, lua rochosa, temperado.</li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Barra de aço, Célula de energia, Componente, Combustível mineral, Cartuchos de espingarda, Munição leve, Multiferramenta laser, Cortadora de mão, Soldador básico</li>
+<li><b>Depois de refinado:</b> Placa de aço (via Barra de aço), Liga de titânio (via Barra de aço), Ímã de cobalto (via Barra de aço), Dardos de arpão (via Barra de aço), Projéteis de artilharia (via Barra de aço), Foguetes (via Barra de aço), Munição pesada (via Barra de aço), Virotes de besta (via Barra de aço), Atuador magnético (via Componente), Cilindro de oxigênio (via Componente), Garrafa de hidrogênio (via Componente), Kit médico (via Componente) e mais 14</li>
+<li><b>Blocos que gastam diretamente:</b> Armadura pesada — faixas de aviso, Armadura pesada — meio bloco, Armadura pesada — quina, Armadura pesada — quina de rampa suave (alta), Armadura pesada — quina interna, Armadura pesada — quina interna de rampa suave (alta), Armadura pesada — quina interna de rampa suave (baixa), Armadura pesada — rampa, Armadura pesada — rampa 1:3 — peça 1, Armadura pesada — rampa 1:3 — peça 2, Armadura pesada — rampa 1:3 — peça 3, Armadura pesada — rampa 1:6 — peça 1 e mais 16</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 40 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+<article class="mat" id="carvao" data-cat="minerio" data-pl="aurora|gelo|cristal|malva|preamar" data-q="carvao carvao minerios e metais  aurora gelo cristal malva preamar seiva esmeril">
+<header><h3>Carvão</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Gelo</span><span class="chip pl">Cristal</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<p class="mut">Sem confirmação (mundo protegido, sem veios): Seiva, Esmeril.</p>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: veio no solo (61 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: veio no solo (4 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: veio no solo (27 campos na disposição original)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: veio no solo (60 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: veio no solo (65 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo)</li>
+<li><b>Seiva</b> <i>(Sistema Âmbar, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+<li><b>Esmeril</b> <i>(Sistema Cromo, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 0,8).</p>
+<p class="mut">Cada veio guarda de 300 a 800 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#cobre">Cobre</a> → 1× <a href="materiais.html#lingote-de-cobre">Lingote de cobre</a></li>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#titanio">Titânio</a> → 1× <a href="materiais.html#lingote-de-titanio">Lingote de titânio</a></li>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#cobalto">Cobalto</a> → 1× <a href="materiais.html#lingote-de-cobalto">Lingote de cobalto</a></li>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#prata">Prata</a> → 1× <a href="materiais.html#lingote-de-prata">Lingote de prata</a></li>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#ouro">Ouro</a> → 1× <a href="materiais.html#lingote-de-ouro">Lingote de ouro</a></li>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#platina">Platina</a> → 1× <a href="materiais.html#lingote-de-platina">Lingote de platina</a></li>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#iridio">Irídio</a> → 1× <a href="materiais.html#lingote-de-iridio">Lingote de irídio</a></li>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#silicio">Silício</a> → 1× <a href="materiais.html#lamina-de-silicio">Lâmina de silício</a></li>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#nucleita">Nucleíta</a> → 1× <a href="materiais.html#nucleita-lapidada">Nucleíta lapidada</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Fio de cobre (via Lingote de cobre), Liga de titânio (via Lingote de titânio), Cápsula de hélio-3 (via Lingote de titânio), Núcleo de energia (via Lingote de cobalto), Ímã de cobalto (via Lingote de cobalto), Circuito (via Lingote de prata), Lumigelo selado (via Lingote de prata), Lente de vitrólita (via Lingote de prata), Chip lógico (via Lingote de ouro), Chip de malha (via Lingote de platina), Foco de nucleíta (via Lingote de platina), Ponta de irídio (via Lingote de irídio) e mais 2</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 50 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li><li>lojas que vendem: mecanico</li></ul>
+</article>
+<article class="mat" id="cobre" data-cat="minerio" data-pl="aurora|cinzas|lua|brasa|duna|mesa|dente|malva|preamar" data-q="cobre cobre minerios e metais  aurora cinzas lua brasa duna mesa dente malva preamar seiva esmeril">
+<header><h3>Cobre</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Cinzas</span><span class="chip pl">Lua</span><span class="chip pl">Brasa</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Dente</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<p class="mut">Sem confirmação (mundo protegido, sem veios): Seiva, Esmeril.</p>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: veio no solo (49 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: veio no solo (68 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: veio no solo (36 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Brasa</b> <i>(Sistema Aurora, lua de lava)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (31 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (38 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: veio no solo (30 campos na disposição original)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: veio no solo (66 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: veio no solo (33 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo)</li>
+<li><b>Seiva</b> <i>(Sistema Âmbar, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+<li><b>Esmeril</b> <i>(Sistema Cromo, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 1,2).</p>
+<p class="mut">Cada veio guarda de 250 a 700 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#cobre">Cobre</a> → 1× <a href="materiais.html#lingote-de-cobre">Lingote de cobre</a></li>
+<li><b>Peneira (Fundição):</b> 40 de cascalho viram 1 Cobre nos corpos de lava.</li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Fio de cobre (via Lingote de cobre)</li>
+<li><b>Blocos que gastam diretamente:</b> Banco de capacitores, Bateria, Construtor móvel, Elevador — plataforma, Gerador, Gerador de oxigênio e hidrogênio, Gerador grande, Luz de cultivo, Painel solar, Processador de alimentos, Tanque de combustível</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 80 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li><li>lojas que compram: ELETRÔNICOS</li></ul>
+</article>
+<article class="mat" id="silicio" data-cat="minerio" data-pl="aurora|lua|duna|mesa|dente|malva|preamar" data-q="silicio silicio minerios e metais cristal escuro das dunas e das luas. vira lamina de silicio, base do chip logico. aurora lua duna mesa dente malva preamar">
+<header><h3>Silício</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<p class="desc">Cristal escuro das dunas e das luas. Vira lâmina de silício, base do chip lógico.</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Lua</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Dente</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: veio no solo (13 campos na disposição original); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: veio no solo (17 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (93 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (23 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: veio no solo (18 campos na disposição original)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: veio no solo (18 campos na disposição original); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: veio no solo (45 campos na disposição original); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 1,1).</p>
+<p class="mut">Cada veio guarda de 250 a 700 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#silicio">Silício</a> → 1× <a href="materiais.html#lamina-de-silicio">Lâmina de silício</a></li>
+<li><b>Peneira (Fundição):</b> 40 de cascalho viram 1 Silício nos corpos deserto.</li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Chip lógico (via Lâmina de silício)</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 70 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li><li>lojas que compram: ELETRÔNICOS</li></ul>
+</article>
+<article class="mat" id="gelo" data-cat="minerio" data-pl="aurora|gelo|cristal|po|dorso|malva|preamar" data-q="gelo gelo minerios e metais  aurora gelo cristal po dorso malva preamar">
+<header><h3>Gelo</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Gelo</span><span class="chip pl">Cristal</span><span class="chip pl">Pó</span><span class="chip pl">Dorso</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: veio no solo (30 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: veio no solo (161 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Pó</b> <i>(Sistema Ônix, lua gelada)</i>: veio no solo (27 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (10 campos na disposição original)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: veio no solo (4 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: veio no solo (21 campos na disposição original)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 0,8).</p>
+<p class="mut">Cada veio guarda de 300 a 800 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#brasalita">Brasalita</a> + 1× <a href="materiais.html#gelo">Gelo</a> → 1× <a href="materiais.html#brasalita-temperada">Brasalita temperada</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Cilindro de oxigênio, Garrafa de hidrogênio, Muda de abóbora, Muda de milho, Muda de trigo, Ração</li>
+<li><b>Depois de refinado:</b> Acumulador térmico (via Brasalita temperada)</li>
+<li><b>Blocos que gastam diretamente:</b> Canteiro hidropônico, Câmara fria, Tanque de hidrogênio, Tanque de oxigênio</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 60 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li><li>lojas que compram: MERCEARIA</li><li>lojas que vendem: MERCEARIA</li></ul>
+</article>
+<article class="mat" id="prata" data-cat="minerio" data-pl="aurora|gelo|lua|fobos|cristal|duna|mesa|dente|po|brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso|malva|preamar" data-q="prata prata minerios e metais  aurora gelo lua fobos cristal duna mesa dente po brita seixo lasca bloco cascalho mo ponta dorso malva preamar">
+<header><h3>Prata</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Gelo</span><span class="chip pl">Lua</span><span class="chip pl">Fobos</span><span class="chip pl">Cristal</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Dente</span><span class="chip pl">Pó</span><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: veio no solo (30 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: veio no solo (30 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Fobos</b> <i>(Sistema Aurora, lua rochosa)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (7 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (28 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Pó</b> <i>(Sistema Ônix, lua gelada)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: veio no solo (5 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: veio no solo (6 campos na disposição original)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 1,6).</p>
+<p class="mut">Cada veio guarda de 180 a 450 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#prata">Prata</a> → 1× <a href="materiais.html#lingote-de-prata">Lingote de prata</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Circuito (via Lingote de prata), Lumigelo selado (via Lingote de prata), Lente de vitrólita (via Lingote de prata)</li>
+<li><b>Blocos que gastam diretamente:</b> Banco de capacitores, Bateria, Carregador de células, Console de comando, Gerador de escudo, LCD grande, Laser de nave, Luz de cultivo, Painel LCD, Painel solar, Plasma de nave, Porta de campo de força e mais 3</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 240 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+<article class="mat" id="titanio" data-cat="minerio" data-pl="cinzas|lua|fobos|duna|mesa|dente" data-q="titanio titanio minerios e metais  cinzas lua fobos duna mesa dente">
+<header><h3>Titânio</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 2</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Cinzas</span><span class="chip pl">Lua</span><span class="chip pl">Fobos</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Dente</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: veio no solo (24 campos na disposição original); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Fobos</b> <i>(Sistema Aurora, lua rochosa)</i>: veio no solo (36 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (61 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (44 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 2 ou broca de nave nível 2 (dureza 2,0).</p>
+<p class="mut">Cada veio guarda de 160 a 420 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#titanio">Titânio</a> → 1× <a href="materiais.html#lingote-de-titanio">Lingote de titânio</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Liga de titânio (via Lingote de titânio), Cápsula de hélio-3 (via Lingote de titânio)</li>
+<li><b>Blocos que gastam diretamente:</b> Construtor grande, Gerador industrial, Giroscópio, Propulsor de hidrogênio, Propulsor de hidrogênio grande, Propulsor de íon, Propulsor de íon grande, Roda de carga, Torreta de artilharia</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 200 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+<article class="mat" id="cobalto" data-cat="minerio" data-pl="gelo|cristal|po|brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso" data-q="cobalto cobalto minerios e metais  gelo cristal po brita seixo lasca bloco cascalho mo ponta dorso">
+<header><h3>Cobalto</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Gelo</span><span class="chip pl">Cristal</span><span class="chip pl">Pó</span><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: veio no solo (72 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Pó</b> <i>(Sistema Ônix, lua gelada)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: pedra de minério</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 1,5).</p>
+<p class="mut">Cada veio guarda de 200 a 500 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#cobalto">Cobalto</a> → 1× <a href="materiais.html#lingote-de-cobalto">Lingote de cobalto</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Núcleo de energia (via Lingote de cobalto), Ímã de cobalto (via Lingote de cobalto)</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 140 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+<article class="mat" id="ouro" data-cat="minerio" data-pl="cinzas|brasa|duna|mesa" data-q="ouro ouro minerios e metais  cinzas brasa duna mesa">
+<header><h3>Ouro</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 2</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Cinzas</span><span class="chip pl">Brasa</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: veio no solo (107 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Brasa</b> <i>(Sistema Aurora, lua de lava)</i>: veio no solo (54 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (22 campos na disposição original); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: veio no solo (31 campos na disposição original); pedra de minério; Zangão-de-pedra pode soltar 3 a 6 (sorteado entre os minérios da pedra de minério do corpo); paredes dos salões de caverna (1 ou 2 veios extras sorteados entre os minérios do corpo)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 2 ou broca de nave nível 2 (dureza 2,4).</p>
+<p class="mut">Cada veio guarda de 120 a 320 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#ouro">Ouro</a> → 1× <a href="materiais.html#lingote-de-ouro">Lingote de ouro</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Chip lógico (via Lingote de ouro)</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 450 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+<article class="mat" id="platina" data-cat="minerio" data-pl="brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso" data-q="platina platina minerios e metais  brita seixo lasca bloco cascalho mo ponta dorso">
+<header><h3>Platina</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 3</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (17 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (14 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (18 campos na disposição original); rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: rocha de superfície (quebrar a rocha rende o minério do bioma); pedra de minério</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 3 ou broca de nave nível 3 (dureza 3,0).</p>
+<p class="mut">Cada veio guarda de 100 a 260 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#platina">Platina</a> → 1× <a href="materiais.html#lingote-de-platina">Lingote de platina</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Chip de malha (via Lingote de platina), Foco de nucleíta (via Lingote de platina)</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 650 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+<article class="mat" id="iridio" data-cat="minerio" data-pl="brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso" data-q="iridio iridio minerios e metais metal raro e denso, so nos asteroides. resiste a calor e pressao extremos. serve para: ponta de iridio (broca de nave). brita seixo lasca bloco cascalho mo ponta dorso">
+<header><h3>Irídio</h3><span class="cat">Minérios e metais</span>
+<span class="chip tier">laser nível 3</span>
+</header>
+<p class="desc">Metal raro e denso, só nos asteroides. Resiste a calor e pressão extremos. Serve para: ponta de irídio (Broca de nave).</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (19 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (8 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (19 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: veio no solo (4 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 3 ou broca de nave nível 3 (dureza 3,2).</p>
+<p class="mut">Cada veio guarda de 60 a 160 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#iridio">Irídio</a> → 1× <a href="materiais.html#lingote-de-iridio">Lingote de irídio</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Ponta de irídio (via Lingote de irídio)</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 800 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+</div></section>
+<section class="grupo" data-grupo="especial"><h2>Cristais e minerais especiais</h2><p class="mut">Raros, com regra própria de onde aparecem; a maioria não se compra.</p><div class="cards">
+<article class="mat" id="vitrolita" data-cat="especial" data-pl="lua|fobos|dente" data-q="vitrolita vitrolita cristais e minerais especiais vidro natural do fundo das crateras grandes das luas sem ar (lua, fobos, dente). dureza 1,4: serve a multiferramenta de nivel 2. na fundicao vira vidro de vitrolita. nao se compra: tem que ser achada. serve para: lente de vitrolita (multiferramenta nivel 3 e 4, radar avancado). lua fobos dente">
+<header><h3>Vitrólita</h3><span class="cat">Cristais e minerais especiais</span>
+<span class="chip tier">laser nível 2</span>
+</header>
+<p class="desc">Vidro natural do fundo das crateras grandes das luas sem ar (Lua, Fobos, Dente). Dureza 1,4: serve a Multiferramenta de nível 2. Na Fundição vira vidro de vitrólita. Não se compra: tem que ser achada. Serve para: lente de vitrólita (Multiferramenta nível 3 e 4, Radar avançado).</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Lua</span><span class="chip pl">Fobos</span><span class="chip pl">Dente</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: veio no fundo das crateras grandes (14 campos na disposição original)</li>
+<li><b>Fobos</b> <i>(Sistema Aurora, lua rochosa)</i>: veio no fundo das crateras grandes (7 campos na disposição original)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: veio no fundo das crateras grandes (11 campos na disposição original)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 2 ou broca de nave nível 2 (dureza 1,4).</p>
+<p class="mut">Cada veio guarda de 40 a 90 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 3× <a href="materiais.html#vitrolita">Vitrólita</a> → 1× <a href="materiais.html#vidro-de-vitrolita">Vidro de vitrólita</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Lente de vitrólita (via Vidro de vitrólita)</li>
+<li><b>Amostra exigida na pesquisa:</b> Óptica</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 300 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="lumigelo" data-cat="especial" data-pl="gelo|cristal|po" data-q="lumigelo lumigelo cristais e minerais especiais gelo luminoso dos polos dos corpos gelados (gelo, cristal, po). derrete: a cada 2 minutos cada pilha perde 1 unidade, que vira 1 gelo, e so fica estavel num corpo gelado ou numa camara fria com energia. sele-o na fabrica (2 lumigelos + 1 lingote de prata) para guardar sem perder. nao se compra. serve para: anel criogenico (motor de dobra, radar avancado, coletor atmosferico, reator de fusao). gelo cristal po">
+<header><h3>Lumigelo</h3><span class="cat">Cristais e minerais especiais</span>
+<span class="chip tier">laser nível 2</span>
+</header>
+<p class="desc">Gelo luminoso dos polos dos corpos gelados (Gelo, Cristal, Pó). DERRETE: a cada 2 minutos cada pilha perde 1 unidade, que vira 1 gelo, e só fica estável num corpo gelado ou numa câmara fria com energia. Sele-o na Fábrica (2 lumigelos + 1 lingote de prata) para guardar sem perder. Não se compra. Serve para: anel criogênico (Motor de dobra, Radar avançado, Coletor atmosférico, Reator de fusão).</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Gelo</span><span class="chip pl">Cristal</span><span class="chip pl">Pó</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: veio nos polos do corpo (25 campos na disposição original)</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: veio nos polos do corpo (7 campos na disposição original)</li>
+<li><b>Pó</b> <i>(Sistema Ônix, lua gelada)</i>: veio nos polos do corpo (8 campos na disposição original)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 2 ou broca de nave nível 2 (dureza 1,8).</p>
+<p class="mut">Cada veio guarda de 50 a 120 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#lingote-de-prata">Lingote de prata</a> + 2× <a href="materiais.html#lumigelo">Lumigelo</a> → 1× <a href="materiais.html#lumigelo-selado">Lumigelo selado</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Lumigelo selado</li>
+<li><b>Depois de refinado:</b> Anel criogênico (via Lumigelo selado)</li>
+<li><b>Amostra exigida na pesquisa:</b> Criogenia</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 350 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="brasalita" data-cat="especial" data-pl="cinzas|brasa" data-q="brasalita brasalita cristais e minerais especiais crosta de rocha incandescente da beira da lava (cinzas, brasa; mais crostas depois de cada erupcao). perto dela o chao queima: o traje gasta a bateria e, sem bateria, voce perde vida. na fundicao, com gelo, vira brasalita temperada. nao se compra. serve para: acumulador termico (multiferramenta de plasma, broca de nave, broca de extracao iii, motor de dobra). cinzas brasa">
+<header><h3>Brasalita</h3><span class="cat">Cristais e minerais especiais</span>
+<span class="chip tier">laser nível 2</span>
+</header>
+<p class="desc">Crosta de rocha incandescente da beira da lava (Cinzas, Brasa; mais crostas depois de cada erupção). Perto dela o chão queima: o traje gasta a bateria e, sem bateria, você perde vida. Na Fundição, com gelo, vira brasalita temperada. Não se compra. Serve para: acumulador térmico (Multiferramenta de plasma, Broca de nave, Broca de extração III, Motor de dobra).</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Cinzas</span><span class="chip pl">Brasa</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: veio crostas de rocha incandescente na beira da lava (18 campos na disposição original); nova crosta depois de cada erupção</li>
+<li><b>Brasa</b> <i>(Sistema Aurora, lua de lava)</i>: veio crostas de rocha incandescente na beira da lava (10 campos na disposição original)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 2 ou broca de nave nível 2 (dureza 2,2).</p>
+<p class="mut">Cada veio guarda de 40 a 80 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#brasalita">Brasalita</a> + 1× <a href="materiais.html#gelo">Gelo</a> → 1× <a href="materiais.html#brasalita-temperada">Brasalita temperada</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Acumulador térmico (via Brasalita temperada)</li>
+<li><b>Amostra exigida na pesquisa:</b> Termodinâmica</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 320 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="fulgurito" data-cat="especial" data-pl="duna|mesa" data-q="fulgurito fulgurito cristais e minerais especiais areia vitrificada pelos raios das tempestades de duna e mesa. so aparece depois de uma tempestade e some em 45 minutos. dureza 0,8: qualquer multiferramenta cava. na fabrica vira fibra de fulgurito. nao se compra. serve para: chip de malha (pesquisa malha logica). duna mesa">
+<header><h3>Fulgurito</h3><span class="cat">Cristais e minerais especiais</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<p class="desc">Areia vitrificada pelos raios das tempestades de Duna e Mesa. Só aparece depois de uma tempestade e some em 45 minutos. Dureza 0,8: qualquer Multiferramenta cava. Na Fábrica vira fibra de fulgurito. Não se compra. Serve para: chip de malha (pesquisa Malha lógica).</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Duna</span><span class="chip pl">Mesa</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: campos depois de uma tempestade de areia (somem em 45 min)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: campos depois de uma tempestade de areia (somem em 45 min)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 1 ou broca de nave nível 1 (dureza 0,8).</p>
+<p class="mut">Cada veio guarda de 25 a 50 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fábrica:</b> 2× <a href="materiais.html#fulgurito">Fulgurito</a> → 3× <a href="materiais.html#fibra-de-fulgurito">Fibra de fulgurito</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Fibra de fulgurito</li>
+<li><b>Depois de refinado:</b> Chip de malha (via Fibra de fulgurito)</li>
+<li><b>Amostra exigida na pesquisa:</b> Malha lógica</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 400 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="nucleita" data-cat="especial" data-pl="brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso" data-q="nucleita nucleita cristais e minerais especiais cristal denso do centro dos asteroides grandes de onix (brita, bloco, mo e dorso), fundo demais para ver da superficie: so o radar mostra. dureza 3,5: pede a multiferramenta nivel 3 ou a broca de nave. na fundicao vira nucleita lapidada. nao se compra. serve para: foco de nucleita (multiferramenta de plasma, broca de nave). brita seixo lasca bloco cascalho mo ponta dorso">
+<header><h3>Nucleíta</h3><span class="cat">Cristais e minerais especiais</span>
+<span class="chip tier">laser nível 3</span>
+</header>
+<p class="desc">Cristal denso do centro dos asteroides grandes de Ônix (Brita, Bloco, Mó e Dorso), fundo demais para ver da superfície: só o radar mostra. Dureza 3,5: pede a Multiferramenta nível 3 ou a broca de nave. Na Fundição vira nucleíta lapidada. Não se compra. Serve para: foco de nucleíta (Multiferramenta de plasma, Broca de nave).</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: veio no centro dos asteroides grandes (fundo demais: só o radar mostra) (3 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: veio no centro dos asteroides grandes (fundo demais: só o radar mostra) (4 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: veio no centro dos asteroides grandes (fundo demais: só o radar mostra) (3 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: fragmentos de colisão no cinturão de asteroides</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: veio no centro dos asteroides grandes (fundo demais: só o radar mostra) (4 campos na disposição original); fragmentos de colisão no cinturão de asteroides</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 3 ou broca de nave nível 3 (dureza 3,5).</p>
+<p class="mut">Cada veio guarda de 30 a 60 unidades.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#nucleita">Nucleíta</a> → 1× <a href="materiais.html#nucleita-lapidada">Nucleíta lapidada</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Foco de nucleíta (via Nucleíta lapidada)</li>
+<li><b>Amostra exigida na pesquisa:</b> Óptica de potência</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 900 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="penumbrita" data-cat="especial" data-pl="aurora|cinzas|gelo|lua|duna|mesa|malva" data-q="penumbrita penumbrita cristais e minerais especiais mineral escuro de brilho frio. so nasce nas paredes dos saloes de caverna; pede laser nivel 2. serve para vender e para montar a sonda de eco. aurora cinzas gelo lua duna mesa malva">
+<header><h3>Penumbrita</h3><span class="cat">Cristais e minerais especiais</span>
+<span class="chip tier">laser nível 2</span>
+</header>
+<p class="desc">Mineral escuro de brilho frio. Só nasce nas paredes dos salões de caverna; pede laser nível 2. Serve para vender e para montar a Sonda de eco.</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Cinzas</span><span class="chip pl">Gelo</span><span class="chip pl">Lua</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Malva</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: paredes dos salões de caverna (garantida nas 6 cavernas do corpo)</li>
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: paredes dos salões de caverna (garantida nas 3 cavernas do corpo)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: paredes dos salões de caverna (garantida nas 4 cavernas do corpo)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: paredes dos salões de caverna (garantida nas 3 cavernas do corpo)</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: paredes dos salões de caverna (garantida nas 6 cavernas do corpo)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: paredes dos salões de caverna (garantida nas 4 cavernas do corpo)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: paredes dos salões de caverna (garantida nas 3 cavernas do corpo)</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Multiferramenta laser nível 2 ou broca de nave nível 2 (dureza 1,8).</p>
+<p class="mut">Cada veio guarda de 40 a 90 unidades.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Sonda de eco</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 350 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="helio-3" data-cat="especial" data-pl="tita" data-q="helio-3 helio3 cristais e minerais especiais gas raro das nuvens altas de tita. nao existe veio: o coletor atmosferico colhe em voo (2 por minuto a 80 m/s). na fabrica, 20 de helio-3 + 1 lingote de titanio viram uma capsula de combustivel do reator de fusao. nao se compra. serve para: abastecer o reator de fusao. tita">
+<header><h3>Hélio-3</h3><span class="cat">Cristais e minerais especiais</span>
+</header>
+<p class="desc">Gás raro das nuvens altas de Titã. Não existe veio: o coletor atmosférico colhe em voo (2 por minuto a 80 m/s). Na Fábrica, 20 de hélio-3 + 1 lingote de titânio viram uma cápsula de combustível do reator de fusão. Não se compra. Serve para: abastecer o Reator de fusão.</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Titã</span></div>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Titã</b> <i>(Sistema Ônix, gigante gasoso)</i>: colhido em voo pelo Coletor atmosférico nas nuvens altas</li>
+</ul></details>
+<p class="fer"><b>Ferramenta:</b> Coletor atmosférico (2 por minuto a 80 m/s); não existe veio.</p>
+<h4>Como se processa</h4><ul>
+<li><b>Fábrica:</b> 20× <a href="materiais.html#helio-3">Hélio-3</a> + 1× <a href="materiais.html#lingote-de-titanio">Lingote de titânio</a> → 1× <a href="materiais.html#capsula-de-helio-3">Cápsula de hélio-3</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Cápsula de hélio-3</li>
+<li><b>Amostra exigida na pesquisa:</b> Fusão</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 60 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="cristal" data-cat="especial" data-pl="aurora|cinzas|gelo|lua|fobos|brasa|cristal|duna|mesa|dente|po|brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso|malva|preamar" data-q="cristal cristal cristais e minerais especiais cristal do terreno, das arvores e das pedras (1.0.377: agora e item, fica na mochila, no bau e no porta-malas). e o combustivel do motor de dobra: 60 cristais = 1 salto entre sistemas. tambem se vende por 10 creditos, mas quem vende tudo fica sem combustivel de salto. nao se compra. aurora cinzas gelo lua fobos brasa cristal duna mesa dente po brita seixo lasca bloco cascalho mo ponta dorso malva preamar seiva esmeril">
+<header><h3>Cristal</h3><span class="cat">Cristais e minerais especiais</span>
+</header>
+<p class="desc">Cristal do terreno, das árvores e das pedras (1.0.377: agora é item, fica na mochila, no baú e no porta-malas). É o combustível do Motor de dobra: 60 cristais = 1 salto entre sistemas. Também se vende por 10 créditos, mas quem vende tudo fica sem combustível de salto. Não se compra.</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Cinzas</span><span class="chip pl">Gelo</span><span class="chip pl">Lua</span><span class="chip pl">Fobos</span><span class="chip pl">Brasa</span><span class="chip pl">Cristal</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Dente</span><span class="chip pl">Pó</span><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<p class="mut">Sem confirmação (mundo protegido, sem veios): Seiva, Esmeril.</p>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Fobos</b> <i>(Sistema Aurora, lua rochosa)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Brasa</b> <i>(Sistema Aurora, lua de lava)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Pó</b> <i>(Sistema Ônix, lua gelada)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: cristais do terreno, das árvores e das pedras (todo corpo com chão)</li>
+<li><b>Seiva</b> <i>(Sistema Âmbar, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+<li><b>Esmeril</b> <i>(Sistema Cromo, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+</ul></details>
+<h4>Comércio</h4><ul><li>preço-base 10 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li></ul>
+</article>
+</div></section>
+<section class="grupo" data-grupo="terreno"><h2>Recursos do terreno</h2><p class="mut">Coletados do chão e da vegetação.</p><div class="cards">
+<article class="mat" id="pedra" data-cat="terreno" data-pl="aurora|cinzas|gelo|lua|fobos|brasa|cristal|duna|mesa|dente|po|brita|seixo|lasca|bloco|cascalho|mo|ponta|dorso|malva|preamar" data-q="pedra pedra recursos do terreno cascalho: sai ao cavar o terreno com a multiferramenta (de 1 a 4 por golpe). serve para aterrar (laser, modo aterrar: tecla q), para o concreto (8 + 2 de gelo) e vende-se no mercado. na peneira da fundicao, 40 de cascalho dao 1 minerio comum do corpo (ferro, ou cobre em mundos de lava). quebrar uma pedra nao da cascalho: da o minerio do bioma. aurora cinzas gelo lua fobos brasa cristal duna mesa dente po brita seixo lasca bloco cascalho mo ponta dorso malva preamar seiva esmeril">
+<header><h3>Pedra</h3><span class="cat">Recursos do terreno</span>
+</header>
+<p class="desc">Cascalho: sai ao cavar o terreno com a Multiferramenta (de 1 a 4 por golpe). Serve para aterrar (laser, modo Aterrar: tecla Q), para o concreto (8 + 2 de gelo) e vende-se no mercado. Na peneira da Fundição, 40 de cascalho dão 1 minério comum do corpo (ferro, ou cobre em mundos de lava). Quebrar uma pedra NÃO dá cascalho: dá o minério do bioma.</p>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Cinzas</span><span class="chip pl">Gelo</span><span class="chip pl">Lua</span><span class="chip pl">Fobos</span><span class="chip pl">Brasa</span><span class="chip pl">Cristal</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Dente</span><span class="chip pl">Pó</span><span class="chip pl">Brita</span><span class="chip pl">Seixo</span><span class="chip pl">Lasca</span><span class="chip pl">Bloco</span><span class="chip pl">Cascalho</span><span class="chip pl">Mó</span><span class="chip pl">Ponta</span><span class="chip pl">Dorso</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<p class="mut">Sem confirmação (mundo protegido, sem veios): Seiva, Esmeril.</p>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Lua</b> <i>(Sistema Aurora, lua rochosa)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Fobos</b> <i>(Sistema Aurora, lua rochosa)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Brasa</b> <i>(Sistema Aurora, lua de lava)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Cristal</b> <i>(Sistema Aurora, lua gelada)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Dente</b> <i>(Sistema Ônix, lua rochosa)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Pó</b> <i>(Sistema Ônix, lua gelada)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Brita</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Seixo</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Lasca</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Bloco</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Cascalho</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Mó</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Ponta</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Dorso</b> <i>(Sistema Ônix, asteroide)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: cavar o terreno com a Multiferramenta (1 a 4 por golpe)</li>
+<li><b>Seiva</b> <i>(Sistema Âmbar, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+<li><b>Esmeril</b> <i>(Sistema Cromo, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+</ul></details>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 40× <a href="materiais.html#pedra">Pedra</a> → 1× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Depois de refinado:</b> Componente (via Minério de ferro), Barra de aço (via Minério de ferro), Célula de energia (via Minério de ferro), Combustível mineral (via Minério de ferro), Cartuchos de espingarda (via Minério de ferro), Munição leve (via Minério de ferro), Multiferramenta laser (via Minério de ferro), Cortadora de mão (via Minério de ferro), Soldador básico (via Minério de ferro)</li>
+<li><b>Blocos que gastam diretamente:</b> Chaminé</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 20 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+<article class="mat" id="madeira" data-cat="terreno" data-pl="aurora|cinzas|gelo|duna|mesa|malva|preamar" data-q="madeira madeira recursos do terreno  aurora cinzas gelo duna mesa malva preamar seiva">
+<header><h3>Madeira</h3><span class="cat">Recursos do terreno</span>
+</header>
+<h4>Onde existe</h4><div class="chips"><span class="chip pl">Aurora</span><span class="chip pl">Cinzas</span><span class="chip pl">Gelo</span><span class="chip pl">Duna</span><span class="chip pl">Mesa</span><span class="chip pl">Malva</span><span class="chip pl">Preamar</span></div>
+<p class="mut">Sem confirmação (mundo protegido, sem veios): Seiva.</p>
+<details><summary>Como aparece em cada corpo</summary><ul class="fontes">
+<li><b>Aurora</b> <i>(Sistema Aurora, temperado)</i>: árvores (corpos com vegetação)</li>
+<li><b>Cinzas</b> <i>(Sistema Aurora, de lava)</i>: árvores (corpos com vegetação)</li>
+<li><b>Gelo</b> <i>(Sistema Aurora, gelado)</i>: árvores (corpos com vegetação)</li>
+<li><b>Duna</b> <i>(Sistema Ônix, deserto)</i>: árvores (corpos com vegetação)</li>
+<li><b>Mesa</b> <i>(Sistema Ônix, deserto)</i>: árvores (corpos com vegetação)</li>
+<li><b>Malva</b> <i>(Sistema Ônix, temperado)</i>: árvores (corpos com vegetação)</li>
+<li><b>Preamar</b> <i>(Sistema Cobalto, temperado)</i>: árvores (corpos com vegetação)</li>
+<li><b>Seiva</b> <i>(Sistema Âmbar, temperado)</i>: listado no mapa do jogo, mas o mundo é protegido (sem veios)</li>
+</ul></details>
+<h4>Como se processa</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#madeira">Madeira</a> + 3× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a> → 1× <a href="materiais.html#barra-de-aco">Barra de aço</a></li>
+</ul>
+<p class="mut">Fundição (só em base) faz todas as receitas; a Fundição de bordo (só em nave de grade grande) faz as mesmas, menos a peneira, com ciclo 2,5× mais longo.</p>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Barra de aço, Curativo, Espetinho de fera, Biocombustível, Kit médico, Muda de abóbora, Muda de milho, Muda de trigo, Virotes de besta, Ração</li>
+<li><b>Depois de refinado:</b> Componente (via Barra de aço), Placa de aço (via Barra de aço), Liga de titânio (via Barra de aço), Ímã de cobalto (via Barra de aço), Dardos de arpão (via Barra de aço), Projéteis de artilharia (via Barra de aço), Cartuchos de espingarda (via Barra de aço), Foguetes (via Barra de aço), Munição pesada (via Barra de aço), Munição leve (via Barra de aço)</li>
+<li><b>Blocos que gastam diretamente:</b> Balcão de bar, Bancada de campo, Banco de jardim, Bandeira — Colônia Livre, Bandeira — Corsários da Sucata, Bandeira — Mineração Aurora, Barril de madeira, Beliche, Caixote de madeira, Cama, Cartaz, Estante e mais 13</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 30 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+</div></section>
+<section class="grupo" data-grupo="refinado"><h2>Ligas e refinados</h2><p class="mut">Saem da Fundição (e da Fundição de bordo) a partir dos minérios.</p><div class="cards">
+<article class="mat" id="barra-de-aco" data-cat="refinado" data-pl="" data-q="barra de aco barra ligas e refinados  ">
+<header><h3>Barra de aço</h3><span class="cat">Ligas e refinados</span>
+</header>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#madeira">Madeira</a> + 3× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a> → 1× <a href="materiais.html#barra-de-aco">Barra de aço</a></li>
+<li><b>Fundição:</b> 4× Sucata → 1× <a href="materiais.html#barra-de-aco">Barra de aço</a></li>
+<li><b>Construtor:</b> 1× <a href="materiais.html#madeira">Madeira</a> + 3× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a> → 1× <a href="materiais.html#barra-de-aco">Barra de aço</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Componente, Dardos de arpão, Projéteis de artilharia, Cartuchos de espingarda, Foguetes, Munição pesada, Virotes de besta, Munição leve, Placa de aço, Liga de titânio, Ímã de cobalto</li>
+<li><b>Depois de refinado:</b> Atuador magnético (via Componente), Célula de energia (via Componente), Cilindro de oxigênio (via Componente), Garrafa de hidrogênio (via Componente), Kit médico (via Componente), Muda de abóbora (via Componente), Pacote de combustível grande (via Componente), Sonda de eco (via Componente), Multiferramenta laser (via Componente), Multiferramenta reforçada (via Componente), Multiferramenta industrial (via Componente), Multiferramenta de plasma (via Componente) e mais 20</li>
+<li><b>Blocos que gastam diretamente:</b> Abóbada (meio-cilindro deitado), Alavanca, Antena de telhado, Antena parabólica, Ar-condicionado de parede, Ar-condicionado de telhado, Arco — passagem, Armadura leve — barra, Armadura leve — chanfro de aresta, Armadura leve — chanfro fino, Armadura leve — com acabamento, Armadura leve — cunha vertical e mais 242</li>
+</ul>
+<h4>Comércio</h4><ul><li>lojas que compram: FERRAGENS</li><li>lojas que vendem: FERRAGENS</li></ul>
+</article>
+<article class="mat" id="lingote-de-cobre" data-cat="refinado" data-pl="" data-q="lingote de cobre lingote_cobre ligas e refinados fundicao: 3 de cobre + 1 de carvao. vira fio de cobre na fabrica. ">
+<header><h3>Lingote de cobre</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de cobre + 1 de carvão. Vira fio de cobre na fábrica.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#cobre">Cobre</a> → 1× <a href="materiais.html#lingote-de-cobre">Lingote de cobre</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Fio de cobre</li>
+<li><b>Depois de refinado:</b> Circuito (via Fio de cobre), Anel criogênico (via Fio de cobre), Atuador magnético (via Fio de cobre), Curativo (via Fio de cobre), Kit médico avançado (via Fio de cobre), Multiferramenta reforçada (via Fio de cobre), Cortadora reforçada (via Fio de cobre), Soldador reforçado (via Fio de cobre)</li>
+<li><b>Blocos que gastam diretamente:</b> Terminal de venda</li>
+</ul>
+</article>
+<article class="mat" id="lingote-de-titanio" data-cat="refinado" data-pl="" data-q="lingote de titanio lingote_titanio ligas e refinados fundicao: 3 de titanio + 2 de carvao. entra na liga de titanio. ">
+<header><h3>Lingote de titânio</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de titânio + 2 de carvão. Entra na liga de titânio.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#titanio">Titânio</a> → 1× <a href="materiais.html#lingote-de-titanio">Lingote de titânio</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Liga de titânio, Cápsula de hélio-3</li>
+<li><b>Depois de refinado:</b> Ponta de irídio (via Liga de titânio), Acumulador térmico (via Liga de titânio), Anel criogênico (via Liga de titânio), Multiferramenta industrial (via Liga de titânio), Multiferramenta de plasma (via Liga de titânio), Cortadora industrial (via Liga de titânio), Cortadora de plasma (via Liga de titânio), Soldador industrial (via Liga de titânio)</li>
+</ul>
+</article>
+<article class="mat" id="lingote-de-cobalto" data-cat="refinado" data-pl="" data-q="lingote de cobalto lingote_cobalto ligas e refinados fundicao: 3 de cobalto + 1 de carvao. entra no nucleo de energia. ">
+<header><h3>Lingote de cobalto</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de cobalto + 1 de carvão. Entra no núcleo de energia.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#cobalto">Cobalto</a> → 1× <a href="materiais.html#lingote-de-cobalto">Lingote de cobalto</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Núcleo de energia, Ímã de cobalto</li>
+<li><b>Depois de refinado:</b> Cortadora de plasma (via Núcleo de energia), Atuador magnético (via Ímã de cobalto)</li>
+</ul>
+</article>
+<article class="mat" id="lingote-de-prata" data-cat="refinado" data-pl="" data-q="lingote de prata lingote_prata ligas e refinados fundicao: 3 de prata + 1 de carvao. condutor dos circuitos. ">
+<header><h3>Lingote de prata</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de prata + 1 de carvão. Condutor dos circuitos.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#prata">Prata</a> → 1× <a href="materiais.html#lingote-de-prata">Lingote de prata</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Circuito, Lumigelo selado, Lente de vitrólita</li>
+<li><b>Depois de refinado:</b> Núcleo de energia (via Circuito), Célula de fusão (via Circuito), Chip lógico (via Circuito), Kit médico avançado (via Circuito), Sonda de eco (via Circuito), Multiferramenta industrial (via Circuito), Cortadora industrial (via Circuito), Cortadora de plasma (via Circuito), Soldador industrial (via Circuito), Anel criogênico (via Lumigelo selado), Foco de nucleíta (via Lente de vitrólita), Multiferramenta industrial (via Lente de vitrólita)</li>
+</ul>
+</article>
+<article class="mat" id="lingote-de-ouro" data-cat="refinado" data-pl="" data-q="lingote de ouro lingote_ouro ligas e refinados fundicao: 3 de ouro + 2 de carvao. ">
+<header><h3>Lingote de ouro</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de ouro + 2 de carvão.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#ouro">Ouro</a> → 1× <a href="materiais.html#lingote-de-ouro">Lingote de ouro</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Chip lógico</li>
+</ul>
+</article>
+<article class="mat" id="lingote-de-platina" data-cat="refinado" data-pl="" data-q="lingote de platina lingote_platina ligas e refinados fundicao: 3 de platina + 2 de carvao. ">
+<header><h3>Lingote de platina</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de platina + 2 de carvão.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#platina">Platina</a> → 1× <a href="materiais.html#lingote-de-platina">Lingote de platina</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Chip de malha, Foco de nucleíta</li>
+</ul>
+</article>
+<article class="mat" id="lingote-de-iridio" data-cat="refinado" data-pl="" data-q="lingote de iridio lingote_iridio ligas e refinados fundicao: 3 de iridio + 2 de carvao. vira ponta de iridio na fabrica. ">
+<header><h3>Lingote de irídio</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de irídio + 2 de carvão. Vira ponta de irídio na fábrica.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#iridio">Irídio</a> → 1× <a href="materiais.html#lingote-de-iridio">Lingote de irídio</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Ponta de irídio</li>
+</ul>
+</article>
+<article class="mat" id="lamina-de-silicio" data-cat="refinado" data-pl="" data-q="lamina de silicio lamina_silicio ligas e refinados fundicao: 3 de silicio + 1 de carvao. e a base do chip logico. ">
+<header><h3>Lâmina de silício</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de silício + 1 de carvão. É a base do chip lógico.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 1× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#silicio">Silício</a> → 1× <a href="materiais.html#lamina-de-silicio">Lâmina de silício</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Chip lógico</li>
+</ul>
+</article>
+<article class="mat" id="vidro-de-vitrolita" data-cat="refinado" data-pl="" data-q="vidro de vitrolita vidro_vitrolita ligas e refinados fundicao: 3 de vitrolita. vira lente de vitrolita na fabrica. ">
+<header><h3>Vidro de vitrólita</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de vitrólita. Vira lente de vitrólita na Fábrica.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 3× <a href="materiais.html#vitrolita">Vitrólita</a> → 1× <a href="materiais.html#vidro-de-vitrolita">Vidro de vitrólita</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Lente de vitrólita</li>
+<li><b>Depois de refinado:</b> Foco de nucleíta (via Lente de vitrólita), Multiferramenta industrial (via Lente de vitrólita)</li>
+</ul>
+</article>
+<article class="mat" id="brasalita-temperada" data-cat="refinado" data-pl="" data-q="brasalita temperada brasalita_temperada ligas e refinados fundicao: 2 de brasalita + 1 de gelo. guarda o calor sem queimar: e a base do acumulador termico. ">
+<header><h3>Brasalita temperada</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 2 de brasalita + 1 de gelo. Guarda o calor sem queimar: é a base do acumulador térmico.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#brasalita">Brasalita</a> + 1× <a href="materiais.html#gelo">Gelo</a> → 1× <a href="materiais.html#brasalita-temperada">Brasalita temperada</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Acumulador térmico</li>
+</ul>
+</article>
+<article class="mat" id="nucleita-lapidada" data-cat="refinado" data-pl="" data-q="nucleita lapidada nucleita_lapidada ligas e refinados fundicao: 3 de nucleita + 2 de carvao. entra no foco de nucleita. ">
+<header><h3>Nucleíta lapidada</h3><span class="cat">Ligas e refinados</span>
+</header>
+<p class="desc">Fundição: 3 de nucleíta + 2 de carvão. Entra no foco de nucleíta.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 2× <a href="materiais.html#carvao">Carvão</a> + 3× <a href="materiais.html#nucleita">Nucleíta</a> → 1× <a href="materiais.html#nucleita-lapidada">Nucleíta lapidada</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Foco de nucleíta</li>
+</ul>
+</article>
+<article class="mat" id="minerio-de-ferro" data-cat="refinado" data-pl="" data-q="minerio de ferro minerio ligas e refinados  ">
+<header><h3>Minério de ferro</h3><span class="cat">Ligas e refinados</span>
+<span class="chip tier">laser nível 1</span>
+</header>
+<h4>Como obter</h4><ul>
+<li><b>Fundição:</b> 40× <a href="materiais.html#pedra">Pedra</a> → 1× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Barra de aço, Célula de energia, Componente, Combustível mineral, Cartuchos de espingarda, Munição leve, Multiferramenta laser, Cortadora de mão, Soldador básico</li>
+<li><b>Depois de refinado:</b> Placa de aço (via Barra de aço), Liga de titânio (via Barra de aço), Ímã de cobalto (via Barra de aço), Dardos de arpão (via Barra de aço), Projéteis de artilharia (via Barra de aço), Foguetes (via Barra de aço), Munição pesada (via Barra de aço), Virotes de besta (via Barra de aço), Atuador magnético (via Componente), Cilindro de oxigênio (via Componente), Garrafa de hidrogênio (via Componente), Kit médico (via Componente) e mais 14</li>
+<li><b>Blocos que gastam diretamente:</b> Armadura pesada — faixas de aviso, Armadura pesada — meio bloco, Armadura pesada — quina, Armadura pesada — quina de rampa suave (alta), Armadura pesada — quina interna, Armadura pesada — quina interna de rampa suave (alta), Armadura pesada — quina interna de rampa suave (baixa), Armadura pesada — rampa, Armadura pesada — rampa 1:3 — peça 1, Armadura pesada — rampa 1:3 — peça 2, Armadura pesada — rampa 1:3 — peça 3, Armadura pesada — rampa 1:6 — peça 1 e mais 16</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 40 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>o Entreposto das cidades compra e vende</li></ul>
+</article>
+</div></section>
+<section class="grupo" data-grupo="componente"><h2>Componentes da Fábrica</h2><p class="mut">Feitos na Fábrica a partir de barras, lingotes e minérios.</p><div class="cards">
+<article class="mat" id="componente" data-cat="componente" data-pl="" data-q="componente componente componentes da fabrica  ">
+<header><h3>Componente</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#barra-de-aco">Barra de aço</a> + 1× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a> → 1× <a href="materiais.html#componente">Componente</a></li>
+<li><b>Construtor:</b> 1× <a href="materiais.html#barra-de-aco">Barra de aço</a> + 1× <a href="materiais.html#minerio-de-ferro">Minério de ferro</a> → 1× <a href="materiais.html#componente">Componente</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Atuador magnético, Célula de energia, Cilindro de oxigênio, Garrafa de hidrogênio, Kit médico, Muda de abóbora, Projéteis de artilharia, Foguetes, Munição pesada, Pacote de combustível grande, Sonda de eco, Multiferramenta laser, Multiferramenta reforçada, Multiferramenta industrial e mais 8</li>
+<li><b>Blocos que gastam diretamente:</b> Alavanca, Antena de telhado, Antena parabólica, Ar-condicionado de parede, Ar-condicionado de telhado, Armadura leve — com acabamento, Bancada de armas, Bancada de melhorias, Bancada de montagem, Banco de capacitores, Banco do piloto, Bateria e mais 136</li>
+</ul>
+<h4>Comércio</h4><ul><li>lojas que compram: AUTOPEÇAS</li><li>lojas que vendem: AUTOPEÇAS, FERRAGENS</li></ul>
+</article>
+<article class="mat" id="fio-de-cobre" data-cat="componente" data-pl="" data-q="fio de cobre fio componentes da fabrica fabrica: 1 lingote de cobre rende 4 fios. ferramentas, armas de fogo e circuitos. ">
+<header><h3>Fio de cobre</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 1 lingote de cobre rende 4 fios. Ferramentas, armas de fogo e circuitos.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#lingote-de-cobre">Lingote de cobre</a> → 4× <a href="materiais.html#fio-de-cobre">Fio de cobre</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Anel criogênico, Atuador magnético, Curativo, Kit médico avançado, Multiferramenta reforçada, Cortadora reforçada, Soldador reforçado, Circuito</li>
+<li><b>Depois de refinado:</b> Núcleo de energia (via Circuito), Célula de fusão (via Circuito), Chip lógico (via Circuito), Sonda de eco (via Circuito), Multiferramenta industrial (via Circuito), Cortadora industrial (via Circuito), Cortadora de plasma (via Circuito), Soldador industrial (via Circuito)</li>
+<li><b>Blocos que gastam diretamente:</b> Painel eletrônico avariado</li>
+</ul>
+<h4>Comércio</h4><ul><li>lojas que compram: ELETRÔNICOS</li><li>lojas que vendem: AUTOPEÇAS, ELETRÔNICOS</li></ul>
+</article>
+<article class="mat" id="placa-de-aco" data-cat="componente" data-pl="" data-q="placa de aco placa componentes da fabrica fabrica: 2 barras de aco. armaduras de metal, espadas e armas de fogo. ">
+<header><h3>Placa de aço</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 2 barras de aço. Armaduras de metal, espadas e armas de fogo.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 2× <a href="materiais.html#barra-de-aco">Barra de aço</a> → 1× <a href="materiais.html#placa-de-aco">Placa de aço</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Acumulador térmico, Multiferramenta reforçada, Cortadora reforçada, Soldador reforçado</li>
+<li><b>Blocos que gastam diretamente:</b> Bloco mecânico avariado, Coletor atmosférico, Câmara fria, Expansão de núcleo II, Expansão de núcleo III, Núcleo de nave pesada, Núcleo industrial, Núcleo reforçado</li>
+</ul>
+<h4>Comércio</h4><ul><li>lojas que compram: AUTOPEÇAS, FERRAGENS</li><li>lojas que vendem: AUTOPEÇAS, FERRAGENS</li></ul>
+</article>
+<article class="mat" id="circuito" data-cat="componente" data-pl="" data-q="circuito circuito componentes da fabrica fabrica: 3 fios + 1 lingote de prata. eletronica avancada. ">
+<header><h3>Circuito</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 3 fios + 1 lingote de prata. Eletrônica avançada.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 3× <a href="materiais.html#fio-de-cobre">Fio de cobre</a> + 1× <a href="materiais.html#lingote-de-prata">Lingote de prata</a> → 1× <a href="materiais.html#circuito">Circuito</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Célula de fusão, Chip lógico, Kit médico avançado, Sonda de eco, Multiferramenta industrial, Cortadora industrial, Cortadora de plasma, Soldador industrial, Núcleo de energia</li>
+<li><b>Blocos que gastam diretamente:</b> Broca de extração II, Canhão de nave, Conector (acoplamento), Câmara fria, Desmontador, Elevador de nave — plataforma, Expansão de núcleo II, Expansão de núcleo III, Fundição de bordo, Gerador de escudo, Gerador grande, Gerador industrial e mais 21</li>
+</ul>
+<h4>Comércio</h4><ul><li>lojas que compram: ELETRÔNICOS</li><li>lojas que vendem: ELETRÔNICOS</li></ul>
+</article>
+<article class="mat" id="liga-de-titanio" data-cat="componente" data-pl="" data-q="liga de titanio liga_titanio componentes da fabrica fabrica: 2 lingotes de titanio + 1 barra. ferramentas industriais e trajes espaciais. ">
+<header><h3>Liga de titânio</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 2 lingotes de titânio + 1 barra. Ferramentas industriais e trajes espaciais.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#barra-de-aco">Barra de aço</a> + 2× <a href="materiais.html#lingote-de-titanio">Lingote de titânio</a> → 1× <a href="materiais.html#liga-de-titanio">Liga de titânio</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Acumulador térmico, Anel criogênico, Multiferramenta industrial, Multiferramenta de plasma, Cortadora industrial, Cortadora de plasma, Soldador industrial, Ponta de irídio</li>
+<li><b>Blocos que gastam diretamente:</b> Coletor atmosférico, Fundição de bordo, Motor de dobra, Núcleo industrial, Reator de fusão</li>
+</ul>
+</article>
+<article class="mat" id="nucleo-de-energia" data-cat="componente" data-pl="" data-q="nucleo de energia nucleo componentes da fabrica fabrica: 1 lingote de cobalto + 1 circuito + 1 celula de energia. ">
+<header><h3>Núcleo de energia</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 1 lingote de cobalto + 1 circuito + 1 célula de energia.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× Célula de energia + 1× <a href="materiais.html#circuito">Circuito</a> + 1× <a href="materiais.html#lingote-de-cobalto">Lingote de cobalto</a> → 1× <a href="materiais.html#nucleo-de-energia">Núcleo de energia</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Cortadora de plasma</li>
+<li><b>Blocos que gastam diretamente:</b> Gerador industrial, Motor de dobra, Reator de fusão</li>
+</ul>
+</article>
+<article class="mat" id="ponta-de-iridio" data-cat="componente" data-pl="" data-q="ponta de iridio ponta_iridio componentes da fabrica fabrica: 2 lingotes de iridio + 1 liga de titanio. dente das brocas de extracao mais fortes. ">
+<header><h3>Ponta de irídio</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 2 lingotes de irídio + 1 liga de titânio. Dente das brocas de extração mais fortes.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#liga-de-titanio">Liga de titânio</a> + 2× <a href="materiais.html#lingote-de-iridio">Lingote de irídio</a> → 1× <a href="materiais.html#ponta-de-iridio">Ponta de irídio</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Blocos que gastam diretamente:</b> Broca de extração III, Broca de nave</li>
+</ul>
+</article>
+<article class="mat" id="ima-de-cobalto" data-cat="componente" data-pl="" data-q="ima de cobalto ima_cobalto componentes da fabrica fabrica: 1 lingote de cobalto + 1 barra rendem 2 imas. entra no atuador magnetico. ">
+<header><h3>Ímã de cobalto</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 1 lingote de cobalto + 1 barra rendem 2 ímãs. Entra no atuador magnético.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#barra-de-aco">Barra de aço</a> + 1× <a href="materiais.html#lingote-de-cobalto">Lingote de cobalto</a> → 2× <a href="materiais.html#ima-de-cobalto">Ímã de cobalto</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Atuador magnético</li>
+</ul>
+</article>
+<article class="mat" id="lumigelo-selado" data-cat="componente" data-pl="" data-q="lumigelo selado lumigelo_selado componentes da fabrica fabrica: 2 de lumigelo + 1 lingote de prata. nao derrete. entra no anel criogenico (que vai no motor de dobra). nao recarrega mais o motor: ele agora anda a cristais. ">
+<header><h3>Lumigelo selado</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 2 de lumigelo + 1 lingote de prata. Não derrete. Entra no anel criogênico (que vai no Motor de dobra). Não recarrega mais o motor: ele agora anda a cristais.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#lingote-de-prata">Lingote de prata</a> + 2× <a href="materiais.html#lumigelo">Lumigelo</a> → 1× <a href="materiais.html#lumigelo-selado">Lumigelo selado</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Anel criogênico</li>
+</ul>
+</article>
+<article class="mat" id="lente-de-vitrolita" data-cat="componente" data-pl="" data-q="lente de vitrolita lente_vitrolita componentes da fabrica fabrica: 1 vidro de vitrolita + 1 lingote de prata (pesquisa optica). focaliza o feixe da multiferramenta nivel 3 e o radar avancado. ">
+<header><h3>Lente de vitrólita</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 1 vidro de vitrólita + 1 lingote de prata (pesquisa Óptica). Focaliza o feixe da Multiferramenta nível 3 e o radar avançado.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 1× <a href="materiais.html#lingote-de-prata">Lingote de prata</a> + 1× <a href="materiais.html#vidro-de-vitrolita">Vidro de vitrólita</a> → 1× <a href="materiais.html#lente-de-vitrolita">Lente de vitrólita</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Foco de nucleíta, Multiferramenta industrial</li>
+<li><b>Blocos que gastam diretamente:</b> Radar avançado</li>
+</ul>
+</article>
+<article class="mat" id="fibra-de-fulgurito" data-cat="componente" data-pl="" data-q="fibra de fulgurito fibra_fulgurito componentes da fabrica fabrica: 2 de fulgurito rendem 3 fibras. entra no chip de malha. ">
+<header><h3>Fibra de fulgurito</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 2 de fulgurito rendem 3 fibras. Entra no chip de malha.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 2× <a href="materiais.html#fulgurito">Fulgurito</a> → 3× <a href="materiais.html#fibra-de-fulgurito">Fibra de fulgurito</a></li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Chip de malha</li>
+</ul>
+</article>
+<article class="mat" id="capsula-de-helio-3" data-cat="componente" data-pl="" data-q="capsula de helio-3 capsula_helio3 componentes da fabrica fabrica: 20 de helio-3 + 1 lingote de titanio. combustivel do reator de fusao (1 capsula = 30 minutos em carga cheia). os outros geradores nao aceitam. ">
+<header><h3>Cápsula de hélio-3</h3><span class="cat">Componentes da Fábrica</span>
+</header>
+<p class="desc">Fábrica: 20 de hélio-3 + 1 lingote de titânio. Combustível do Reator de fusão (1 cápsula = 30 minutos em carga cheia). Os outros geradores não aceitam.</p>
+<h4>Como obter</h4><ul>
+<li><b>Fábrica:</b> 20× <a href="materiais.html#helio-3">Hélio-3</a> + 1× <a href="materiais.html#lingote-de-titanio">Lingote de titânio</a> → 1× <a href="materiais.html#capsula-de-helio-3">Cápsula de hélio-3</a></li>
+</ul>
+</article>
+</div></section>
+<section class="grupo" data-grupo="criatura"><h2>Saque de criaturas</h2><p class="mut">Dropados por monstros; só se vendem, não se compram.</p><div class="cards">
+<article class="mat" id="carne-de-fera" data-cat="criatura" data-pl="" data-q="carne de fera carne_fera saque de criaturas carne crua de bicho do mato. da para comer assim mesmo, mas rende mais como espetinho. ">
+<header><h3>Carne de fera</h3><span class="cat">Saque de criaturas</span>
+</header>
+<p class="desc">Carne crua de bicho do mato. Dá para comer assim mesmo, mas rende mais como espetinho.</p>
+<h4>Quem solta</h4><ul>
+<li><b>Boca-de-lodo</b>: sempre, 1 a 2 unid.; ocorre em: Aurora, Gelo, Malva, Preamar</li>
+<li><b>Colosso de Seiva</b>: sempre, 20 unid.</li>
+<li><b>Rastejador</b>: sempre, 1 a 2 unid.; ocorre em: Aurora, Gelo, Duna, Malva, Preamar</li>
+</ul>
+<h4>Para que serve</h4><ul>
+<li><b>Receitas diretas:</b> Espetinho de fera</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 60 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="placa-de-quitina" data-cat="criatura" data-pl="" data-q="placa de quitina quitina saque de criaturas casca dura de monstro. vende bem nas cidades. ">
+<header><h3>Placa de quitina</h3><span class="cat">Saque de criaturas</span>
+</header>
+<p class="desc">Casca dura de monstro. Vende bem nas cidades.</p>
+<h4>Quem solta</h4><ul>
+<li><b>Boca-de-lodo</b>: 30% das vezes, 1 unid.; ocorre em: Aurora, Gelo, Malva, Preamar</li>
+<li><b>Espinhoso</b>: sempre, 3 a 5 unid.; ocorre em: Cinzas, Gelo, Mesa</li>
+<li><b>Rastejador</b>: 40% das vezes, 1 unid.; ocorre em: Aurora, Gelo, Duna, Malva, Preamar</li>
+<li><b>Sombra-d&#x27;água</b>: sempre, 2 a 3 unid.; ocorre em: Aurora, Gelo, Malva, Preamar</li>
+<li><b>Zangão-de-pedra</b>: sempre, 1 a 2 unid.; ocorre em: Aurora, Cinzas, Duna, Mesa, Preamar</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 150 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="glandula-luminosa" data-cat="criatura" data-pl="" data-q="glandula luminosa glandula saque de criaturas glandula que brilha no escuro, de monstro. vende bem. ">
+<header><h3>Glândula luminosa</h3><span class="cat">Saque de criaturas</span>
+</header>
+<p class="desc">Glândula que brilha no escuro, de monstro. Vende bem.</p>
+<h4>Quem solta</h4><ul>
+<li><b>Espinhoso</b>: sempre, 1 unid.; ocorre em: Cinzas, Gelo, Mesa</li>
+<li><b>Rastejador</b>: 8% das vezes, 1 unid.; ocorre em: Aurora, Gelo, Duna, Malva, Preamar</li>
+<li><b>Sombra-d&#x27;água</b>: 59% das vezes, 1 unid.; ocorre em: Aurora, Gelo, Malva, Preamar</li>
+<li><b>Zangão-de-pedra</b>: 14% das vezes, 1 unid.; ocorre em: Aurora, Cinzas, Duna, Mesa, Preamar</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 400 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="cerne-de-espinho" data-cat="criatura" data-pl="" data-q="cerne de espinho cerne_espinho saque de criaturas o miolo do espinho do espinhoso: raro e valioso. ">
+<header><h3>Cerne de espinho</h3><span class="cat">Saque de criaturas</span>
+</header>
+<p class="desc">O miolo do espinho do Espinhoso: raro e valioso.</p>
+<h4>Quem solta</h4><ul>
+<li><b>Espinhoso</b>: sempre, 1 unid.; ocorre em: Cinzas, Gelo, Mesa</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 1.200 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="lume-de-sombra" data-cat="criatura" data-pl="" data-q="lume-de-sombra lume_sombra saque de criaturas isca luminosa arrancada da sombra-d&#x27;agua, a serpente que ronda o mar fundo. rarissima: vale uma fortuna nas cidades. ">
+<header><h3>Lume-de-sombra</h3><span class="cat">Saque de criaturas</span>
+</header>
+<p class="desc">Isca luminosa arrancada da Sombra-d&#x27;água, a serpente que ronda o mar fundo. Raríssima: vale uma fortuna nas cidades.</p>
+<h4>Quem solta</h4><ul>
+<li><b>Sombra-d&#x27;água</b>: sempre, 1 unid.; ocorre em: Aurora, Gelo, Malva, Preamar</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 1.600 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+<article class="mat" id="dente-de-lodo" data-cat="criatura" data-pl="" data-q="dente-de-lodo dente_lodo saque de criaturas dente largo e liso da boca-de-lodo, o predador que dorme no fundo do mar. vende bem nas cidades. ">
+<header><h3>Dente-de-lodo</h3><span class="cat">Saque de criaturas</span>
+</header>
+<p class="desc">Dente largo e liso da Boca-de-lodo, o predador que dorme no fundo do mar. Vende bem nas cidades.</p>
+<h4>Quem solta</h4><ul>
+<li><b>Boca-de-lodo</b>: sempre, 1 a 2 unid.; ocorre em: Aurora, Gelo, Malva, Preamar</li>
+</ul>
+<h4>Comércio</h4><ul><li>preço-base 200 créditos (varia com o estoque da cidade e a reputação; vende-se por cerca de 82% do preço de mercado)</li><li>as lojas compram do jogador, mas não vendem: tem que ser achado ou fabricado</li><li>o mercado negro compra</li></ul>
+</article>
+</div></section>
+<p id="vazio" class="vazio" hidden>Nenhum material encontrado com esses filtros.</p>
+<aside class="nota"><h3>Sobre estes dados</h3>
+<ul>
+<li>A lista de materiais de cada corpo é a mesma que o jogo mostra no painel do mapa; a contagem de campos de veio vale para a disposição original do mundo. Mundos criados com outra semente mudam as posições e as quantidades, mas não quais materiais existem em cada tipo de corpo.</li>
+<li>Seiva e Esmeril são mundos protegidos, sem veios: o mapa do jogo lista ferro, carvão e cobre (rochas), marcados com “?” por não haver confirmação de coleta.</li>
+<li>Materiais que dependem de evento (brasalita em erupção, fulgurito em tempestade, fragmentos de colisão no cinturão) podem não estar no mapa quando você chegar.</li>
+</ul></aside>
+</div></main>
+<footer>
+  <div class="wrap">
+    <span>© Where We Live — jogo independente em desenvolvimento · Wiki gerada a partir da versão 1.0.461 do jogo</span>
+    <span>Achou algo errado ou faltando? <a href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Conte no nosso Discord</a>.</span>
+  </div>
+</footer>
+<script src="wiki.js"></script>
+</body>
+</html>

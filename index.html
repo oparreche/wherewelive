@@ -105,6 +105,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   .hero::after{background:linear-gradient(180deg,#060a16cc 0%,#060a1690 50%,var(--bg) 100%)}
 }
 @media(prefers-reduced-motion:reduce){.hero::before{animation:none}html{scroll-behavior:auto}}
+.wiki-m{display:none}@media(max-width:860px){.wiki-m{display:inline-flex}}
 </style>
 </head>
 <body>
@@ -117,9 +118,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       <a href="#naves">Naves</a>
       <a href="#mundos">Mundos</a>
       <a href="#combate">Combate</a>
+      <a href="wiki/">Wiki</a>
       <a href="#baixar">Como jogar</a>
     </nav>
     <div class="acts">
+      <a class="btn sm ghost wiki-m" href="wiki/">Wiki</a>
       <a class="btn sm ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Discord</a>
       <a class="btn sm" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar</a>
     </div>

@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planetas — Wiki Where We Live</title>
+<meta name="description" content="Que materiais existem em cada planeta, lua e asteroide do Where We Live, por sistema estelar.">
+<meta property="og:title" content="Planetas — Wiki Where We Live">
+<meta property="og:description" content="Que materiais existem em cada planeta, lua e asteroide do Where We Live, por sistema estelar.">
+<link rel="icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="../" aria-label="Where We Live — página inicial"><img src="../logo_horizontal.png" alt="Where We Live"></a>
+    <nav class="wnav"><a href="../">O jogo</a><span class="sep"></span><a href="index.html">Início</a><a href="materiais.html">Materiais</a><a href="planetas.html" class="on">Planetas</a></nav>
+    <div class="acts"><a class="btn sm ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Discord</a><a class="btn sm" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar</a></div>
+  </div>
+</header>
+
+<main><div class="wrap">
+<div class="topo"><div class="kicker">Wiki</div><h1>Planetas</h1><p class="lead">Cada sistema, cada corpo e o que dá para coletar nele (versão 1.0.461).</p></div>
+<div class="filtros"><label class="busca"><span>Buscar material ou corpo</span><input id="q" type="search" placeholder="ex.: prata, Duna, asteroide…" autocomplete="off"></label><button id="limpar" type="button" class="btn sm ghost">Limpar</button></div>
+<p id="cont" class="mut" aria-live="polite"></p>
+<section class="sistema"><h2>Sistema Aurora</h2><p class="mut">Aurora (mundo vivo), Cinzas (lava), Gelo e 4 luas</p><div class="cards corpos">
+<article class="corpo" id="aurora" data-q="aurora sistema aurora temperado minerio de ferro carvao cobre silicio gelo prata penumbrita pedra cristal madeira">
+<header><h3>Aurora</h3><span class="chip ">temperado</span></header>
+<p class="mut">raio 6.000 m · com atmosfera respirável · tem mar · 6 cavernas · vida no fundo do mar</p>
+<p class="mut">Criaturas: Rastejador, Zangão-de-pedra</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#carvao">Carvão</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#silicio">Silício</a></li>
+<li><a href="materiais.html#gelo">Gelo</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#penumbrita">Penumbrita</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+<li><a href="materiais.html#madeira">Madeira</a></li>
+</ul>
+</article>
+<article class="corpo" id="cinzas" data-q="cinzas sistema aurora de lava minerio de ferro cobre titanio ouro penumbrita brasalita pedra cristal madeira">
+<header><h3>Cinzas</h3><span class="chip ">de lava</span></header>
+<p class="mut">raio 5.000 m · mar de lava · 3 cavernas · erupções de lava</p>
+<p class="mut">Criaturas: Zangão-de-pedra, Espinhoso</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#titanio">Titânio</a></li>
+<li><a href="materiais.html#ouro">Ouro</a></li>
+<li><a href="materiais.html#penumbrita">Penumbrita</a></li>
+<li><a href="materiais.html#brasalita">Brasalita</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+<li><a href="materiais.html#madeira">Madeira</a></li>
+</ul>
+</article>
+<article class="corpo" id="gelo" data-q="gelo sistema aurora gelado minerio de ferro carvao gelo cobalto prata penumbrita lumigelo pedra cristal madeira">
+<header><h3>Gelo</h3><span class="chip ">gelado</span></header>
+<p class="mut">raio 5.500 m · tem mar · 4 cavernas · vida no fundo do mar</p>
+<p class="mut">Criaturas: Rastejador, Espinhoso</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#carvao">Carvão</a></li>
+<li><a href="materiais.html#gelo">Gelo</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#penumbrita">Penumbrita</a></li>
+<li><a href="materiais.html#lumigelo">Lumigelo</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+<li><a href="materiais.html#madeira">Madeira</a></li>
+</ul>
+</article>
+<article class="corpo" id="lua" data-q="lua sistema aurora lua rochosa minerio de ferro cobre silicio prata titanio vitrolita penumbrita pedra cristal">
+<header><h3>Lua</h3><span class="chip ">lua rochosa</span></header>
+<p class="mut">raio 1.400 m · 3 cavernas</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#silicio">Silício</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#titanio">Titânio</a></li>
+<li><a href="materiais.html#vitrolita">Vitrólita</a></li>
+<li><a href="materiais.html#penumbrita">Penumbrita</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="fobos" data-q="fobos sistema aurora lua rochosa minerio de ferro prata titanio vitrolita pedra cristal">
+<header><h3>Fobos</h3><span class="chip ">lua rochosa</span></header>
+<p class="mut">raio 800 m</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#titanio">Titânio</a></li>
+<li><a href="materiais.html#vitrolita">Vitrólita</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="brasa" data-q="brasa sistema aurora lua de lava minerio de ferro cobre ouro brasalita pedra cristal">
+<header><h3>Brasa</h3><span class="chip ">lua de lava</span></header>
+<p class="mut">raio 1.100 m</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#ouro">Ouro</a></li>
+<li><a href="materiais.html#brasalita">Brasalita</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="cristal" data-q="cristal sistema aurora lua gelada minerio de ferro carvao gelo cobalto prata lumigelo pedra cristal">
+<header><h3>Cristal</h3><span class="chip ">lua gelada</span></header>
+<p class="mut">raio 1.200 m</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#carvao">Carvão</a></li>
+<li><a href="materiais.html#gelo">Gelo</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#lumigelo">Lumigelo</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+</div></section>
+<section class="sistema"><h2>Sistema Ônix</h2><p class="mut">Duna (deserto), Mesa (cânions), Malva (mundo vivo, flora roxa), Titã (gigante gasoso com anéis), 2 luas, cinturão com 8 asteroides e 5 estações</p><div class="cards corpos">
+<article class="corpo" id="duna" data-q="duna sistema onix deserto minerio de ferro cobre silicio prata titanio ouro penumbrita fulgurito pedra cristal madeira">
+<header><h3>Duna</h3><span class="chip ">deserto</span></header>
+<p class="mut">raio 5.200 m · 6 cavernas · tempestades de areia</p>
+<p class="mut">Criaturas: Zangão-de-pedra, Rastejador</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#silicio">Silício</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#titanio">Titânio</a></li>
+<li><a href="materiais.html#ouro">Ouro</a></li>
+<li><a href="materiais.html#penumbrita">Penumbrita</a></li>
+<li><a href="materiais.html#fulgurito">Fulgurito</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+<li><a href="materiais.html#madeira">Madeira</a></li>
+</ul>
+</article>
+<article class="corpo" id="mesa" data-q="mesa sistema onix deserto minerio de ferro cobre silicio prata titanio ouro penumbrita fulgurito pedra cristal madeira">
+<header><h3>Mesa</h3><span class="chip ">deserto</span></header>
+<p class="mut">raio 3.800 m · 4 cavernas · tempestades de areia</p>
+<p class="mut">Criaturas: Zangão-de-pedra, Espinhoso</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#silicio">Silício</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#titanio">Titânio</a></li>
+<li><a href="materiais.html#ouro">Ouro</a></li>
+<li><a href="materiais.html#penumbrita">Penumbrita</a></li>
+<li><a href="materiais.html#fulgurito">Fulgurito</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+<li><a href="materiais.html#madeira">Madeira</a></li>
+</ul>
+</article>
+<article class="corpo" id="tita" data-q="tita sistema onix gigante gasoso helio-3">
+<header><h3>Titã</h3><span class="chip ">gigante gasoso</span></header>
+<p class="mut">raio 26.000 m</p>
+<p>Sem chão: só o gás. O <a href="materiais.html#helio-3">Hélio-3</a> é colhido em voo pelo Coletor atmosférico.</p>
+</article>
+<article class="corpo" id="dente" data-q="dente sistema onix lua rochosa minerio de ferro cobre silicio prata titanio vitrolita pedra cristal">
+<header><h3>Dente</h3><span class="chip ">lua rochosa</span></header>
+<p class="mut">raio 1.000 m</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#silicio">Silício</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#titanio">Titânio</a></li>
+<li><a href="materiais.html#vitrolita">Vitrólita</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="po" data-q="po sistema onix lua gelada gelo cobalto prata lumigelo pedra cristal">
+<header><h3>Pó</h3><span class="chip ">lua gelada</span></header>
+<p class="mut">raio 650 m</p>
+<ul class="lm">
+<li><a href="materiais.html#gelo">Gelo</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#lumigelo">Lumigelo</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="brita" data-q="brita sistema onix asteroide minerio de ferro cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Brita</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 420 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="seixo" data-q="seixo sistema onix asteroide minerio de ferro cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Seixo</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 260 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="lasca" data-q="lasca sistema onix asteroide minerio de ferro cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Lasca</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 180 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="bloco" data-q="bloco sistema onix asteroide minerio de ferro cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Bloco</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 340 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="cascalho" data-q="cascalho sistema onix asteroide minerio de ferro cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Cascalho</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 150 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="mo" data-q="mo sistema onix asteroide minerio de ferro cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Mó</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 480 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="ponta" data-q="ponta sistema onix asteroide minerio de ferro cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Ponta</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 220 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="dorso" data-q="dorso sistema onix asteroide minerio de ferro gelo cobalto prata platina iridio nucleita pedra cristal">
+<header><h3>Dorso</h3><span class="chip ">asteroide</span></header>
+<p class="mut">raio 300 m · cinturão de asteroides</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#gelo">Gelo</a></li>
+<li><a href="materiais.html#cobalto">Cobalto</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#platina">Platina</a></li>
+<li><a href="materiais.html#iridio">Irídio</a> <i>(ocasional)</i></li>
+<li><a href="materiais.html#nucleita">Nucleíta</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+</ul>
+</article>
+<article class="corpo" id="malva" data-q="malva sistema onix temperado minerio de ferro carvao cobre silicio gelo prata penumbrita pedra cristal madeira">
+<header><h3>Malva</h3><span class="chip ">temperado</span></header>
+<p class="mut">raio 4.800 m · com atmosfera respirável · tem mar · 3 cavernas · vida no fundo do mar</p>
+<p class="mut">Criaturas: Rastejador</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#carvao">Carvão</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#silicio">Silício</a></li>
+<li><a href="materiais.html#gelo">Gelo</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#penumbrita">Penumbrita</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+<li><a href="materiais.html#madeira">Madeira</a></li>
+</ul>
+</article>
+</div></section>
+<section class="sistema"><h2>Sistema Cobalto</h2><p class="mut">Além do Acordo. Mundo oceânico, sem colônia. Luas ainda sem mapa</p><div class="cards corpos">
+<article class="corpo" id="preamar" data-q="preamar sistema cobalto temperado minerio de ferro carvao cobre silicio gelo prata pedra cristal madeira">
+<header><h3>Preamar</h3><span class="chip ">temperado</span></header>
+<p class="mut">raio 5.200 m · com atmosfera respirável · tem mar · vida no fundo do mar</p>
+<p class="mut">Criaturas: Rastejador, Zangão-de-pedra</p>
+<ul class="lm">
+<li><a href="materiais.html#minerio-de-ferro">Minério de ferro</a></li>
+<li><a href="materiais.html#carvao">Carvão</a></li>
+<li><a href="materiais.html#cobre">Cobre</a></li>
+<li><a href="materiais.html#silicio">Silício</a></li>
+<li><a href="materiais.html#gelo">Gelo</a></li>
+<li><a href="materiais.html#prata">Prata</a></li>
+<li><a href="materiais.html#pedra">Pedra</a></li>
+<li><a href="materiais.html#cristal">Cristal</a></li>
+<li><a href="materiais.html#madeira">Madeira</a></li>
+</ul>
+</article>
+</div></section>
+<section class="sistema"><h2>Sistema Âmbar</h2><p class="mut">Mundo protegido. Seiva, sob os Vigias do Acordo. Estação Vigília · <b>mundo protegido</b></p><div class="cards corpos">
+<article class="corpo" id="seiva" data-q="seiva sistema ambar temperado minerio de ferro carvao cobre pedra cristal madeira">
+<header><h3>Seiva</h3><span class="chip ">temperado</span></header>
+<p class="mut">raio 4.200 m · com atmosfera respirável</p>
+<p class="mut">Mundo protegido, sem veios de minério. O mapa do jogo lista: Minério de ferro, Carvão, Cobre, Pedra, Cristal, Madeira.</p>
+</article>
+</div></section>
+<section class="sistema"><h2>Sistema Cromo</h2><p class="mut">Mundo protegido. Esmeril, da Coletividade Cromo: só se desce em Corpo de visita. Estação Limiar · <b>mundo protegido</b></p><div class="cards corpos">
+<article class="corpo" id="esmeril" data-q="esmeril sistema cromo temperado minerio de ferro carvao cobre pedra cristal">
+<header><h3>Esmeril</h3><span class="chip ">temperado</span></header>
+<p class="mut">raio 3.600 m</p>
+<p class="mut">Mundo protegido, sem veios de minério. O mapa do jogo lista: Minério de ferro, Carvão, Cobre, Pedra, Cristal.</p>
+</article>
+</div></section>
+<p id="vazio" class="vazio" hidden>Nada encontrado.</p>
+<aside class="nota"><h3>Sobre estes dados</h3>
+<ul>
+<li>A lista de materiais de cada corpo é a mesma que o jogo mostra no painel do mapa; a contagem de campos de veio vale para a disposição original do mundo. Mundos criados com outra semente mudam as posições e as quantidades, mas não quais materiais existem em cada tipo de corpo.</li>
+<li>Seiva e Esmeril são mundos protegidos, sem veios: o mapa do jogo lista ferro, carvão e cobre (rochas), marcados com “?” por não haver confirmação de coleta.</li>
+<li>Materiais que dependem de evento (brasalita em erupção, fulgurito em tempestade, fragmentos de colisão no cinturão) podem não estar no mapa quando você chegar.</li>
+</ul></aside>
+</div></main>
+<footer>
+  <div class="wrap">
+    <span>© Where We Live — jogo independente em desenvolvimento · Wiki gerada a partir da versão 1.0.461 do jogo</span>
+    <span>Achou algo errado ou faltando? <a href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Conte no nosso Discord</a>.</span>
+  </div>
+</footer>
+<script src="wiki.js"></script>
+</body>
+</html>
