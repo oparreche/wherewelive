@@ -142,7 +142,12 @@ dl.kv dd{margin:0;color:#e4ebff}
 .ferro h4{font-size:16px;color:var(--cy);margin:16px 0 4px;letter-spacing:.08em}
 .ferro ul{padding-left:20px}
 .ferro li{margin:5px 0}
+.tb td:last-child{min-width:180px}
+.tb.kvt td:last-child{min-width:0}
+.tb-wrap{max-width:100%;-webkit-overflow-scrolling:touch}
 @media(max-width:700px){
+  .tb-wrap{box-shadow:inset -14px 0 12px -12px #000a}
+  .tb th,.tb td{padding:6px 8px;font-size:13px}
   .cards.naves{grid-template-columns:1fr}
   dl.kv{grid-template-columns:1fr;gap:0}
   dl.kv dt{margin-top:6px}
