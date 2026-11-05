@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naves e veículos — Wiki Where We Live</title>
+<meta name="description" content="Naves e veículos prontos do Where We Live: preço, onde comprar, blocos, massa, propulsores, carga e velocidade, mais como funciona o ferro-velho.">
+<meta property="og:title" content="Naves e veículos — Wiki Where We Live">
+<meta property="og:description" content="Naves e veículos prontos do Where We Live: preço, onde comprar, blocos, massa, propulsores, carga e velocidade, mais como funciona o ferro-velho.">
+<link rel="icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="../" aria-label="Where We Live — página inicial"><img src="../logo_horizontal.png" alt="Where We Live"></a>
+    <nav class="wnav"><a href="../">O jogo</a><span class="sep"></span><a href="index.html">Início</a><a href="materiais.html">Materiais</a><a href="planetas.html">Planetas</a><a href="blocos.html">Blocos</a><a href="receitas.html">Receitas</a><a href="naves.html" class="on">Naves</a></nav>
+    <div class="acts"><a class="btn sm ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Discord</a><a class="btn sm" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar</a></div>
+  </div>
+</header>
+
+<main><div class="wrap">
+<div class="topo"><div class="kicker">Wiki</div><h1>Naves e veículos</h1><p class="lead">22 naves e 19 veículos terrestres e hovers. Os preços são os da economia atual (naves e veículos prontos custam 125× o valor-base). As miniaturas são geradas do projeto de cada uma. Versão do jogo: 1.0.463.</p></div>
+<details class="visao" open id="ferro-velho"><summary>Ferro-velho: como funciona a ficha</summary><div class="ferro"><p>O ferro-velho é um <b>local de comércio, sem inimigos</b>. Em vez de comprar uma nave pronta, você compra uma <b>ficha</b> por 20.000 créditos e recebe uma <b>unidade sorteada</b>: um veículo ou nave que não está totalmente funcional (falta propulsor, motor…). A ficha vale em qualquer ferro-velho.<ul><li><b>Valor sorteado:</b> cada ficha entrega uma unidade de uma faixa (tabela abaixo). O “valor prometido” é o valor de referência da unidade, bem acima do preço da ficha.</li><li><b>Reconstruir:</b> você pode reconstruir a nave sozinho, mas sem a facilidade do mecânico da cidade: precisa completá-la e <b>registrar o chassi</b> (salvar o projeto) para depois usar o mecânico. A unidade ganha núcleo ao registrar o chassi.</li><li><b>Desmontar rende:</b> desmontar a unidade rende cerca de <b>1,57× o valor prometido da unidade</b>. Com uma ficha de 20.000, o valor prometido médio é de cerca de 51.875 e o rendimento médio, de cerca de <b>81.444</b> (estimativa), um lucro médio de cerca de <b>61.444</b> por ficha.</li><li><b>Estoque:</b> cada ferro-velho tem 3 unidades em estoque, com limite de 2 (significado exato do limite não confirmado no código) e reposição a cada 12 h. A ficha pode ser devolvida por 10.000 créditos.</li><li><b>Nos planetas:</b> só naves pequenas e veículos.</li><li><b>Naves grandes:</b> só no espaço, no <b>pátio orbital</b> do Cascalho (órbita de Ônix): ficha de 80.000 créditos, 2 berços, estoque de 2, limite de 1, e a unidade é rebocada em até 48 h. Faixas abaixo.</li></ul><h4>Ferro-velho dos planetas (ficha 20.000)</h4><div class="tb-wrap"><table class="tb"><thead><tr><th>Faixa</th><th>Chance</th><th>Valor prometido</th><th>Pode vir</th></tr></thead><tbody><tr><th>Sucata</th><td>25%</td><td>30.000 a 38.000</td><td>Picape, Jipe, Rover de exploração, Caminhão, Ônibus</td></tr><tr><th>Comum</th><td>40%</td><td>39.000 a 53.000</td><td>Pardal, Libélula, Escaravelho</td></tr><tr><th>Boa</th><td>25%</td><td>57.000 a 70.000</td><td>Pardal, Libélula, Escaravelho</td></tr><tr><th>Rara</th><td>10%</td><td>82.000 a 100.000</td><td>Pardal, Libélula, Escaravelho</td></tr></tbody></table></div><h4>Pátio orbital do Cascalho (ficha 80.000)</h4><div class="tb-wrap"><table class="tb"><thead><tr><th>Faixa</th><th>Chance</th><th>Valor prometido</th><th>Pode vir</th></tr></thead><tbody><tr><th>Comum</th><td>40%</td><td>90.000 a 130.000</td><td>Gaivota, Dardo, Raia, Mula, Gancho</td></tr><tr><th>Boa</th><td>35%</td><td>130.000 a 190.000</td><td>Falcão, Courier, Atlas, Broca, Tartaruga, Garça, Pelicano</td></tr><tr><th>Rara</th><td>20%</td><td>190.000 a 250.000</td><td>Falcão, Courier, Atlas, Broca, Tartaruga, Garça, Pelicano, Sentinela, Fortaleza, Cometa</td></tr><tr><th>Achado</th><td>5%</td><td>250.000 a 350.000</td><td>Colosso, Bastião, Samaritana, Leviatã</td></tr></tbody></table></div><p class="mut">O rendimento de 1,57× e o lucro por ficha são estimativas feitas com as chances e faixas acima; o pátio orbital não foi conferido com o mesmo rigor. O valor exato de cada desmontagem varia com o que a unidade ainda tem.</p></div></details>
+<div class="filtros" id="filtros">
+<label class="busca"><span>Buscar</span><input id="q" type="search" placeholder="ex.: cargueiro, hover, Courier…" autocomplete="off"></label>
+<label><span>Tipo</span><select id="tipo" data-attr="tipo" data-param="tipo"><option value="">Todos</option><option value="pequena">Nave pequena (até 40 m)</option><option value="media">Nave média (até 55 m)</option><option value="grande">Nave grande (mais de 55 m)</option><option value="hover">Hover</option><option value="carro">Carro</option></select></label>
+<label><span>Onde obter</span><select id="onde" data-attr="onde" data-param="onde"><option value="">Qualquer lugar</option><option value="cidade">Cidades (à vista)</option><option value="orbita">Estação espacial (à vista)</option><option value="ferro">Ferro-velho dos planetas</option><option value="orbital">Pátio orbital do Cascalho</option></select></label>
+<button id="limpar" type="button" class="btn sm ghost">Limpar</button>
+</div>
+<p id="cont" class="mut" aria-live="polite"></p>
+<section class="grupo" data-grupo="naves"><h2>Naves</h2><p class="mut">Compradas à vista nas cidades da corporação ou na estação espacial; algumas também saem do ferro-velho.</p><div class="cards naves">
+<article class="nave" id="n-pardal" data-q="pardal nave pequena utilitario compacto de asas curtas. patio de naves das cidades da corporacao, a vista ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="pequena" data-onde="cidade ferro">
+<img class="thumb" src="img/n/pardal.webp" width="480" height="267" loading="lazy" alt="Miniatura de Pardal">
+<header><h3>Pardal</h3><span class="cat">Nave pequena</span></header>
+<p class="desc">Utilitário compacto de asas curtas.</p>
+<p class="price"><b>1.000.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>236</dd><dt>Massa</dt><dd>255,5</dd><dt>Dimensões</dt><dd>30 × 30 × 20 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>16× atmosférico grande</dd><dt>Empuxo total</dt><dd>96 (índice do jogo)</dd><dt>Giroscópios</dt><dd>4</dd><dt>Aceleração na atmosfera</dt><dd>14,1 m/s² à frente · 42,3 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,57 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>240</dd><dt>Camas</dt><dd>1</dd><dt>Portas</dt><dd>2</dd></dl></details>
+</article>
+<article class="nave" id="n-escaravelho" data-q="escaravelho nave pequena blindado compacto de casco largo. patio de naves das cidades da corporacao, a vista ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="pequena" data-onde="cidade ferro">
+<img class="thumb" src="img/n/escaravelho.webp" width="480" height="267" loading="lazy" alt="Miniatura de Escaravelho">
+<header><h3>Escaravelho</h3><span class="cat">Nave pequena</span></header>
+<p class="desc">Blindado compacto de casco largo.</p>
+<p class="price"><b>1.125.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>250</dd><dt>Massa</dt><dd>268,4</dd><dt>Dimensões</dt><dd>25 × 20 × 25 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>16× atmosférico grande</dd><dt>Empuxo total</dt><dd>96 (índice do jogo)</dd><dt>Giroscópios</dt><dd>4</dd><dt>Aceleração na atmosfera</dt><dd>13,4 m/s² à frente · 40,2 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,49 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>240</dd><dt>Camas</dt><dd>1</dd><dt>Portas</dt><dd>2</dd></dl></details>
+</article>
+<article class="nave" id="n-libelula" data-q="libelula nave pequena aeronave agil de asas finas. patio de naves das cidades da corporacao, a vista ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="pequena" data-onde="cidade ferro">
+<img class="thumb" src="img/n/libelula.webp" width="480" height="267" loading="lazy" alt="Miniatura de Libélula">
+<header><h3>Libélula</h3><span class="cat">Nave pequena</span></header>
+<p class="desc">Aeronave ágil de asas finas.</p>
+<p class="price"><b>1.187.500 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>245</dd><dt>Massa</dt><dd>270</dd><dt>Dimensões</dt><dd>32,5 × 40 × 17,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>16× atmosférico grande</dd><dt>Empuxo total</dt><dd>96 (índice do jogo)</dd><dt>Giroscópios</dt><dd>4</dd><dt>Aceleração na atmosfera</dt><dd>13,3 m/s² à frente · 40 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,48 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>240</dd><dt>Camas</dt><dd>1</dd><dt>Portas</dt><dd>2</dd></dl></details>
+</article>
+<article class="nave" id="n-dardo" data-q="dardo nave media caca de asa delta. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa comum" data-tipo="media" data-onde="cidade orbital">
+<img class="thumb" src="img/n/dardo.webp" width="480" height="267" loading="lazy" alt="Miniatura de Dardo">
+<header><h3>Dardo</h3><span class="cat">Nave média</span></header>
+<p class="desc">Caça de asa delta.</p>
+<p class="price"><b>1.750.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Comum</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>496</dd><dt>Massa</dt><dd>494,6</dd><dt>Dimensões</dt><dd>42,5 × 45 × 25 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>24× atmosférico grande</dd><dt>Empuxo total</dt><dd>144 (índice do jogo)</dd><dt>Giroscópios</dt><dd>5</dd><dt>Aceleração na atmosfera</dt><dd>14,6 m/s² à frente · 36,4 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,01 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>sem containers</dd><dt>Bateria</dt><dd>240</dd><dt>Portas</dt><dd>3</dd></dl></details>
+</article>
+<article class="nave" id="n-gancho" data-q="gancho nave grande rebocador de garras para puxar cascos e cargas. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa comum" data-tipo="grande" data-onde="cidade orbital">
+<img class="thumb" src="img/n/gancho.webp" width="480" height="267" loading="lazy" alt="Miniatura de Gancho">
+<header><h3>Gancho</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Rebocador de garras para puxar cascos e cargas.</p>
+<p class="price"><b>1.875.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Comum</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>656</dd><dt>Massa</dt><dd>878,6</dd><dt>Dimensões</dt><dd>67,5 × 25 × 30 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>36× atmosférico grande</dd><dt>Empuxo total</dt><dd>216 (índice do jogo)</dd><dt>Giroscópios</dt><dd>10</dd><dt>Aceleração na atmosfera</dt><dd>12,3 m/s² à frente · 32,8 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,14 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>360</dd><dt>Camas</dt><dd>2</dd><dt>Portas</dt><dd>3</dd></dl></details>
+</article>
+<article class="nave" id="n-mula" data-q="mula nave media cavalo de carga com conteineres. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa comum" data-tipo="media" data-onde="cidade orbital">
+<img class="thumb" src="img/n/mula.webp" width="480" height="267" loading="lazy" alt="Miniatura de Mula">
+<header><h3>Mula</h3><span class="cat">Nave média</span></header>
+<p class="desc">Cavalo de carga com contêineres.</p>
+<p class="price"><b>2.000.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Comum</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>619</dd><dt>Massa</dt><dd>727,2</dd><dt>Dimensões</dt><dd>55 × 25 × 25 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>30× atmosférico grande</dd><dt>Empuxo total</dt><dd>180 (índice do jogo)</dd><dt>Giroscópios</dt><dd>8</dd><dt>Aceleração na atmosfera</dt><dd>12,4 m/s² à frente · 32,2 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,1 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>98.000 espaços de container</dd><dt>Bateria</dt><dd>300</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd></dl></details>
+</article>
+<article class="nave" id="n-courier" data-q="courier nave grande transporte esguio com casulos de motor. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa boa / rara" data-tipo="grande" data-onde="cidade orbital">
+<img class="thumb" src="img/n/courier.webp" width="480" height="267" loading="lazy" alt="Miniatura de Courier">
+<header><h3>Courier</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Transporte esguio com casulos de motor.</p>
+<p class="price"><b>2.250.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Boa / Rara</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>898</dd><dt>Massa</dt><dd>777,5</dd><dt>Dimensões</dt><dd>62,5 × 35 × 30 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>25× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>150 (índice do jogo)</dd><dt>Giroscópios</dt><dd>9</dd><dt>Aceleração na atmosfera</dt><dd>10,3 m/s² à frente · 25,7 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>10,3 m/s² à frente · 25,7 m/s² para cima</dd><dt>Giro</dt><dd>1,16 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>2.000 espaços de container</dd><dt>Bateria</dt><dd>300</dd><dt>Tanque de hidrogênio</dt><dd>240</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-gaivota" data-q="gaivota nave pequena asas em v invertido. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa comum" data-tipo="pequena" data-onde="cidade orbital">
+<img class="thumb" src="img/n/gaivota.webp" width="480" height="267" loading="lazy" alt="Miniatura de Gaivota">
+<header><h3>Gaivota</h3><span class="cat">Nave pequena</span></header>
+<p class="desc">Asas em V invertido.</p>
+<p class="price"><b>2.250.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Comum</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>521</dd><dt>Massa</dt><dd>525,4</dd><dt>Dimensões</dt><dd>37,5 × 50 × 27,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>21× atmosférico grande</dd><dt>Empuxo total</dt><dd>126 (índice do jogo)</dd><dt>Giroscópios</dt><dd>7</dd><dt>Aceleração na atmosfera</dt><dd>13,7 m/s² à frente · 24 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,33 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>240</dd><dt>Camas</dt><dd>1</dd><dt>Portas</dt><dd>2</dd></dl></details>
+</article>
+<article class="nave" id="n-raia" data-q="raia nave media asa voadora. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa comum" data-tipo="media" data-onde="cidade orbital">
+<img class="thumb" src="img/n/raia.webp" width="480" height="267" loading="lazy" alt="Miniatura de Raia">
+<header><h3>Raia</h3><span class="cat">Nave média</span></header>
+<p class="desc">Asa voadora.</p>
+<p class="price"><b>2.500.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Comum</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>684</dd><dt>Massa</dt><dd>706,1</dd><dt>Dimensões</dt><dd>42,5 × 65 × 27,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>30× atmosférico grande</dd><dt>Empuxo total</dt><dd>180 (índice do jogo)</dd><dt>Giroscópios</dt><dd>9</dd><dt>Aceleração na atmosfera</dt><dd>12,7 m/s² à frente · 33,1 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>0 m/s² à frente · 0 m/s² para cima</dd><dt>Giro</dt><dd>1,27 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>300</dd><dt>Camas</dt><dd>2</dd><dt>Portas</dt><dd>3</dd></dl></details>
+</article>
+<article class="nave" id="n-falcao" data-q="falcao nave media interceptador de asas avancadas. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa boa / rara" data-tipo="media" data-onde="cidade orbital">
+<img class="thumb" src="img/n/falcao.webp" width="480" height="267" loading="lazy" alt="Miniatura de Falcão">
+<header><h3>Falcão</h3><span class="cat">Nave média</span></header>
+<p class="desc">Interceptador de asas avançadas.</p>
+<p class="price"><b>2.750.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Boa / Rara</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>823</dd><dt>Massa</dt><dd>756,7</dd><dt>Dimensões</dt><dd>52,5 × 60 × 25 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>24× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>144 (índice do jogo)</dd><dt>Giroscópios</dt><dd>9</dd><dt>Aceleração na atmosfera</dt><dd>10,6 m/s² à frente · 26,4 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>10,6 m/s² à frente · 26,4 m/s² para cima</dd><dt>Giro</dt><dd>1,19 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>300</dd><dt>Tanque de hidrogênio</dt><dd>400</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>3</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-garca" data-q="garca nave grande transporte de passageiros com salao e janelas. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa boa / rara" data-tipo="grande" data-onde="cidade orbital">
+<img class="thumb" src="img/n/garca.webp" width="480" height="267" loading="lazy" alt="Miniatura de Garça">
+<header><h3>Garça</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Transporte de passageiros com salão e janelas.</p>
+<p class="price"><b>3.000.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Boa / Rara</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.244</dd><dt>Massa</dt><dd>1131,9</dd><dt>Dimensões</dt><dd>62,5 × 40 × 32,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>32× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>192 (índice do jogo)</dd><dt>Giroscópios</dt><dd>12</dd><dt>Aceleração na atmosfera</dt><dd>10,6 m/s² à frente · 23 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>10,6 m/s² à frente · 23 m/s² para cima</dd><dt>Giro</dt><dd>1,06 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>420</dd><dt>Tanque de hidrogênio</dt><dd>320</dd><dt>Camas</dt><dd>2</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-atlas" data-q="atlas nave media cargueiro blindado. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa boa / rara" data-tipo="media" data-onde="cidade orbital">
+<img class="thumb" src="img/n/atlas.webp" width="480" height="267" loading="lazy" alt="Miniatura de Atlas">
+<header><h3>Atlas</h3><span class="cat">Nave média</span></header>
+<p class="desc">Cargueiro blindado.</p>
+<p class="price"><b>3.250.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Boa / Rara</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.089</dd><dt>Massa</dt><dd>983,7</dd><dt>Dimensões</dt><dd>52,5 × 40 × 32,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>32× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>192 (índice do jogo)</dd><dt>Giroscópios</dt><dd>11</dd><dt>Aceleração na atmosfera</dt><dd>10,2 m/s² à frente · 28,5 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>10,2 m/s² à frente · 28,5 m/s² para cima</dd><dt>Giro</dt><dd>1,12 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>360</dd><dt>Tanque de hidrogênio</dt><dd>320</dd><dt>Camas</dt><dd>2</dd><dt>Portas</dt><dd>3</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-broca" data-q="broca nave media minerador com brocas na proa e tremonha. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa boa / rara" data-tipo="media" data-onde="cidade orbital">
+<img class="thumb" src="img/n/broca.webp" width="480" height="267" loading="lazy" alt="Miniatura de Broca">
+<header><h3>Broca</h3><span class="cat">Nave média</span></header>
+<p class="desc">Minerador com brocas na proa e tremonha.</p>
+<p class="price"><b>3.375.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Boa / Rara</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.167</dd><dt>Massa</dt><dd>1098,3</dd><dt>Dimensões</dt><dd>55 × 40 × 35 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>31× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>186 (índice do jogo)</dd><dt>Giroscópios</dt><dd>12</dd><dt>Aceleração na atmosfera</dt><dd>10,9 m/s² à frente · 21,9 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>10,9 m/s² à frente · 21,9 m/s² para cima</dd><dt>Giro</dt><dd>1,09 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>8.000 espaços de container</dd><dt>Bateria</dt><dd>420</dd><dt>Tanque de hidrogênio</dt><dd>320</dd><dt>Camas</dt><dd>1</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-pelicano" data-q="pelicano nave grande cargueiro de casco largo. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa boa / rara" data-tipo="grande" data-onde="cidade orbital">
+<img class="thumb" src="img/n/pelicano.webp" width="480" height="267" loading="lazy" alt="Miniatura de Pelicano">
+<header><h3>Pelicano</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Cargueiro de casco largo.</p>
+<p class="price"><b>3.500.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Boa / Rara</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.370</dd><dt>Massa</dt><dd>1250,9</dd><dt>Dimensões</dt><dd>60 × 45 × 37,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>40× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>240 (índice do jogo)</dd><dt>Giroscópios</dt><dd>14</dd><dt>Aceleração na atmosfera</dt><dd>11,2 m/s² à frente · 27,2 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>11,2 m/s² à frente · 27,2 m/s² para cima</dd><dt>Giro</dt><dd>1,12 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>420</dd><dt>Tanque de hidrogênio</dt><dd>640</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-tartaruga" data-q="tartaruga nave grande casco blindado e abaulado. patio de naves das cidades da corporacao, a vista patio orbital do cascalho (onix), por ficha: faixa boa / rara" data-tipo="grande" data-onde="cidade orbital">
+<img class="thumb" src="img/n/tartaruga.webp" width="480" height="267" loading="lazy" alt="Miniatura de Tartaruga">
+<header><h3>Tartaruga</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Casco blindado e abaulado.</p>
+<p class="price"><b>3.750.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Pátio de naves das cidades da corporação, à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Boa / Rara</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.237</dd><dt>Massa</dt><dd>1116,2</dd><dt>Dimensões</dt><dd>62,5 × 45 × 32,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>39× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>234 (índice do jogo)</dd><dt>Giroscópios</dt><dd>12</dd><dt>Aceleração na atmosfera</dt><dd>12,5 m/s² à frente · 28,7 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>12,5 m/s² à frente · 28,7 m/s² para cima</dd><dt>Giro</dt><dd>1,08 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>2.000 espaços de container</dd><dt>Bateria</dt><dd>420</dd><dt>Tanque de hidrogênio</dt><dd>640</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-cometa" data-q="cometa nave grande corredor de nacelas gemeas. estacao espacial (patio de naves), a vista patio orbital do cascalho (onix), por ficha: faixa rara" data-tipo="grande" data-onde="orbita orbital">
+<img class="thumb" src="img/n/cometa.webp" width="480" height="267" loading="lazy" alt="Miniatura de Cometa">
+<header><h3>Cometa</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Corredor de nacelas gêmeas.</p>
+<p class="price"><b>4.500.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Estação espacial (pátio de naves), à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Rara</li></ul>
+<p class="aviso">Aviso do jogo: na atmosfera o empuxo para cima (1 m/s²) não vence o peso (20): a nave não decola (voa no espaço)</p>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.016</dd><dt>Massa</dt><dd>1102,4</dd><dt>Dimensões</dt><dd>60 × 40 × 30 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>33× de íon grande</dd><dt>Empuxo total</dt><dd>198 (índice do jogo)</dd><dt>Giroscópios</dt><dd>14</dd><dt>Aceleração na atmosfera</dt><dd>1,52 m/s² à frente · 1,09 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>7,62 m/s² à frente · 5,44 m/s² para cima</dd><dt>Giro</dt><dd>1,27 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>2.000 espaços de container</dd><dt>Bateria</dt><dd>420</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-sentinela" data-q="sentinela nave grande patrulha rapida de nacelas com canhoes. estacao espacial (patio de naves), a vista patio orbital do cascalho (onix), por ficha: faixa rara" data-tipo="grande" data-onde="orbita orbital">
+<img class="thumb" src="img/n/sentinela.webp" width="480" height="267" loading="lazy" alt="Miniatura de Sentinela">
+<header><h3>Sentinela</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Patrulha rápida de nacelas com canhões.</p>
+<p class="price"><b>5.000.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Estação espacial (pátio de naves), à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Rara</li></ul>
+<p class="aviso">Aviso do jogo: na atmosfera o empuxo para cima (1 m/s²) não vence o peso (20): a nave não decola (voa no espaço)</p>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>862</dd><dt>Massa</dt><dd>828</dd><dt>Dimensões</dt><dd>60 × 35 × 27,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>26× de íon grande</dd><dt>Empuxo total</dt><dd>156 (índice do jogo)</dd><dt>Giroscópios</dt><dd>9</dd><dt>Aceleração na atmosfera</dt><dd>1,45 m/s² à frente · 1,16 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>7,25 m/s² à frente · 5,8 m/s² para cima</dd><dt>Giro</dt><dd>1,09 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>2.000 espaços de container</dd><dt>Bateria</dt><dd>360</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-bastiao" data-q="bastiao nave grande fragata de assalto com nacelas. estacao espacial (patio de naves), a vista patio orbital do cascalho (onix), por ficha: faixa achado" data-tipo="grande" data-onde="orbita orbital">
+<img class="thumb" src="img/n/bastiao.webp" width="480" height="267" loading="lazy" alt="Miniatura de Bastião">
+<header><h3>Bastião</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Fragata de assalto com nacelas.</p>
+<p class="price"><b>5.250.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Estação espacial (pátio de naves), à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Achado</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.358</dd><dt>Massa</dt><dd>1275,2</dd><dt>Dimensões</dt><dd>75 × 45 × 37,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>42× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>252 (índice do jogo)</dd><dt>Giroscópios</dt><dd>15</dd><dt>Aceleração na atmosfera</dt><dd>12,5 m/s² à frente · 26,7 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>12,5 m/s² à frente · 26,7 m/s² para cima</dd><dt>Giro</dt><dd>1,18 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>2.000 espaços de container</dd><dt>Bateria</dt><dd>480</dd><dt>Tanque de hidrogênio</dt><dd>1.360</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-fortaleza" data-q="fortaleza nave media canhoneira blindada com esponsoes. estacao espacial (patio de naves), a vista patio orbital do cascalho (onix), por ficha: faixa rara" data-tipo="media" data-onde="orbita orbital">
+<img class="thumb" src="img/n/fortaleza.webp" width="480" height="267" loading="lazy" alt="Miniatura de Fortaleza">
+<header><h3>Fortaleza</h3><span class="cat">Nave média</span></header>
+<p class="desc">Canhoneira blindada com esponsões.</p>
+<p class="price"><b>5.500.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Estação espacial (pátio de naves), à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Rara</li></ul>
+<p class="aviso">Aviso do jogo: na atmosfera o empuxo para cima (1 m/s²) não vence o peso (20): a nave não decola (voa no espaço)</p>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.050</dd><dt>Massa</dt><dd>1041,6</dd><dt>Dimensões</dt><dd>52,5 × 30 × 35 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>31× de íon grande</dd><dt>Empuxo total</dt><dd>186 (índice do jogo)</dd><dt>Giroscópios</dt><dd>11</dd><dt>Aceleração na atmosfera</dt><dd>1,38 m/s² à frente · 1,15 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>6,91 m/s² à frente · 5,76 m/s² para cima</dd><dt>Giro</dt><dd>1,06 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>2.000 espaços de container</dd><dt>Bateria</dt><dd>360</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-samaritana" data-q="samaritana nave grande hospital voador com enfermaria e cruz vermelha. estacao espacial (patio de naves), a vista patio orbital do cascalho (onix), por ficha: faixa achado" data-tipo="grande" data-onde="orbita orbital">
+<img class="thumb" src="img/n/samaritana.webp" width="480" height="267" loading="lazy" alt="Miniatura de Samaritana">
+<header><h3>Samaritana</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Hospital voador com enfermaria e cruz vermelha.</p>
+<p class="price"><b>5.750.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Estação espacial (pátio de naves), à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Achado</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.641</dd><dt>Massa</dt><dd>1504,8</dd><dt>Dimensões</dt><dd>70 × 45 × 40 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>50× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>300 (índice do jogo)</dd><dt>Giroscópios</dt><dd>17</dd><dt>Aceleração na atmosfera</dt><dd>12 m/s² à frente · 27,9 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>12 m/s² à frente · 27,9 m/s² para cima</dd><dt>Giro</dt><dd>1,13 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>1.000 espaços de container</dd><dt>Bateria</dt><dd>540</dd><dt>Tanque de hidrogênio</dt><dd>640</dd><dt>Camas</dt><dd>14</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-colosso" data-q="colosso nave grande fragata blindada de ion. estacao espacial (patio de naves), a vista patio orbital do cascalho (onix), por ficha: faixa achado" data-tipo="grande" data-onde="orbita orbital">
+<img class="thumb" src="img/n/colosso.webp" width="480" height="267" loading="lazy" alt="Miniatura de Colosso">
+<header><h3>Colosso</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Fragata blindada de íon.</p>
+<p class="price"><b>6.500.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Estação espacial (pátio de naves), à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Achado</li></ul>
+<p class="aviso">Aviso do jogo: na atmosfera o empuxo para cima (1 m/s²) não vence o peso (20): a nave não decola (voa no espaço)</p>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.293</dd><dt>Massa</dt><dd>1319,2</dd><dt>Dimensões</dt><dd>75 × 45 × 37,5 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>39× de íon grande</dd><dt>Empuxo total</dt><dd>234 (índice do jogo)</dd><dt>Giroscópios</dt><dd>15</dd><dt>Aceleração na atmosfera</dt><dd>1,46 m/s² à frente · 1,09 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>7,28 m/s² à frente · 5,46 m/s² para cima</dd><dt>Giro</dt><dd>1,14 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>2.000 espaços de container</dd><dt>Bateria</dt><dd>540</dd><dt>Camas</dt><dd>4</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+<article class="nave" id="n-leviata" data-q="leviata nave grande cargueiro pesado com conteineres no dorso. estacao espacial (patio de naves), a vista patio orbital do cascalho (onix), por ficha: faixa achado" data-tipo="grande" data-onde="orbita orbital">
+<img class="thumb" src="img/n/leviata.webp" width="480" height="267" loading="lazy" alt="Miniatura de Leviatã">
+<header><h3>Leviatã</h3><span class="cat">Nave grande</span></header>
+<p class="desc">Cargueiro pesado com contêineres no dorso.</p>
+<p class="price"><b>7.000.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Estação espacial (pátio de naves), à vista</li><li>Pátio orbital do Cascalho (Ônix), por ficha: faixa Achado</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.859</dd><dt>Massa</dt><dd>1763,5</dd><dt>Dimensões</dt><dd>75 × 45 × 35 m (comp. × larg. × alt.)</dd><dt>Propulsores</dt><dd>56× de hidrogênio grande</dd><dt>Empuxo total</dt><dd>336 (índice do jogo)</dd><dt>Giroscópios</dt><dd>19</dd><dt>Aceleração na atmosfera</dt><dd>11,3 m/s² à frente · 27,2 m/s² para cima</dd><dt>Aceleração no espaço</dt><dd>11,3 m/s² à frente · 27,2 m/s² para cima</dd><dt>Giro</dt><dd>1,08 (índice do jogo; cai com o peso)</dd><dt>Velocidade máxima</dt><dd>100 m/s</dd><dt>Carga</dt><dd>70.000 espaços de container</dd><dt>Bateria</dt><dd>600</dd><dt>Tanque de hidrogênio</dt><dd>640</dd><dt>Camas</dt><dd>1</dd><dt>Portas</dt><dd>4</dd><dt>Gerador de oxigênio</dt><dd>1</dd></dl></details>
+</article>
+</div></section>
+<section class="grupo" data-grupo="veiculos-terrestres-e-hovers"><h2>Veículos terrestres e hovers</h2><p class="mut">Carros e hovers das vitrines das cidades; o caminhão e o ônibus só saem do ferro-velho.</p><div class="cards naves">
+<article class="nave" id="v-truck" data-q="caminhao carro  ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="carro" data-onde="ferro">
+<img class="thumb" src="img/v/truck.webp" width="480" height="267" loading="lazy" alt="Miniatura de Caminhão">
+<header><h3>Caminhão</h3><span class="cat">Carro</span></header>
+<p class="price"><b>valor de referência 37.500</b> <span class="mut">(não se compra à vista)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>739</dd><dt>Massa</dt><dd>200,9</dd><dt>Velocidade máxima</dt><dd>≈ 20,3 m/s</dd><dt>Turbo</dt><dd>≈ 32,5 m/s</dd><dt>Aceleração</dt><dd>6,62 m/s²</dd><dt>Motores</dt><dd>2</dd><dt>Rodas</dt><dd>6</dd><dt>Tanque</dt><dd>42,5</dd><dt>Integridade</dt><dd>600</dd><dt>Carga extra</dt><dd>45 espaços</dd></dl></details>
+</article>
+<article class="nave" id="v-bus" data-q="onibus carro  ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="carro" data-onde="ferro">
+<img class="thumb" src="img/v/bus.webp" width="480" height="267" loading="lazy" alt="Miniatura de Ônibus">
+<header><h3>Ônibus</h3><span class="cat">Carro</span></header>
+<p class="price"><b>valor de referência 37.500</b> <span class="mut">(não se compra à vista)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>1.104</dd><dt>Massa</dt><dd>199,5</dd><dt>Velocidade máxima</dt><dd>≈ 20,3 m/s</dd><dt>Turbo</dt><dd>≈ 32,5 m/s</dd><dt>Aceleração</dt><dd>6,65 m/s²</dd><dt>Motores</dt><dd>2</dd><dt>Rodas</dt><dd>6</dd><dt>Tanque</dt><dd>80</dd><dt>Integridade</dt><dd>600</dd><dt>Carga extra</dt><dd>36 espaços</dd></dl></details>
+</article>
+<article class="nave" id="v-barge" data-q="barcaca de carga hover  sem origem de compra encontrada no codigo" data-tipo="hover" data-onde="">
+<img class="thumb" src="img/v/barge.webp" width="480" height="267" loading="lazy" alt="Miniatura de Barcaça de carga">
+<header><h3>Barcaça de carga</h3><span class="cat">Hover</span></header>
+<p class="price"><b>valor de referência 42.000</b> <span class="mut">(não se compra à vista)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>sem origem de compra encontrada no código</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>549</dd><dt>Massa</dt><dd>132</dd><dt>Velocidade máxima</dt><dd>≈ 32,5 m/s</dd><dt>Turbo</dt><dd>≈ 68,2 m/s</dd><dt>Propulsores de flutuação</dt><dd>16</dd><dt>Integridade</dt><dd>455,9</dd><dt>Carga extra</dt><dd>42 espaços</dd></dl></details>
+</article>
+<article class="nave" id="v-hover_tank" data-q="tanque flutuante hover  vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/hover_tank.webp" width="480" height="267" loading="lazy" alt="Miniatura de Tanque flutuante">
+<header><h3>Tanque flutuante</h3><span class="cat">Hover</span></header>
+<p class="price"><b>46.500 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>679</dd><dt>Massa</dt><dd>248,8</dd><dt>Velocidade máxima</dt><dd>≈ 27,4 m/s</dd><dt>Turbo</dt><dd>≈ 57,6 m/s</dd><dt>Propulsores de flutuação</dt><dd>16</dd><dt>Integridade</dt><dd>600</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-rover" data-q="rover de exploracao carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="carro" data-onde="cidade ferro">
+<img class="thumb" src="img/v/rover.webp" width="480" height="267" loading="lazy" alt="Miniatura de Rover de exploração">
+<header><h3>Rover de exploração</h3><span class="cat">Carro</span></header>
+<p class="price"><b>46.500 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>269</dd><dt>Massa</dt><dd>57,1</dd><dt>Velocidade máxima</dt><dd>≈ 24,3 m/s</dd><dt>Turbo</dt><dd>≈ 38,9 m/s</dd><dt>Aceleração</dt><dd>9,37 m/s²</dd><dt>Motores</dt><dd>1</dd><dt>Rodas</dt><dd>6</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>231,4</dd><dt>Carga extra</dt><dd>21 espaços</dd></dl></details>
+</article>
+<article class="nave" id="v-van" data-q="van carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="carro" data-onde="cidade">
+<img class="thumb" src="img/v/van.webp" width="480" height="267" loading="lazy" alt="Miniatura de Van">
+<header><h3>Van</h3><span class="cat">Carro</span></header>
+<p class="price"><b>48.750 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>362</dd><dt>Massa</dt><dd>71,5</dd><dt>Velocidade máxima</dt><dd>≈ 29,9 m/s</dd><dt>Turbo</dt><dd>≈ 47,8 m/s</dd><dt>Aceleração</dt><dd>13,2 m/s²</dd><dt>Motores</dt><dd>2</dd><dt>Rodas</dt><dd>4</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>274,6</dd><dt>Carga extra</dt><dd>24 espaços</dd></dl></details>
+</article>
+<article class="nave" id="v-skiff" data-q="aerodeslizador hover  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/skiff.webp" width="480" height="267" loading="lazy" alt="Miniatura de Aerodeslizador">
+<header><h3>Aerodeslizador</h3><span class="cat">Hover</span></header>
+<p class="price"><b>57.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>421</dd><dt>Massa</dt><dd>75,7</dd><dt>Velocidade máxima</dt><dd>≈ 31,2 m/s</dd><dt>Turbo</dt><dd>≈ 65,6 m/s</dd><dt>Propulsores de flutuação</dt><dd>8</dd><dt>Integridade</dt><dd>287</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-jeep" data-q="jipe carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="carro" data-onde="cidade ferro">
+<img class="thumb" src="img/v/jeep.webp" width="480" height="267" loading="lazy" alt="Miniatura de Jipe">
+<header><h3>Jipe</h3><span class="cat">Carro</span></header>
+<p class="price"><b>57.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>209</dd><dt>Massa</dt><dd>43,2</dd><dt>Velocidade máxima</dt><dd>≈ 27,3 m/s</dd><dt>Turbo</dt><dd>≈ 43,7 m/s</dd><dt>Aceleração</dt><dd>11,4 m/s²</dd><dt>Motores</dt><dd>1</dd><dt>Rodas</dt><dd>4</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>189,7</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-pickup" data-q="picape carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista ferro-velho dos planetas, por ficha (unidade sorteada)" data-tipo="carro" data-onde="cidade ferro">
+<img class="thumb" src="img/v/pickup.webp" width="480" height="267" loading="lazy" alt="Miniatura de Picape">
+<header><h3>Picape</h3><span class="cat">Carro</span></header>
+<p class="price"><b>57.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li><li>Ferro-velho dos planetas, por ficha (unidade sorteada)</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>295</dd><dt>Massa</dt><dd>65,8</dd><dt>Velocidade máxima</dt><dd>≈ 31,2 m/s</dd><dt>Turbo</dt><dd>≈ 49,9 m/s</dd><dt>Aceleração</dt><dd>14,1 m/s²</dd><dt>Motores</dt><dd>2</dd><dt>Rodas</dt><dd>4</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>257,5</dd><dt>Carga extra</dt><dd>24 espaços</dd></dl></details>
+</article>
+<article class="nave" id="v-buggy" data-q="buggy carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="carro" data-onde="cidade">
+<img class="thumb" src="img/v/buggy.webp" width="480" height="267" loading="lazy" alt="Miniatura de Buggy">
+<header><h3>Buggy</h3><span class="cat">Carro</span></header>
+<p class="price"><b>63.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>136</dd><dt>Massa</dt><dd>33,8</dd><dt>Velocidade máxima</dt><dd>≈ 30,8 m/s</dd><dt>Turbo</dt><dd>≈ 49,2 m/s</dd><dt>Aceleração</dt><dd>13,8 m/s²</dd><dt>Motores</dt><dd>1</dd><dt>Rodas</dt><dd>4</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>161,3</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-ambulance" data-q="ambulancia carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="carro" data-onde="cidade">
+<img class="thumb" src="img/v/ambulance.webp" width="480" height="267" loading="lazy" alt="Miniatura de Ambulância">
+<header><h3>Ambulância</h3><span class="cat">Carro</span></header>
+<p class="price"><b>66.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>306</dd><dt>Massa</dt><dd>67,1</dd><dt>Velocidade máxima</dt><dd>≈ 30,9 m/s</dd><dt>Turbo</dt><dd>≈ 49,4 m/s</dd><dt>Aceleração</dt><dd>13,8 m/s²</dd><dt>Motores</dt><dd>2</dd><dt>Rodas</dt><dd>4</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>261,4</dd><dt>Carga extra</dt><dd>24 espaços</dd></dl></details>
+</article>
+<article class="nave" id="v-coupe" data-q="cupe flutuante hover  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/coupe.webp" width="480" height="267" loading="lazy" alt="Miniatura de Cupê flutuante">
+<header><h3>Cupê flutuante</h3><span class="cat">Hover</span></header>
+<p class="price"><b>69.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>213</dd><dt>Massa</dt><dd>41,1</dd><dt>Velocidade máxima</dt><dd>≈ 37,4 m/s</dd><dt>Turbo</dt><dd>≈ 78,6 m/s</dd><dt>Propulsores de flutuação</dt><dd>8</dd><dt>Integridade</dt><dd>183,2</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-scooter" data-q="scooter flutuante hover  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/scooter.webp" width="480" height="267" loading="lazy" alt="Miniatura de Scooter flutuante">
+<header><h3>Scooter flutuante</h3><span class="cat">Hover</span></header>
+<p class="price"><b>69.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>31</dd><dt>Massa</dt><dd>5,29</dd><dt>Velocidade máxima</dt><dd>≈ 37 m/s</dd><dt>Turbo</dt><dd>≈ 77,8 m/s</dd><dt>Propulsores de flutuação</dt><dd>1</dd><dt>Integridade</dt><dd>80</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-hot_rod" data-q="hot rod carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="carro" data-onde="cidade">
+<img class="thumb" src="img/v/hot_rod.webp" width="480" height="267" loading="lazy" alt="Miniatura de Hot rod">
+<header><h3>Hot rod</h3><span class="cat">Carro</span></header>
+<p class="price"><b>75.750 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>225</dd><dt>Massa</dt><dd>52,7</dd><dt>Velocidade máxima</dt><dd>≈ 35,2 m/s</dd><dt>Turbo</dt><dd>≈ 56,3 m/s</dd><dt>Aceleração</dt><dd>16,8 m/s²</dd><dt>Motores</dt><dd>2</dd><dt>Rodas</dt><dd>4</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>218,1</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-patrol" data-q="viatura de patrulha hover  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/patrol.webp" width="480" height="267" loading="lazy" alt="Miniatura de Viatura de patrulha">
+<header><h3>Viatura de patrulha</h3><span class="cat">Hover</span></header>
+<p class="price"><b>82.500 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>217</dd><dt>Massa</dt><dd>41,3</dd><dt>Velocidade máxima</dt><dd>≈ 37,3 m/s</dd><dt>Turbo</dt><dd>≈ 78,4 m/s</dd><dt>Propulsores de flutuação</dt><dd>8</dd><dt>Integridade</dt><dd>183,8</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-dune" data-q="dune buggy carro  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="carro" data-onde="cidade">
+<img class="thumb" src="img/v/dune.webp" width="480" height="267" loading="lazy" alt="Miniatura de Dune buggy">
+<header><h3>Dune buggy</h3><span class="cat">Carro</span></header>
+<p class="price"><b>82.500 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>144</dd><dt>Massa</dt><dd>34</dd><dt>Velocidade máxima</dt><dd>≈ 30,7 m/s</dd><dt>Turbo</dt><dd>≈ 49,1 m/s</dd><dt>Aceleração</dt><dd>13,7 m/s²</dd><dt>Motores</dt><dd>1</dd><dt>Rodas</dt><dd>4</dd><dt>Tanque</dt><dd>36,2</dd><dt>Integridade</dt><dd>161,9</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-hover_bike" data-q="moto flutuante hover  vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/hover_bike.webp" width="480" height="267" loading="lazy" alt="Miniatura de Moto flutuante">
+<header><h3>Moto flutuante</h3><span class="cat">Hover</span></header>
+<p class="price"><b>90.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>50</dd><dt>Massa</dt><dd>8,86</dd><dt>Velocidade máxima</dt><dd>≈ 39,2 m/s</dd><dt>Turbo</dt><dd>≈ 82,3 m/s</dd><dt>Propulsores de flutuação</dt><dd>2</dd><dt>Integridade</dt><dd>86,6</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-sport" data-q="esportivo flutuante hover  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/sport.webp" width="480" height="267" loading="lazy" alt="Miniatura de Esportivo flutuante">
+<header><h3>Esportivo flutuante</h3><span class="cat">Hover</span></header>
+<p class="price"><b>97.500 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>198</dd><dt>Massa</dt><dd>37,7</dd><dt>Velocidade máxima</dt><dd>≈ 38,4 m/s</dd><dt>Turbo</dt><dd>≈ 80,7 m/s</dd><dt>Propulsores de flutuação</dt><dd>8</dd><dt>Integridade</dt><dd>173,2</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+<article class="nave" id="v-manta" data-q="manta hover  vitrine da garagem das cidades, a vista vitrine de veiculos das ruas das cidades, a vista" data-tipo="hover" data-onde="cidade">
+<img class="thumb" src="img/v/manta.webp" width="480" height="267" loading="lazy" alt="Miniatura de Manta">
+<header><h3>Manta</h3><span class="cat">Hover</span></header>
+<p class="price"><b>114.000 créditos</b> <span class="mut">(à vista, economia atual)</span></p>
+<h4>Onde se obtém</h4><ul class="lm1"><li>Vitrine da garagem das cidades, à vista</li><li>Vitrine de veículos das ruas das cidades, à vista</li></ul>
+<details><summary>Dados técnicos</summary><dl class="kv"><dt>Blocos</dt><dd>192</dd><dt>Massa</dt><dd>33,5</dd><dt>Velocidade máxima</dt><dd>≈ 27 m/s</dd><dt>Turbo</dt><dd>≈ 56,6 m/s</dd><dt>Propulsores de flutuação</dt><dd>2</dd><dt>Integridade</dt><dd>160,6</dd><dt>Carga extra</dt><dd>sem</dd></dl></details>
+</article>
+</div></section>
+<p id="vazio" class="vazio" hidden>Nada encontrado com esses filtros.</p>
+<aside class="nota"><h3>Sobre estes dados</h3>
+<ul>
+<li>Preços: valor-base do catálogo × 125 (a economia atual). O preço real numa cidade pode variar com a reputação e o estoque.</li>
+<li>Porte (pequena, média, grande) é o do jogo, pelo comprimento do casco: até 40 m, até 55 m e acima disso. Todas as naves são de grade grande.</li>
+<li>Propulsores, giroscópios, bateria, aceleração e giro vêm do cálculo de voo do próprio jogo para o projeto de cada nave. A velocidade máxima é a mesma (100 m/s) para todas. O “empuxo total” e o “giro” são índices internos, sem unidade confirmada.</li>
+<li>A carga é a soma dos espaços dos containers do projeto (confiança média: depende de como o jogo conta containers ligados por extensão).</li>
+<li>Velocidade e turbo dos veículos são calculados do projeto, em m/s (unidade assumida). As miniaturas dos carros mostram rodas ilustrativas, porque as rodas do veículo são desenhadas à parte do casco.</li>
+<li>Naves com aviso (por exemplo, empuxo para cima menor que o peso na atmosfera) só voam no espaço. Se a Design lançar propulsores de outros tamanhos, esta página os incorpora na próxima geração dos dados.</li>
+<li>Não há compra de nave no mecânico da cidade: o mecânico completa o chassi registrado (veja o ferro-velho acima).</li>
+</ul></aside>
+</div></main>
+<footer>
+  <div class="wrap">
+    <span>© Where We Live — jogo independente em desenvolvimento · Wiki gerada a partir da versão 1.0.463 do jogo</span>
+    <span>Achou algo errado ou faltando? <a href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Conte no nosso Discord</a>.</span>
+  </div>
+</footer>
+<script src="wiki.js"></script>
+</body>
+</html>
