@@ -208,14 +208,6 @@ section{position:relative}
 .sec-h.c p{margin-inline:auto;max-width:44em}
 .hr{height:1px;background:linear-gradient(90deg,#0000,var(--line),#0000);border:0;margin:0}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#0f1830cc;color:var(--mut);font:600 14px "Barlow Condensed";letter-spacing:.14em;text-transform:uppercase}
-/* faixa de números */
-.nums{padding-block:0;margin-top:-1px;background:linear-gradient(180deg,#060a16,#0b1226);border-block:1px solid var(--line)}
-.nums .wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
-.num{padding:30px 14px;text-align:center;border-left:1px solid var(--line)}
-.num:first-child{border-left:0}
-.num b{display:block;font:800 clamp(38px,4.6vw,60px)/1 "Barlow Condensed";color:var(--amber);letter-spacing:.01em}
-.num span{display:block;margin-top:6px;font:600 13px "Barlow Condensed";letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
-@media(max-width:860px){.nums .wrap{grid-template-columns:repeat(3,1fr)}.num{border-top:1px solid var(--line);padding:20px 8px}.num:nth-child(-n+3){border-top:0}.num:nth-child(4){border-left:0}}
 /* cartões do jogo: hover âmbar */
 .feat{transition:transform .25s,border-color .25s,box-shadow .25s}
 .feat:hover{transform:translateY(-4px);border-color:#ffb52e66;box-shadow:0 18px 50px #0007,0 0 0 1px #ffb52e22 inset}
@@ -448,7 +440,6 @@ html.static.mob .chap:first-child .wrap{padding-top:96px}
   </div>
 
 
-  <div class="nums" id="numeros"><div class="wrap"><div class="num"><b data-n="5">5</b><span>sistemas estelares</span></div><div class="num"><b data-n="24">24</b><span>mundos</span></div><div class="num"><b data-n="293">293</b><span>blocos</span></div><div class="num"><b data-n="22">22</b><span>naves</span></div><div class="num"><b data-n="19">19</b><span>veículos</span></div><div class="num"><b data-n="17">17</b><span>minérios</span></div></div></div>
 
   <section id="jogo">
     <div class="wrap">
@@ -708,10 +699,6 @@ html.static.mob .chap:first-child .wrap{padding-top:96px}
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
     els.forEach(function(e){io.observe(e)});
   }else els.forEach(function(e){e.classList.add('in')});
-  // números
-  var nn=[].slice.call(document.querySelectorAll('[data-n]'));
-  function cnt(e){var t=+e.dataset.n,s=null;if(R){return}function f(ts){if(!s)s=ts;var p=Math.min(1,(ts-s)/1300);e.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
-  if('IntersectionObserver' in window){var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cnt(e.target);io2.unobserve(e.target)}})},{threshold:.6});nn.forEach(function(e){io2.observe(e)})}
   // galeria
   var g=document.getElementById('gal');
   function step(d){var c=g.querySelector('.gcard');g.scrollBy({left:d*(c.offsetWidth+18),behavior:R?'auto':'smooth'})}
