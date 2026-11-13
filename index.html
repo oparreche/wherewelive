@@ -18,7 +18,9 @@
 <script>
 (function(){var d=document.documentElement,q=location.search,w=0;
 try{w=!!window.WebGLRenderingContext&&!!document.createElement('canvas').getContext('webgl2')}catch(e){}
-if(!w||/[?&]static\b/.test(q)||matchMedia('(prefers-reduced-motion:reduce)').matches){d.classList.add('static');return}
+d.classList.add('js');
+var mob=innerWidth<860&&!/[?&]3d\b/.test(q);
+if(!w||mob||/[?&]static\b/.test(q)||matchMedia('(prefers-reduced-motion:reduce)').matches){d.classList.add('static');if(mob)d.classList.add('mob');return}
 d.classList.add('s3d');
 var l=document.createElement('link');l.rel='preload';l.as='fetch';l.crossOrigin='';l.href='nave.glb';document.head.appendChild(l);var m=document.createElement('link');m.rel='preload';m.as='image';m.crossOrigin='';m.href='malva.webp';document.head.appendChild(m);
 var s=document.createElement('link');s.rel='preload';s.as='image';s.href=innerWidth<860?'stills/poster_m.webp':'stills/poster.webp';document.head.appendChild(s);
@@ -196,7 +198,149 @@ html.static .diag,html.static .dom{display:none}
 @media(max-width:860px){.diag .tag{font-size:13px;letter-spacing:.14em}.dom{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.cue i{animation:none}}
 
-.wiki-m{display:none}@media(max-width:860px){.wiki-m{display:inline-flex}}
+
+/* ================= landing v3 ================= */
+:root{--card2:#101a33;--glow:#ffb52e;--r2:24px}
+html.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
+section{position:relative}
+.sec-h.c{text-align:center;margin-inline:auto}
+.sec-h.c p{margin-inline:auto;max-width:44em}
+.hr{height:1px;background:linear-gradient(90deg,#0000,var(--line),#0000);border:0;margin:0}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#0f1830cc;color:var(--mut);font:600 14px "Barlow Condensed";letter-spacing:.14em;text-transform:uppercase}
+/* faixa de números */
+.nums{padding-block:0;margin-top:-1px;background:linear-gradient(180deg,#060a16,#0b1226);border-block:1px solid var(--line)}
+.nums .wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.num{padding:30px 14px;text-align:center;border-left:1px solid var(--line)}
+.num:first-child{border-left:0}
+.num b{display:block;font:800 clamp(38px,4.6vw,60px)/1 "Barlow Condensed";color:var(--amber);letter-spacing:.01em}
+.num span{display:block;margin-top:6px;font:600 13px "Barlow Condensed";letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+@media(max-width:860px){.nums .wrap{grid-template-columns:repeat(3,1fr)}.num{border-top:1px solid var(--line);padding:20px 8px}.num:nth-child(-n+3){border-top:0}.num:nth-child(4){border-left:0}}
+/* cartões do jogo: hover âmbar */
+.feat{transition:transform .25s,border-color .25s,box-shadow .25s}
+.feat:hover{transform:translateY(-4px);border-color:#ffb52e66;box-shadow:0 18px 50px #0007,0 0 0 1px #ffb52e22 inset}
+/* galeria (carrossel) */
+.gal-h{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:30px}
+.gal-h .sec-h{margin:0}
+.gal-nav{display:flex;gap:10px}
+.gal-nav button{all:unset;cursor:pointer;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:#0f1830;color:var(--fg);transition:.2s}
+.gal-nav button:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+.gal-nav button:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+.gal{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px max(20px,calc((100vw - 1180px)/2)) 30px;scrollbar-width:none;overscroll-behavior-x:contain}
+.gal::-webkit-scrollbar{display:none}
+.gcard{flex:0 0 min(78vw,640px);scroll-snap-align:center;position:relative;border-radius:var(--r2);overflow:hidden;border:1px solid var(--line);background:#000;cursor:zoom-in;box-shadow:0 24px 60px #0008;aspect-ratio:16/10;padding:0;display:block;color:inherit;font:inherit;text-align:left}
+.gcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.gcard:hover img{transform:scale(1.06)}
+.gcard::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#03050dee 0%,#03050d00 52%)}
+.gcard figcaption{position:absolute;z-index:2;left:22px;right:22px;bottom:18px}
+.gcard figcaption b{display:block;font:800 30px/1.05 "Barlow Condensed";letter-spacing:.03em;text-transform:uppercase}
+.gcard figcaption span{display:block;margin-top:4px;color:#c9d6f5;font-size:15px;line-height:1.4}
+.gcard .tg{position:absolute;z-index:2;top:16px;left:18px;font:700 12px "Barlow Condensed";letter-spacing:.24em;text-transform:uppercase;color:#1a0f00;background:var(--amber);padding:3px 10px;border-radius:3px}
+/* faixas (reaproveita .band) */
+.shot{position:relative}
+.shot img{height:auto}
+.shot::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px #ffffff14;pointer-events:none}
+.shot.tilt{transition:transform .5s ease}
+.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.thumbs .shot img{aspect-ratio:16/10}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag-row .chip b{color:var(--amber);font-weight:700}
+/* gerador */
+.gen{background:radial-gradient(70% 90% at 80% 0%,#ffb52e1c,#0000 60%),linear-gradient(180deg,var(--bg),#0a1124 12%,#0a1124 88%,var(--bg))}
+.gen-top{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.vid{position:relative;border-radius:var(--r2);overflow:hidden;border:1px solid #ffb52e44;box-shadow:0 40px 100px #000a,0 0 80px #ffb52e22;background:#000;aspect-ratio:16/9}
+.vid video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
+.vid .play{all:unset;cursor:pointer;position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(0deg,#03050d99,#03050d11 60%)}
+.vid .play i{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--amber),var(--amber2));color:#1a0f00;box-shadow:0 12px 40px #ff9a2a88;transition:transform .2s}
+.vid .play:hover i{transform:scale(1.08)}
+.vid .play:focus-visible{outline:3px solid var(--cy);outline-offset:-6px}
+.vid .play em{position:absolute;left:18px;top:16px;background:#03050dcc;padding:4px 12px;border-radius:999px;border:1px solid #ffb52e66;font:700 14px "Barlow Condensed";letter-spacing:.2em;text-transform:uppercase;color:#fff;font-style:normal;text-shadow:0 1px 8px #000}
+.vid.on .play{display:none}
+.gen h2{font-size:clamp(38px,5vw,64px);font-weight:800;margin-bottom:16px}
+.gen p{color:#c4d1f1;margin:0 0 14px}
+.gen ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.gen li{padding-left:26px;position:relative;color:#d3def9}
+.gen li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:3px;background:var(--amber);border-radius:2px}
+.gen-three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+.gen-three figure{margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.gen-three img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.gen-three figcaption{padding:14px 18px 16px;color:var(--mut);font-size:15px}
+.gen-three figcaption b{display:block;color:var(--fg);font:700 22px "Barlow Condensed";letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+@media(max-width:980px){.gen-top{grid-template-columns:1fr;gap:30px}.gen-three{grid-template-columns:1fr}}
+/* mundos */
+.worlds{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.world{position:relative;border-radius:var(--r2);overflow:hidden;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.world:hover{transform:translateY(-6px);border-color:#ffb52e55}
+.world .pl{aspect-ratio:16/11;overflow:hidden;background:#02030a}
+.world .pl img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.world:hover .pl img{transform:scale(1.07)}
+.world .tx{padding:24px 26px 28px}
+.world .k{font:700 13px "Barlow Condensed";letter-spacing:.28em;text-transform:uppercase;color:var(--amber)}
+.world h3{font-size:36px;font-weight:800;margin:6px 0 10px}
+.world p{margin:0;color:var(--mut);font-size:16px}
+@media(max-width:980px){.worlds{grid-template-columns:1fr}.world{flex-direction:row}.world .pl{flex:0 0 42%;aspect-ratio:auto}.world .tx{padding:18px 20px}.world h3{font-size:30px}}
+@media(max-width:560px){.world{flex-direction:column}.world .pl{aspect-ratio:16/10}}
+/* locais */
+.sites{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.site{border-radius:var(--r2);overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,var(--card),#0b1226)}
+.site .im{aspect-ratio:16/10;overflow:hidden}
+.site .im img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.site:hover .im img{transform:scale(1.06)}
+.site .tx{padding:22px 24px 26px}
+.site h3{font-size:30px;font-weight:800;margin-bottom:8px}
+.site p{margin:0;color:var(--mut);font-size:16px}
+.fac{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:34px;align-items:center}
+.fac .lbl{font:700 14px "Barlow Condensed";letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-right:6px}
+@media(max-width:980px){.sites{grid-template-columns:1fr}}
+/* wiki */
+.wikib{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;background:linear-gradient(135deg,#101a33,#0b1226);border:1px solid var(--line);border-radius:var(--r2);padding:48px;overflow:hidden;position:relative}
+.wikib::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;background:radial-gradient(closest-side,#ffb52e22,#0000);pointer-events:none}
+.wikib h2{font-size:clamp(36px,4.6vw,58px);font-weight:800;margin-bottom:14px}
+.wikib p{color:#c4d1f1;margin:0 0 22px}
+.icons{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;position:relative}
+.icons span{aspect-ratio:1;border-radius:14px;background:linear-gradient(180deg,#16213f,#0d152b);border:1px solid var(--line);display:grid;place-items:center;transition:transform .2s,border-color .2s}
+.icons span:hover{transform:translateY(-4px) scale(1.06);border-color:var(--amber)}
+.icons img{width:76%;height:76%;object-fit:contain;image-rendering:auto}
+@media(max-width:980px){.wikib{grid-template-columns:1fr;padding:28px 22px;gap:28px}}
+/* baixar */
+.dl{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:stretch}
+.dl-card{border-radius:var(--r2);border:1px solid #ffb52e55;padding:38px;background:radial-gradient(120% 120% at 0 0,#ffb52e22,#0000 55%),var(--card);box-shadow:0 30px 80px #0008,0 0 70px #ffb52e14;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.dl-card h3{font-size:clamp(34px,4vw,50px);font-weight:800}
+.dl-card p{margin:0;color:#c4d1f1}
+.dl-card .btn{align-self:flex-start;font-size:22px;padding:18px 34px}
+.dl-card .meta{margin:4px 0 0}
+.spec{border-radius:var(--r2);border:1px solid var(--line);background:var(--card);padding:30px 32px}
+.spec h3{font-size:26px;margin-bottom:14px;color:var(--amber);letter-spacing:.08em}
+.spec dl{margin:0;display:grid;gap:0}
+.spec .row{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.spec .row:first-of-type{border-top:0}
+.spec dt{font:700 15px "Barlow Condensed";letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.spec dd{margin:0;color:var(--fg);font-size:16px}
+@media(max-width:980px){.dl{grid-template-columns:1fr}.spec .row{grid-template-columns:1fr;gap:2px}}
+.steps{margin-bottom:36px}
+.step{transition:transform .25s,border-color .25s}
+.step:hover{transform:translateY(-4px);border-color:#ffb52e55}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:#02030aee;display:none;place-items:center;padding:24px;backdrop-filter:blur(6px)}
+.lb.on{display:grid}
+.lb img{max-width:min(1500px,96vw);max-height:84vh;border-radius:14px;box-shadow:0 30px 120px #000}
+.lb p{position:absolute;bottom:22px;left:0;right:0;text-align:center;margin:0;color:#dbe5ff;font:700 22px "Barlow Condensed";letter-spacing:.1em;text-transform:uppercase}
+.lb button{all:unset;cursor:pointer;position:absolute;top:18px;right:22px;font:800 34px/1 "Barlow Condensed";color:#fff;padding:8px 14px;border:1px solid #ffffff44;border-radius:10px}
+.lb button:hover{border-color:var(--amber);color:var(--amber)}
+/* modo estático no celular: capítulos enxutos */
+html.static.mob .chaps .chap:nth-child(n+3):nth-child(-n+6){display:none}
+html.static.mob .stage{background:var(--bg)}
+html.static.mob .chap .wrap{padding-block:34px}
+html.static.mob .chap:first-child .wrap{padding-top:96px}
+@media(max-width:860px){
+  .gcard{flex-basis:84vw;aspect-ratio:5/4}
+  .gcard figcaption b{font-size:25px}
+  .vid .play i{width:70px;height:70px}
+  .dl-card{padding:26px 22px}
+  .dl-card .btn{align-self:stretch;justify-content:center}
+  .spec{padding:22px 20px}
+}
+@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}.gcard img,.world .pl img,.site .im img{transition:none}}
 </style>
 </head>
 <body>
@@ -207,13 +351,12 @@ html.static .diag,html.static .dom{display:none}
     <nav>
       <a href="#jogo">O jogo</a>
       <a href="#naves">Naves</a>
+      <a href="#gerador">Gerador</a>
       <a href="#mundos">Mundos</a>
       <a href="#combate">Combate</a>
-      <a href="wiki/">Wiki</a>
       <a href="#baixar">Como jogar</a>
     </nav>
     <div class="acts">
-      <a class="btn sm ghost wiki-m" href="wiki/">Wiki</a>
       <a class="btn sm ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Discord</a>
       <a class="btn sm" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar</a>
     </div>
@@ -304,147 +447,151 @@ html.static .diag,html.static .dom{display:none}
     <nav class="rail" aria-label="Peças da nave"><button type="button" aria-label="Nave" title="Nave" class="on"><i></i><span>Nave</span></button><button type="button" aria-label="Casco e asas" title="Casco e asas"><i></i><span>Casco e asas</span></button><button type="button" aria-label="Propulsores" title="Propulsores"><i></i><span>Propulsores</span></button><button type="button" aria-label="Núcleo" title="Núcleo"><i></i><span>Núcleo</span></button><button type="button" aria-label="Cabine" title="Cabine"><i></i><span>Cabine</span></button><button type="button" aria-label="Broca" title="Broca"><i></i><span>Broca</span></button><button type="button" aria-label="Decolagem" title="Decolagem"><i></i><span>Decolagem</span></button></nav>
   </div>
 
+
+  <div class="nums" id="numeros"><div class="wrap"><div class="num"><b data-n="5">5</b><span>sistemas estelares</span></div><div class="num"><b data-n="24">24</b><span>mundos</span></div><div class="num"><b data-n="293">293</b><span>blocos</span></div><div class="num"><b data-n="22">22</b><span>naves</span></div><div class="num"><b data-n="19">19</b><span>veículos</span></div><div class="num"><b data-n="17">17</b><span>minérios</span></div></div></div>
+
   <section id="jogo">
     <div class="wrap">
-      <div class="sec-h">
+      <div class="sec-h rv">
         <div class="kicker">O jogo</div>
         <h2>Tudo o que você precisa para viver lá fora</h2>
         <p>Where We Live mistura construção livre, pilotagem e sobrevivência em sistemas estelares inteiros, com planetas de verdade que você percorre a pé, de carro ou de nave.</p>
       </div>
-      <div class="feats">
-        <article class="feat">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg></div>
-          <h3>Construa com blocos</h3>
-          <p>Paredes, rampas, janelas finas, portas, propulsores e estações. Monte bases e naves peça por peça — e edite a nave direto, com ela estacionada. O que você constrói sob o seu núcleo volta inteiro para a mochila.</p>
-        </article>
-        <article class="feat">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 3 4 7 4 11l3 3v3l-4-1-3 3-3-3-4 1v-3l3-3c0-4 1-8 4-11z"/><circle cx="12" cy="10" r="1.6"/></svg></div>
-          <h3>Pilote de verdade</h3>
-          <p>Decole do pátio de uma cidade, cruze a atmosfera e chegue ao espaço. Cada nave tem peso, empuxo e combustível ou energia — e leva o seu carro no convés.</p>
-        </article>
-        <article class="feat">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
-          <h3>Planetas e luas</h3>
-          <p>Terreno voxel gerado na GPU: montanhas, praias, cavernas e pedras de minério que você extrai com o laser. Cada mundo tem clima, flora, ar e perigos próprios.</p>
-        </article>
-        <article class="feat">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/></svg></div>
-          <h3>Economia viva</h3>
-          <p>Preços que sobem e descem por cidade, lojas de verdade, contratos e reputação com as corporações. Fabrique, venda, melhore — e garimpe sucata nos ferros-velhos.</p>
-        </article>
-        <article class="feat">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.4c3 0 6 1.6 6 5.6"/></svg></div>
-          <h3>Sozinho ou em grupo</h3>
-          <p>Jogue em mundo próprio ou entre em servidores com amigos. Hospede o seu com o Servidor Dedicado e leve sua base e sua nave junto.</p>
-        </article>
-        <article class="feat">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></div>
-          <h3>Sobreviva</h3>
-          <p>Oxigênio, fome, estamina, armadura e armas. Sem ar lá em cima, leve um gerador de O₂ — e um leito médico para voltar para casa. Longe das cidades, os bichos atacam.</p>
-        </article>
-      </div>
+      <div class="feats"><article class="feat rv" style="--d:0.00s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg></div><h3>Construa com blocos</h3><p>Paredes, rampas, janelas finas, portas, propulsores e estações. Monte bases e naves peça por peça — e edite a nave direto, com ela estacionada. O que você constrói sob o seu núcleo volta inteiro para a mochila.</p></article><article class="feat rv" style="--d:0.08s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 3 4 7 4 11l3 3v3l-4-1-3 3-3-3-4 1v-3l3-3c0-4 1-8 4-11z"/><circle cx="12" cy="10" r="1.6"/></svg></div><h3>Pilote de verdade</h3><p>Decole do pátio de uma cidade, cruze a atmosfera e chegue ao espaço. Cada nave tem peso, empuxo e combustível ou energia — e leva o seu carro no convés.</p></article><article class="feat rv" style="--d:0.16s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3>Planetas e luas</h3><p>Terreno voxel gerado na GPU: montanhas, praias, cavernas e pedras de minério que você extrai com o laser. Cada mundo tem clima, flora, ar e perigos próprios.</p></article><article class="feat rv" style="--d:0.00s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/></svg></div><h3>Economia viva</h3><p>Preços que sobem e descem por cidade, lojas de verdade, contratos e reputação com as facções. Fabrique, venda, melhore — e garimpe sucata nos ferros-velhos.</p></article><article class="feat rv" style="--d:0.08s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.4c3 0 6 1.6 6 5.6"/></svg></div><h3>Sozinho ou em grupo</h3><p>Jogue em mundo próprio ou entre em servidores com amigos. Hospede o seu com o Servidor Dedicado e leve sua base e sua nave junto.</p></article><article class="feat rv" style="--d:0.16s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></div><h3>Sobreviva</h3><p>Oxigênio, fome, estamina, armadura e armas. Sem ar lá em cima, leve um gerador de O₂ — e um leito médico para voltar para casa. Longe das cidades, os bichos atacam.</p></article></div>
     </div>
   </section>
 
-  <section id="naves" class="alt">
+  <section id="galeria" class="alt">
+    <div class="wrap gal-h">
+      <div class="sec-h rv"><div class="kicker">Galeria</div><h2>O jogo, de dentro</h2><p>Capturas reais, tiradas no próprio jogo. Toque para ampliar.</p></div>
+      <div class="gal-nav" aria-label="Navegar na galeria"><button type="button" id="gprev" aria-label="Anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" id="gnext" aria-label="Próxima"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
+    </div>
+    <div class="gal" id="gal"><figure class="gcard" tabindex="0" role="button" data-full="img/aurora_cidade.webp" data-cap="Uma cidade inteira vista do alto" aria-label="Ampliar: Uma cidade inteira vista do alto"><img src="img/aurora_cidade_s.webp" srcset="img/aurora_cidade_s.webp 720w, img/aurora_cidade.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Uma cidade inteira vista do alto. Avenidas, praça, lojas com letreiro e vida de verdade."><span class="tg">Cidades</span><figcaption><b>Uma cidade inteira vista do alto</b><span>Avenidas, praça, lojas com letreiro e vida de verdade.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/aurora_nave_passa.webp" data-cap="Naves de blocos cruzando o céu" aria-label="Ampliar: Naves de blocos cruzando o céu"><img src="img/aurora_nave_passa_s.webp" srcset="img/aurora_nave_passa_s.webp 720w, img/aurora_nave_passa.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Naves de blocos cruzando o céu. Cada nave é feita de blocos, com peso, empuxo e combustível."><span class="tg">Naves</span><figcaption><b>Naves de blocos cruzando o céu</b><span>Cada nave é feita de blocos, com peso, empuxo e combustível.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/malva_floresta.webp" data-cap="Floresta lilás de Malva" aria-label="Ampliar: Floresta lilás de Malva"><img src="img/malva_floresta_s.webp" srcset="img/malva_floresta_s.webp 720w, img/malva_floresta.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Floresta lilás de Malva. O planeta roxo: capim, árvores de copa lilás e céu lilás."><span class="tg">Malva</span><figcaption><b>Floresta lilás de Malva</b><span>O planeta roxo: capim, árvores de copa lilás e céu lilás.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/combate_criatura.webp" data-cap="Bicho grande, tiro certo" aria-label="Ampliar: Bicho grande, tiro certo"><img src="img/combate_criatura_s.webp" srcset="img/combate_criatura_s.webp 720w, img/combate_criatura.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Bicho grande, tiro certo. Longe das cidades, a fauna ataca. Mire pelo cano e recue na hora."><span class="tg">Fauna</span><figcaption><b>Bicho grande, tiro certo</b><span>Longe das cidades, a fauna ataca. Mire pelo cano e recue na hora.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/obra_brocas.webp" data-cap="Brocas, fábricas e energia" aria-label="Ampliar: Brocas, fábricas e energia"><img src="img/obra_brocas_s.webp" srcset="img/obra_brocas_s.webp 720w, img/obra_brocas.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Brocas, fábricas e energia. Extraia, refine e fabrique sem sair de casa."><span class="tg">Base</span><figcaption><b>Brocas, fábricas e energia</b><span>Extraia, refine e fabrique sem sair de casa.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/caverna_salao.webp" data-cap="Salões de cristal debaixo da terra" aria-label="Ampliar: Salões de cristal debaixo da terra"><img src="img/caverna_salao_s.webp" srcset="img/caverna_salao_s.webp 720w, img/caverna_salao.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Salões de cristal debaixo da terra. Leve lanterna: lá embaixo o escuro é de verdade."><span class="tg">Cavernas</span><figcaption><b>Salões de cristal debaixo da terra</b><span>Leve lanterna: lá embaixo o escuro é de verdade.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/onix_chegada.webp" data-cap="Chegada ao Sistema Ônix" aria-label="Ampliar: Chegada ao Sistema Ônix"><img src="img/onix_chegada_s.webp" srcset="img/onix_chegada_s.webp 720w, img/onix_chegada.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Chegada ao Sistema Ônix. Salte para outro sistema com o Motor de dobra."><span class="tg">Espaço</span><figcaption><b>Chegada ao Sistema Ônix</b><span>Salte para outro sistema com o Motor de dobra.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/aurora_ferro_velho.webp" data-cap="Sucata que vira nave" aria-label="Ampliar: Sucata que vira nave"><img src="img/aurora_ferro_velho_s.webp" srcset="img/aurora_ferro_velho_s.webp 720w, img/aurora_ferro_velho.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Sucata que vira nave. Pátios de comércio, sem inimigos, com portal e escritório."><span class="tg">Ferro-velho</span><figcaption><b>Sucata que vira nave</b><span>Pátios de comércio, sem inimigos, com portal e escritório.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/obra_hover.webp" data-cap="Hover, carros e naves" aria-label="Ampliar: Hover, carros e naves"><img src="img/obra_hover_s.webp" srcset="img/obra_hover_s.webp 720w, img/obra_hover.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Hover, carros e naves. Projete o seu em blocos e leve no convés."><span class="tg">Veículos</span><figcaption><b>Hover, carros e naves</b><span>Projete o seu em blocos e leve no convés.</span></figcaption></figure><figure class="gcard" tabindex="0" role="button" data-full="img/aurora_cidade_rua.webp" data-cap="Rua principal" aria-label="Ampliar: Rua principal"><img src="img/aurora_cidade_rua_s.webp" srcset="img/aurora_cidade_rua_s.webp 720w, img/aurora_cidade_rua.webp 1440w" sizes="(max-width:860px) 84vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Rua principal. Padaria, café, farmácia, ferragens… cada loja com nome próprio."><span class="tg">Cidades</span><figcaption><b>Rua principal</b><span>Padaria, café, farmácia, ferragens… cada loja com nome próprio.</span></figcaption></figure></div>
+  </section>
+
+  <section id="naves">
     <div class="wrap">
       <div class="band">
-        <div class="shot"><img src="shot_espaco.jpg" loading="lazy" alt="Nave de blocos branca e laranja voando no espaço do Sistema Ônix, com o gigante gasoso Titã ao fundo"></div>
-        <div>
+        <div class="rv">
+          <div class="shot"><img src="img/aurora_nave_passa_s.webp" srcset="img/aurora_nave_passa_s.webp 720w, img/aurora_nave_passa.webp 1440w" sizes="(max-width:860px) 100vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Nave de blocos laranja e cinza cruzando o céu de Aurora, em pleno voo"></div>
+          <div class="thumbs"><div class="shot"><img src="img/obra_hover_s.webp" srcset="img/obra_hover_s.webp 720w, img/obra_hover.webp 1440w" sizes="(max-width:860px) 50vw, 300px" width="1440" height="810" loading="lazy" decoding="async" alt="Hover de blocos pairando sobre a grama, com dois propulsores"></div><div class="shot"><img src="img/malva_nave_s.webp" srcset="img/malva_nave_s.webp 720w, img/malva_nave.webp 1440w" sizes="(max-width:860px) 50vw, 300px" width="1440" height="810" loading="lazy" decoding="async" alt="Nave decolando entre as árvores lilases de Malva"></div></div>
+        </div>
+        <div class="rv" style="--d:.12s">
           <div class="kicker">Naves e espaço</div>
           <h2>Do pátio a outro sistema</h2>
           <p>Cada cidade tem seu pátio de naves. Compre uma, suba a rampa até a cabine e decole — ou construa a sua, bloco a bloco, e edite direto nela sempre que estiver parada.</p>
           <ul>
             <li>Propulsores pequenos e grandes, giroscópios, baterias, tanques e até uma Fundição de bordo para as naves grandes</li>
             <li>Leve o carro ou o hover no convés: ele fica travado na nave e viaja com ela</li>
-            <li>O Motor de dobra, abastecido com cristais colhidos nos planetas, leva a nave inteira — com a tripulação e os veículos travados — para o Sistema Ônix</li>
-            <li>Quer só projetar? O <b>Mundo de projeto</b> é um mundo solo de construção livre: monte nave, carro ou casa sem gastar material e grave o resultado na tela Projetos para usar nos outros mundos</li>
+            <li>O Motor de dobra, abastecido com cristais colhidos nos planetas, leva a nave inteira — com a tripulação e os veículos travados — para outro sistema</li>
+            <li>Quer só projetar? O <b>Mundo de projeto</b> é um mundo solo de construção livre: monte nave, carro ou casa sem gastar material e grave o resultado na tela Projetos</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="ferro-velho">
+  <section id="construcao" class="alt">
     <div class="wrap">
       <div class="band rev">
-        <div class="shot"><img src="shot_dia.jpg" loading="lazy" alt="Portal de entrada do ferro-velho Retalhos do Vale, com muro de chapa e céu de dia"></div>
-        <div>
-          <div class="kicker">Ferro-velho</div>
-          <h2>Sucata que vira nave</h2>
-          <p>Os ferros-velhos são pátios de comércio, sem inimigos. Compre uma ficha, receba uma unidade incompleta sorteada — de sucata comum a achado raro — e decida: desmontar e vender o material, ou reconstruir e registrar o chassi no mecânico.</p>
+        <div class="rv">
+          <div class="shot"><img src="img/obra_construcao_s.webp" srcset="img/obra_construcao_s.webp 720w, img/obra_construcao.webp 1440w" sizes="(max-width:860px) 100vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Torre de blocos azuis erguida sobre quatro pilares, no deserto"></div>
+          <div class="thumbs"><div class="shot"><img src="img/obra_brocas_s.webp" srcset="img/obra_brocas_s.webp 720w, img/obra_brocas.webp 1440w" sizes="(max-width:860px) 50vw, 300px" width="1440" height="810" loading="lazy" decoding="async" alt="Base com brocas, fundição e fábrica ligadas por dutos"></div><div class="shot"><img src="img/aurora_ferro_velho_s.webp" srcset="img/aurora_ferro_velho_s.webp 720w, img/aurora_ferro_velho.webp 1440w" sizes="(max-width:860px) 50vw, 300px" width="1440" height="810" loading="lazy" decoding="async" alt="Ferro-velho de Aurora, com portal e muro de chapa"></div></div>
+        </div>
+        <div class="rv" style="--d:.12s">
+          <div class="kicker">Construção por blocos</div>
+          <h2>Cada peça é sua</h2>
+          <p>Aço, vidro, rampas, escadas, portas, pistões, rotores, dutos e esteiras. Tudo é bloco, e tudo tem peso, vida e função: o que você monta é o que voa, roda ou aguenta o tranco.</p>
           <ul>
-            <li>Nos planetas, naves pequenas e veículos; no Pátio orbital do Cascalho, naves médias e grandes</li>
-            <li>O pátio vende as peças que costumam faltar: propulsores, giroscópio e bateria</li>
-            <li>Muro de chapa, portal com nome próprio, escritório de contêiner e luz à noite</li>
+            <li>Fundição, fábrica de componentes, bancadas, brocas e geradores formam a sua linha de produção</li>
+            <li>Painel de Projetos: grave, importe e solde uma blueprint de nave, carro ou casa</li>
+            <li>A Wiki do jogo lista os 293 blocos, as receitas e o que cada pesquisa libera</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="cidades" class="alt">
+  <section id="gerador" class="gen">
     <div class="wrap">
-      <div class="band">
-        <div class="shot"><img src="shot_cidade.jpg" loading="lazy" alt="Fachada do Armazém Geral Depósito Rebite, com letreiro luminoso e toldo listrado"></div>
-        <div>
-          <div class="kicker">Cidades</div>
-          <h2>Lojas de verdade em cada esquina</h2>
-          <p>Padaria, café, farmácia, ferragens, autopeças, livraria, armazém e mais: cada loja tem letreiro luminoso, nome próprio e o seu vendedor atrás do balcão. Pão fresco, ensopado, café e curativo entram no cardápio.</p>
+      <div class="gen-top">
+        <div class="vid rv" id="vid">
+          <video id="gv" preload="none" playsinline poster="img/gerador_poster.webp" aria-label="Vídeo: o Gerador de naves e criaturas do Where We Live">
+            <source src="video/gerador.mp4" type="video/mp4">
+          </video>
+          <button class="play" type="button" id="gplay" aria-label="Assistir ao vídeo do gerador (1 min 23 s)"><i><svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i><em>Assistir · 1 min 23 s</em></button>
+        </div>
+        <div class="rv" style="--d:.12s">
+          <div class="kicker">Gerador de naves e criaturas</div>
+          <h2>Descreva. O gerador monta.</h2>
+          <p>Uma ferramenta nossa, fora do jogo: você pede uma nave, um carro ou uma criatura por texto ou por imagem, e ela devolve um projeto montado bloco a bloco, só com as peças reais do jogo.</p>
           <ul>
-            <li>Missões diárias, patrulhas espaciais e contratos das corporações</li>
-            <li>A livraria dá uma dica por dia, de mecânica do jogo ou do mundo</li>
-            <li>Bússola, radar e diário de missões numa interface nova em grafite e âmbar</li>
+            <li>Naves e veículos com rodas, soldados em blocos, prontos para o painel Projetos (tecla K)</li>
+            <li>Ateliê de criaturas: ajuste o corpo, as cores e teste a animação</li>
+            <li>Importe no jogo, solde e voe</li>
           </ul>
         </div>
+      </div>
+      <div class="gen-three">
+        <figure class="rv"><img src="img/gerador_bloco.webp" loading="lazy" decoding="async" width="1280" height="720" alt="Projeto de nave em blocos, com as células de construção destacadas"><figcaption><b>Bloco a bloco</b>A nave nasce na grade do jogo, com as mesmas peças que você usa.</figcaption></figure>
+        <figure class="rv" style="--d:.08s"><img src="img/gerador_criatura.webp" loading="lazy" decoding="async" width="1280" height="720" alt="Ateliê de criaturas, com os controles de corpo e cor"><figcaption><b>Ateliê de criaturas</b>Corpo, cores e animação, antes de entrar no mundo.</figcaption></figure>
+        <figure class="rv" style="--d:.16s"><img src="img/gerador_malva.webp" loading="lazy" decoding="async" width="1280" height="720" alt="Criatura gerada, uma serpente listrada, rastejando pelo capim roxo de Malva"><figcaption><b>No jogo</b>A criatura gerada, solta no capim roxo de Malva.</figcaption></figure>
       </div>
     </div>
   </section>
 
   <section id="mundos">
     <div class="wrap">
-      <div class="band rev">
-        <div class="shot"><img src="shot_malva.jpg" loading="lazy" alt="Personagem caminhando em Malva, o planeta roxo, entre árvores de copa lilás e cristais"></div>
-        <div>
-          <div class="kicker">Mundos</div>
-          <h2>Malva, o planeta roxo</h2>
-          <p>Um novo mundo no Sistema Ônix: capim roxo, árvores de copa lilás e céu lilás, com 4 cidades a céu aberto e 8 locais para explorar. Chegue pela dobra até Duna e siga voando.</p>
-          <ul>
-            <li>Árvores, arbustos e rochas com modelos novos em todos os planetas, nas luas e nos asteroides</li>
-            <li>Pedras de minério espalhadas pelo chão: a cor mostra o minério, e só o laser extrai</li>
-            <li>Tempestades de areia em Duna e Mesa, e perigos próprios em cada mundo</li>
-          </ul>
-        </div>
+      <div class="sec-h c rv">
+        <div class="kicker">Mundos</div>
+        <h2>24 mundos em 5 sistemas</h2>
+        <p>Planetas, luas e asteroides, cada um com clima, ar, flora, minérios e perigos próprios. Chegue pela dobra e siga voando.</p>
+      </div>
+      <div class="worlds">
+        <article class="world rv"><div class="pl"><img src="img/aurora_espaco_s.webp" srcset="img/aurora_espaco_s.webp 720w, img/aurora_espaco.webp 1440w" sizes="(max-width:860px) 90vw, 400px" width="1440" height="810" loading="lazy" decoding="async" alt="O planeta Aurora visto do espaço, com mares azuis e continentes verdes"></div><div class="tx"><div class="k">Sistema Aurora</div><h3>Aurora</h3><p>Onde tudo começa: um planeta temperado de mares, florestas, cidades e o primeiro pátio de naves.</p></div></article>
+        <article class="world rv" style="--d:.1s"><div class="pl"><img src="img/malva_espaco_s.webp" srcset="img/malva_espaco_s.webp 720w, img/malva_espaco.webp 1440w" sizes="(max-width:860px) 90vw, 400px" width="1440" height="810" loading="lazy" decoding="async" alt="O planeta Malva visto do espaço, com nuvens brancas e mares azuis"></div><div class="tx"><div class="k">Sistema Ônix</div><h3>Malva</h3><p>O planeta roxo: capim lilás, árvores de copa violeta, cidades a céu aberto e locais para explorar.</p></div></article>
+        <article class="world rv" style="--d:.2s"><div class="pl"><img src="img/onix_chegada_s.webp" srcset="img/onix_chegada_s.webp 720w, img/onix_chegada.webp 1440w" sizes="(max-width:860px) 90vw, 400px" width="1440" height="810" loading="lazy" decoding="async" alt="Duna, um planeta de areia alaranjada, com o gigante gasoso Titã ao fundo"></div><div class="tx"><div class="k">Sistema Ônix</div><h3>Duna e Titã</h3><p>Desertos de areia, tempestades, luas, asteroides e um gigante gasoso: mais de uma dúzia de corpos só no Ônix.</p></div></article>
       </div>
     </div>
   </section>
 
-  <section id="combate" class="alt">
+  <section id="locais" class="alt">
+    <div class="wrap">
+      <div class="sec-h rv">
+        <div class="kicker">Locais e facções</div>
+        <h2>Cidades, ferros-velhos e cavernas</h2>
+        <p>Cada mundo tem lugares para visitar, comerciar e explorar.</p>
+      </div>
+      <div class="sites">
+        <article class="site rv"><div class="im"><img src="img/aurora_cidade_rua_s.webp" srcset="img/aurora_cidade_rua_s.webp 720w, img/aurora_cidade_rua.webp 1440w" sizes="(max-width:860px) 90vw, 380px" width="1440" height="810" loading="lazy" decoding="async" alt="Rua principal de uma cidade de Aurora, com lojas e árvores"></div><div class="tx"><h3>Cidades</h3><p>Padaria, café, farmácia, ferragens, autopeças, livraria e armazém: lojas com letreiro luminoso, nome próprio e vendedor atrás do balcão. Missões diárias, patrulhas e contratos.</p></div></article>
+        <article class="site rv" style="--d:.1s"><div class="im"><img src="img/aurora_ferro_velho_s.webp" srcset="img/aurora_ferro_velho_s.webp 720w, img/aurora_ferro_velho.webp 1440w" sizes="(max-width:860px) 90vw, 380px" width="1440" height="810" loading="lazy" decoding="async" alt="Ferro-velho com portal de entrada, muro de chapa e escritório de contêiner"></div><div class="tx"><h3>Ferros-velhos</h3><p>Compre uma ficha, receba uma unidade incompleta sorteada e decida: desmontar e vender o material, ou reconstruir e registrar o chassi com o Vistoriador.</p></div></article>
+        <article class="site rv" style="--d:.2s"><div class="im"><img src="img/caverna_boca_s.webp" srcset="img/caverna_boca_s.webp 720w, img/caverna_boca.webp 1440w" sizes="(max-width:860px) 90vw, 380px" width="1440" height="810" loading="lazy" decoding="async" alt="Boca de uma caverna cercada de pedras, na grama de Aurora"></div><div class="tx"><h3>Cavernas</h3><p>Bocas de caverna espalhadas pelos planetas levam a salões de cristal, fungos e minério raro. Lanterna ligada e cuidado com o que vive lá embaixo.</p></div></article>
+      </div>
+      <div class="fac rv"><span class="lbl">Facções</span><span class="chip">Corsários da Sucata</span><span class="chip">Mineração Aurora</span><span class="chip">Colônia Livre</span><span class="chip">Guardiões do Éden</span><span class="chip">Coletividade Cromo</span></div>
+    </div>
+  </section>
+
+  <section id="combate">
     <div class="wrap">
       <div class="band">
-        <div class="shot"><img src="shot_combate.jpg" loading="lazy" alt="Personagem mirando um fuzil de assalto, com a câmera por cima do ombro"></div>
-        <div>
+        <div class="rv"><div class="shot"><img src="img/combate_criatura_s.webp" srcset="img/combate_criatura_s.webp 720w, img/combate_criatura.webp 1440w" sizes="(max-width:860px) 100vw, 640px" width="1440" height="810" loading="lazy" decoding="async" alt="Personagem mirando num bicho grande de couraça cinza, com o dano em vermelho"></div></div>
+        <div class="rv" style="--d:.12s">
           <div class="kicker">Combate e fauna</div>
           <h2>Mire pelo cano, defenda, apare</h2>
-          <p>O combate foi refeito: câmera mais perto com a arma na mão, tiro que sai do cano, luneta nos rifles, acerto confirmado pelo servidor e aviso da direção do dano. Com arma branca, a defesa vale contra os soldados — e aparar no tempo certo dá o troco.</p>
+          <p>Câmera mais perto com a arma na mão, tiro que sai do cano, luneta nos rifles, acerto confirmado pelo servidor e aviso da direção do dano. Com arma branca, a defesa vale contra os soldados — e aparar no tempo certo dá o troco.</p>
           <ul>
-            <li>Três bichos hostis longe das cidades: Rastejador, Zangão-de-pedra e Espinhoso, cada planeta com a sua cor</li>
+            <li>Bichos hostis longe das cidades, cada planeta com a sua cor</li>
             <li>Eles soltam carne de fera, quitina e glândulas — a carne vira espetinho no Processador</li>
             <li>Soldados reagem ao tiro e avisam antes de atirar</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="companheiros">
-    <div class="wrap">
-      <div class="band rev">
-        <div class="shot"><img src="shot_pet.jpg" loading="lazy" alt="A Trufa, um bichinho companheiro, de perto numa encosta gramada à beira-mar"></div>
-        <div>
+      <div class="band rev" style="margin-top:84px">
+        <div class="shot rv"><img src="shot_pet.jpg" loading="lazy" decoding="async" width="1280" height="720" alt="A Trufa, um bichinho companheiro, de perto numa encosta gramada à beira-mar"></div>
+        <div class="rv" style="--d:.12s">
           <div class="kicker">Personagem e companheiros</div>
           <h2>Você, com estilo — e um bichinho ao lado</h2>
-          <p>Personagem novo, masculino ou feminino, com três trajes de modelo próprio — Macacão colonial, Traje reforçado e Traje espacial — e editor de cores para pele, olhos, cabelo e traje. E, para andar com você, três companheiros que ninguém consegue machucar.</p>
+          <p>Personagem masculino ou feminino, com três trajes de modelo próprio — Macacão colonial, Traje reforçado e Traje espacial — e editor de cores para pele, olhos, cabelo e traje. E três companheiros que ninguém consegue machucar.</p>
           <ul>
             <li>Trufa fareja pedras de minério por perto, vai até lá e cava</li>
             <li>Bolota avisa quando há bicho ou soldado hostil chegando</li>
@@ -458,8 +605,8 @@ html.static .diag,html.static .dom{display:none}
   <section id="mar" class="alt">
     <div class="wrap">
       <div class="band">
-        <div class="shot"><img src="shot_mar.jpg" loading="lazy" alt="Personagem nadando sobre o fundo de um mar de Aurora, entre corais e rochas submersas"></div>
-        <div>
+        <div class="shot rv"><img src="shot_mar.jpg" loading="lazy" decoding="async" width="1280" height="720" alt="Personagem nadando sobre o fundo de um mar de Aurora, entre corais e rochas submersas"></div>
+        <div class="rv" style="--d:.12s">
           <div class="kicker">Mar</div>
           <h2>O fundo do mar tem vida</h2>
           <p>Nos mares de Aurora, Gelo e Malva há algas, corais e rochas submersas, cardumes, medusas, arraias e tartarugas. Nade para onde você olha e leve a Arpoeira, a arma feita para o mar.</p>
@@ -469,9 +616,9 @@ html.static .diag,html.static .dom{display:none}
           </ul>
         </div>
       </div>
-      <div class="band rev" style="margin-top:72px">
-        <div class="shot"><img src="shot_sombra.jpg" loading="lazy" alt="A Sombra-d’água, serpente translúcida das águas profundas, de boca aberta e com as iscas luminosas acesas"></div>
-        <div>
+      <div class="band rev" style="margin-top:84px">
+        <div class="shot rv"><img src="shot_sombra.jpg" loading="lazy" decoding="async" width="1280" height="720" alt="A Sombra-d’água, serpente translúcida das águas profundas, de boca aberta e com as iscas luminosas acesas"></div>
+        <div class="rv" style="--d:.12s">
           <div class="kicker">Predadores</div>
           <h2>Cuidado com o escuro</h2>
           <p>A Boca-de-lodo dorme enterrada no fundo e acorda se você chegar perto. A Sombra-d’água, uma serpente translúcida de 7 m, ronda as águas profundas. Os dois têm corpo articulado e, em Gelo e Malva, mudam de cor.</p>
@@ -483,22 +630,49 @@ html.static .diag,html.static .dom{display:none}
       </div>
     </div>
   </section>
-  <section id="baixar">
+
+  <section id="wiki-c">
     <div class="wrap">
-      <div class="sec-h">
+      <div class="wikib rv">
+        <div>
+          <div class="kicker">Wiki do jogo</div>
+          <h2>Tudo catalogado, com ícone</h2>
+          <p>Materiais, blocos, receitas, naves, veículos e planetas: cada item com o seu ícone do jogo, como obter ou fabricar e onde aparece. Gerada direto do código do jogo, sempre atualizada.</p>
+          <a class="btn" href="wiki/">Abrir a Wiki</a>
+        </div>
+        <div class="icons" aria-hidden="true"><span><img src="img/wi/00_nucleo.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/01_lingote_ouro.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/02_circuito.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/03_cristal_vivo.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/04_tool_laser_2.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/05_componente.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/06_liga_titanio.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/07_filhote_trufa.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/08_garrafa_h2.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/09_kit_medico.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/10_penumbrita.webp" loading="lazy" width="64" height="64" alt=""></span><span><img src="img/wi/11_pao.webp" loading="lazy" width="64" height="64" alt=""></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="baixar" class="alt">
+    <div class="wrap">
+      <div class="sec-h rv">
         <div class="kicker">Como jogar</div>
         <h2>Pronto em três passos</h2>
       </div>
       <div class="steps">
-        <div class="step"><h3>Baixe</h3><p>Clique em “Baixar para Windows” e salve o instalador <b>Instalar_WhereWeLive.exe</b>.</p></div>
-        <div class="step"><h3>Instale</h3><p>Execute e escolha a pasta. Se o Windows avisar, clique em <i>Mais informações → Executar assim mesmo</i>: o instalador ainda não é assinado.</p></div>
-        <div class="step"><h3>Jogue</h3><p>Abra pelo atalho da área de trabalho. O jogo confere as novidades e se atualiza sozinho a cada abertura.</p></div>
+        <div class="step rv"><h3>Baixe</h3><p>Clique em “Baixar para Windows” e salve o instalador <b>Instalar_WhereWeLive.exe</b>.</p></div>
+        <div class="step rv" style="--d:.08s"><h3>Instale</h3><p>Execute e escolha a pasta. Se o Windows avisar, clique em <i>Mais informações → Executar assim mesmo</i>: o instalador ainda não é assinado.</p></div>
+        <div class="step rv" style="--d:.16s"><h3>Jogue</h3><p>Abra pelo atalho da área de trabalho. O jogo confere as novidades e se atualiza sozinho a cada abertura.</p></div>
       </div>
-      <div class="req">
-        <div><b>Sistema</b>Windows 10 ou 11 (64 bits)</div>
-        <div><b>Placa de vídeo</b>Compatível com Vulkan (GTX 1050 ou superior recomendada)</div>
-        <div><b>Memória</b>8 GB de RAM ou mais</div>
-        <div><b>Espaço em disco</b>cerca de 1,3 GB instalado; reserve uns 3 GB livres na primeira instalação (download de cerca de 1,1 GB)</div>
+      <div class="dl">
+        <div class="dl-card rv">
+          <div class="kicker" style="margin:0">Grátis · Windows 64 bits</div>
+          <h3>Baixe e comece agora</h3>
+          <p>Instalador em português, atualização automática a cada abertura e suporte no nosso Discord.</p>
+          <a class="btn" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>Baixar para Windows</a>
+          <div class="meta"><span id="ver">Versão atual: <b>1.0.503</b></span></div>
+        </div>
+        <div class="spec rv" style="--d:.1s">
+          <h3>Requisitos</h3>
+          <dl>
+            <div class="row"><dt>Sistema</dt><dd>Windows 10 ou 11 (64 bits)</dd></div>
+            <div class="row"><dt>Vídeo</dt><dd>Compatível com Vulkan (GTX 1050 ou superior recomendada)</dd></div>
+            <div class="row"><dt>Memória</dt><dd>8 GB de RAM ou mais</dd></div>
+            <div class="row"><dt>Disco</dt><dd>cerca de 1,3 GB instalado; reserve uns 3 GB livres na primeira instalação (download de cerca de 1,1 GB)</dd></div>
+          </dl>
+        </div>
       </div>
     </div>
   </section>
@@ -506,9 +680,9 @@ html.static .diag,html.static .dom{display:none}
   <section class="final">
     <div class="wrap">
       <img src="logo_marca.png" loading="lazy" width="92" height="92" alt="">
-      <h2>Seu lugar no sistema está esperando</h2>
-      <p>Baixe, construa sua primeira nave e descubra onde você vai viver. E passe no nosso Discord para achar gente para jogar, mostrar suas construções e contar o que achou.</p>
-      <div class="cta" style="justify-content:center">
+      <h2 class="rv">Seu lugar no sistema está esperando</h2>
+      <p class="rv">Baixe, construa sua primeira nave e descubra onde você vai viver. E passe no nosso Discord para achar gente para jogar, mostrar suas construções e contar o que achou.</p>
+      <div class="cta rv" style="justify-content:center">
         <a class="btn" href="https://github.com/oparreche/wherewelive/releases/latest/download/Instalar_WhereWeLive.exe">Baixar para Windows</a>
         <a class="btn ghost" href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">Entrar no Discord</a>
       </div>
@@ -522,6 +696,40 @@ html.static .diag,html.static .dom{display:none}
     <span>Dúvidas, bugs e sugestões: <a href="https://discord.gg/ax9NkFYRKb" target="_blank" rel="noopener">entre no nosso Discord</a>.</span>
   </div>
 </footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagem ampliada"><button type="button" id="lbx" aria-label="Fechar">×</button><img alt=""><p></p></div>
+
+<script>
+(function(){
+  var R=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // revelar ao rolar
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window&&!R){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('in')});
+  // números
+  var nn=[].slice.call(document.querySelectorAll('[data-n]'));
+  function cnt(e){var t=+e.dataset.n,s=null;if(R){return}function f(ts){if(!s)s=ts;var p=Math.min(1,(ts-s)/1300);e.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+  if('IntersectionObserver' in window){var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cnt(e.target);io2.unobserve(e.target)}})},{threshold:.6});nn.forEach(function(e){io2.observe(e)})}
+  // galeria
+  var g=document.getElementById('gal');
+  function step(d){var c=g.querySelector('.gcard');g.scrollBy({left:d*(c.offsetWidth+18),behavior:R?'auto':'smooth'})}
+  document.getElementById('gprev').onclick=function(){step(-1)};document.getElementById('gnext').onclick=function(){step(1)};
+  // lightbox
+  var lb=document.getElementById('lb'),li=lb.querySelector('img'),lp=lb.querySelector('p');
+  function open(c){li.src=c.dataset.full;li.alt=c.dataset.cap;lp.textContent=c.dataset.cap;lb.classList.add('on');lb.querySelector('button').focus()}
+  function close(){lb.classList.remove('on');li.removeAttribute('src')}
+  g.addEventListener('click',function(e){var c=e.target.closest('.gcard');if(c)open(c)});
+  g.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('gcard')){e.preventDefault();open(e.target)}});
+  lb.addEventListener('click',function(e){if(e.target!==li)close()});
+  addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  // vídeo: só baixa ao clicar
+  var v=document.getElementById('gv'),b=document.getElementById('gplay'),w=document.getElementById('vid');
+  b.onclick=function(){w.classList.add("on");v.controls=true;v.preload="auto";v.play().catch(function(){})};
+  v.addEventListener('play',function(){w.classList.add('on')});
+})();
+</script>
 
 <script>if(document.documentElement.classList.contains('s3d')){var s=document.createElement('script');s.src='ww3d.js';document.body.appendChild(s)}</script>
 </body>
